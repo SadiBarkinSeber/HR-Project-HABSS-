@@ -8,5 +8,6 @@ namespace HR_PROJECT.Domain.Entities
 {
     public class Employee
     {
+        public string Name { get; set; }
     }
 }
