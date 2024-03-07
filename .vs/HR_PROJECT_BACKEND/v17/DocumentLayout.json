@@ -1,12 +1,7 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\Shohzod\\Desktop\\hr-project-backend\\HR-PROJECT-BACKEND\\",
-  "Documents": [
-    {
-      "AbsoluteMoniker": "D:0:0:{F0BC0841-193B-47BB-B3FD-440DB8B5892C}|HR_PROJECT.Domain\\HR_PROJECT.Domain.csproj|c:\\users\\shohzod\\desktop\\hr-project-backend\\hr-project-backend\\hr_project.domain\\entities\\employee.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F0BC0841-193B-47BB-B3FD-440DB8B5892C}|HR_PROJECT.Domain\\HR_PROJECT.Domain.csproj|solutionrelative:hr_project.domain\\entities\\employee.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    }
-  ],
+  "Documents": [],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -14,24 +9,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": -1,
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Employee.cs",
-              "DocumentMoniker": "C:\\Users\\Shohzod\\Desktop\\hr-project-backend\\HR-PROJECT-BACKEND\\HR_PROJECT.Domain\\Entities\\Employee.cs",
-              "RelativeDocumentMoniker": "HR_PROJECT.Domain\\Entities\\Employee.cs",
-              "ToolTip": "C:\\Users\\Shohzod\\Desktop\\hr-project-backend\\HR-PROJECT-BACKEND\\HR_PROJECT.Domain\\Entities\\Employee.cs",
-              "RelativeToolTip": "HR_PROJECT.Domain\\Entities\\Employee.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-06T19:00:07.237Z",
-              "EditorCaption": ""
             }
           ]
         }
