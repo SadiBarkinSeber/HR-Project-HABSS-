@@ -7,6 +7,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Folder Include="Features\CQRS\Commands\" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\HR_PROJECT.Domain\HR_PROJECT.Domain.csproj" />
   </ItemGroup>
 

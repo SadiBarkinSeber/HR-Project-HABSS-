@@ -1,0 +1,31 @@
+﻿using HR_PROJECT.Application.Features.CQRS.Results.EmployeeResults;
+using HR_PROJECT.Application.Interfaces;
+using HR_PROJECT.Domain.Entities;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace HR_PROJECT.Application.Features.CQRS.Handlers.EmployeeHandlers
+{
+    public class GetEmployeeQueryHandler
+    {
+        private readonly IRepository<Employee> _repository;
+
+        public GetEmployeeQueryHandler(IRepository<Employee> repository)
+        {
+            _repository = repository;
+        }
+
+        public async Task<List<GetEmployeeQueryResult>> Handle()
+        {
+            var values = await _repository.GetAllAsync();
+            return values.Select(x => new GetEmployeeQueryResult
+            {
+                Id = x.Id,
+                Name = x.Name
+            }).ToList();
+        }
+    }
+}
