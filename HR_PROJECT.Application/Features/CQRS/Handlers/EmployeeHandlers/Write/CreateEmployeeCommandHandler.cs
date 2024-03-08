@@ -36,10 +36,11 @@ namespace HR_PROJECT.Application.Features.CQRS.Handlers.EmployeeHandlers.Write
                 Position = command.Position,
                 Department = command.Department,
                 Company = command.Company,
-                Mail = command.Mail,
+                Email = command.Email,
                 Wage = command.Wage,
                 ImagePath = command.ImagePath,
                 PhoneNumber = command.PhoneNumber,
+                Address = command.Address,
             });
         }
     }

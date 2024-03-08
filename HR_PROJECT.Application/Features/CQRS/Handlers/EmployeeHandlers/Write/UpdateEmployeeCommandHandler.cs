@@ -22,23 +22,8 @@ namespace HR_PROJECT.Application.Features.CQRS.Handlers.EmployeeHandlers.Write
         {
             var values = await _repository.GetByIdAsync(command.Id);
 
-            values.FirstName = command.FirstName;
-            values.SecondName = command.SecondName;
-            values.FirstSurname = command.FirstSurname;
-            values.SecondSurname = command.SecondSurname;
-            values.DateOfBirth = command.DateOfBirth;
-            values.BirthPlace = command.BirthPlace;
-            values.Tc = command.Tc;
-            values.StartDate = command.StartDate;
-            values.EndDate = command.EndDate;
-            values.IsActive = command.IsActive;
-            values.Position = command.Position;
-            values.Department = command.Department;
-            values.Company = command.Company;
-            values.Mail = command.Mail;
-            values.Wage = command.Wage;
-            values.ImagePath = command.ImagePath;
-            values.PhoneNumber = command.PhoneNumber;
+            values.PhoneNumber = command.Phonenumber;
+            values.Address = command.Address;
 
             await _repository.UpdateAsync(values);
         }

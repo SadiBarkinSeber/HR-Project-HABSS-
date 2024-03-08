@@ -38,10 +38,11 @@ namespace HR_PROJECT.Application.Features.CQRS.Handlers.EmployeeHandlers.Read
                 Position = values.Position,
                 Department = values.Department,
                 Company = values.Company,
-                Mail = values.Mail,
+                Email = values.Email,
                 Wage = values.Wage,
                 ImagePath = values.ImagePath,
                 PhoneNumber = values.PhoneNumber,
+                Address = values.Address,
                 
             };
         }

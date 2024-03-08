@@ -3,28 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\Shohzod\\Desktop\\hr-project-backend\\HR-PROJECT-BACKEND\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Shohzod\\Desktop\\hr-project-backend\\HR-PROJECT-BACKEND\\HR_PROJECT.Persistence\\Migrations\\20240308174056_initEmployeeSeedData.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:HR_PROJECT.Persistence\\Migrations\\20240308174056_initEmployeeSeedData.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Shohzod\\Desktop\\hr-project-backend\\HR-PROJECT-BACKEND\\HR_PROJECT.Persistence\\Migrations\\20240308174152_initEmployeeSeedData2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:HR_PROJECT.Persistence\\Migrations\\20240308174152_initEmployeeSeedData2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Shohzod\\Desktop\\hr-project-backend\\HR-PROJECT-BACKEND\\HR_PROJECT.Persistence\\Migrations\\20240308180902_initMoreFixes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:HR_PROJECT.Persistence\\Migrations\\20240308180902_initMoreFixes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{8761977A-42D5-4803-9F60-0B774D5AE1BE}|HR_PROJECT.Persistence\\HR_PROJECT.Persistence.csproj|c:\\users\\shohzod\\desktop\\hr-project-backend\\hr-project-backend\\hr_project.persistence\\configurations\\employeeconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{8761977A-42D5-4803-9F60-0B774D5AE1BE}|HR_PROJECT.Persistence\\HR_PROJECT.Persistence.csproj|solutionrelative:hr_project.persistence\\configurations\\employeeconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8761977A-42D5-4803-9F60-0B774D5AE1BE}|HR_PROJECT.Persistence\\HR_PROJECT.Persistence.csproj|c:\\users\\shohzod\\desktop\\hr-project-backend\\hr-project-backend\\hr_project.persistence\\context\\hrprojectcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8761977A-42D5-4803-9F60-0B774D5AE1BE}|HR_PROJECT.Persistence\\HR_PROJECT.Persistence.csproj|solutionrelative:hr_project.persistence\\context\\hrprojectcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Shohzod\\Desktop\\hr-project-backend\\HR-PROJECT-BACKEND\\HR_PROJECT.Persistence\\Migrations\\20240308172840_initSeedData.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:HR_PROJECT.Persistence\\Migrations\\20240308172840_initSeedData.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F0BC0841-193B-47BB-B3FD-440DB8B5892C}|HR_PROJECT.Domain\\HR_PROJECT.Domain.csproj|c:\\users\\shohzod\\desktop\\hr-project-backend\\hr-project-backend\\hr_project.domain\\entities\\employee.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F0BC0841-193B-47BB-B3FD-440DB8B5892C}|HR_PROJECT.Domain\\HR_PROJECT.Domain.csproj|solutionrelative:hr_project.domain\\entities\\employee.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{3B13A124-752A-4AF6-84DA-BDFF3DCAAB42}|HR_PROJECT.Application\\HR_PROJECT.Application.csproj|c:\\users\\shohzod\\desktop\\hr-project-backend\\hr-project-backend\\hr_project.application\\features\\cqrs\\handlers\\employeehandlers\\write\\updateemployeecommandhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3B13A124-752A-4AF6-84DA-BDFF3DCAAB42}|HR_PROJECT.Application\\HR_PROJECT.Application.csproj|solutionrelative:hr_project.application\\features\\cqrs\\handlers\\employeehandlers\\write\\updateemployeecommandhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -34,7 +22,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Bookmark",
@@ -42,101 +30,41 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "20240308174152_initEmployeeSeedData2.cs",
-              "DocumentMoniker": "C:\\Users\\Shohzod\\Desktop\\hr-project-backend\\HR-PROJECT-BACKEND\\HR_PROJECT.Persistence\\Migrations\\20240308174152_initEmployeeSeedData2.cs",
-              "RelativeDocumentMoniker": "HR_PROJECT.Persistence\\Migrations\\20240308174152_initEmployeeSeedData2.cs",
-              "ToolTip": "C:\\Users\\Shohzod\\Desktop\\hr-project-backend\\HR-PROJECT-BACKEND\\HR_PROJECT.Persistence\\Migrations\\20240308174152_initEmployeeSeedData2.cs",
-              "RelativeToolTip": "HR_PROJECT.Persistence\\Migrations\\20240308174152_initEmployeeSeedData2.cs",
-              "ViewState": "AQIAAAoAAAAAAAAAAAA1wBsAAAAkAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-08T17:41:53.081Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "20240308174056_initEmployeeSeedData.cs",
-              "DocumentMoniker": "C:\\Users\\Shohzod\\Desktop\\hr-project-backend\\HR-PROJECT-BACKEND\\HR_PROJECT.Persistence\\Migrations\\20240308174056_initEmployeeSeedData.cs",
-              "RelativeDocumentMoniker": "HR_PROJECT.Persistence\\Migrations\\20240308174056_initEmployeeSeedData.cs",
-              "ToolTip": "C:\\Users\\Shohzod\\Desktop\\hr-project-backend\\HR-PROJECT-BACKEND\\HR_PROJECT.Persistence\\Migrations\\20240308174056_initEmployeeSeedData.cs",
-              "RelativeToolTip": "HR_PROJECT.Persistence\\Migrations\\20240308174056_initEmployeeSeedData.cs",
-              "ViewState": "AQIAAB4AAAAAAAAAAAAgwDQAAAAnAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-08T17:40:56.64Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "HRProjectContext.cs",
-              "DocumentMoniker": "C:\\Users\\Shohzod\\Desktop\\hr-project-backend\\HR-PROJECT-BACKEND\\HR_PROJECT.Persistence\\Context\\HRProjectContext.cs",
-              "RelativeDocumentMoniker": "HR_PROJECT.Persistence\\Context\\HRProjectContext.cs",
-              "ToolTip": "C:\\Users\\Shohzod\\Desktop\\hr-project-backend\\HR-PROJECT-BACKEND\\HR_PROJECT.Persistence\\Context\\HRProjectContext.cs",
-              "RelativeToolTip": "HR_PROJECT.Persistence\\Context\\HRProjectContext.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABQAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-08T17:32:04.793Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "20240308172840_initSeedData.cs",
-              "DocumentMoniker": "C:\\Users\\Shohzod\\Desktop\\hr-project-backend\\HR-PROJECT-BACKEND\\HR_PROJECT.Persistence\\Migrations\\20240308172840_initSeedData.cs",
-              "RelativeDocumentMoniker": "HR_PROJECT.Persistence\\Migrations\\20240308172840_initSeedData.cs",
-              "ToolTip": "C:\\Users\\Shohzod\\Desktop\\hr-project-backend\\HR-PROJECT-BACKEND\\HR_PROJECT.Persistence\\Migrations\\20240308172840_initSeedData.cs",
-              "RelativeToolTip": "HR_PROJECT.Persistence\\Migrations\\20240308172840_initSeedData.cs",
+              "Title": "20240308180902_initMoreFixes.cs",
+              "DocumentMoniker": "C:\\Users\\Shohzod\\Desktop\\hr-project-backend\\HR-PROJECT-BACKEND\\HR_PROJECT.Persistence\\Migrations\\20240308180902_initMoreFixes.cs",
+              "RelativeDocumentMoniker": "HR_PROJECT.Persistence\\Migrations\\20240308180902_initMoreFixes.cs",
+              "ToolTip": "C:\\Users\\Shohzod\\Desktop\\hr-project-backend\\HR-PROJECT-BACKEND\\HR_PROJECT.Persistence\\Migrations\\20240308180902_initMoreFixes.cs",
+              "RelativeToolTip": "HR_PROJECT.Persistence\\Migrations\\20240308180902_initMoreFixes.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-08T17:28:40.497Z",
+              "WhenOpened": "2024-03-08T18:09:02.176Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "EmployeeConfiguration.cs",
               "DocumentMoniker": "C:\\Users\\Shohzod\\Desktop\\hr-project-backend\\HR-PROJECT-BACKEND\\HR_PROJECT.Persistence\\Configurations\\EmployeeConfiguration.cs",
               "RelativeDocumentMoniker": "HR_PROJECT.Persistence\\Configurations\\EmployeeConfiguration.cs",
               "ToolTip": "C:\\Users\\Shohzod\\Desktop\\hr-project-backend\\HR-PROJECT-BACKEND\\HR_PROJECT.Persistence\\Configurations\\EmployeeConfiguration.cs",
               "RelativeToolTip": "HR_PROJECT.Persistence\\Configurations\\EmployeeConfiguration.cs",
-              "ViewState": "AQIAAAYAAAAAAAAAAAAAABAAAAAtAAAA",
+              "ViewState": "AQIAACAAAAAAAAAAAAAgwDEAAAAnAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-08T17:16:21.537Z",
+              "WhenOpened": "2024-03-08T18:06:45.418Z",
               "EditorCaption": ""
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "Orientation": 0,
-      "VerticalTabListWidth": 256,
-      "FloatingWindowState": {
-        "Id": "d9c76508-f76b-4ad7-9c7c-374ccf116526",
-        "Display": 0,
-        "X": 423,
-        "Y": 91,
-        "Width": 920,
-        "Height": 946,
-        "WindowState": 0
-      },
-      "DocumentGroups": [
-        {
-          "DockedWidth": 200,
-          "SelectedChildIndex": 0,
-          "Children": [
+            },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Employee.cs",
-              "DocumentMoniker": "C:\\Users\\Shohzod\\Desktop\\hr-project-backend\\HR-PROJECT-BACKEND\\HR_PROJECT.Domain\\Entities\\Employee.cs",
-              "RelativeDocumentMoniker": "HR_PROJECT.Domain\\Entities\\Employee.cs",
-              "ToolTip": "C:\\Users\\Shohzod\\Desktop\\hr-project-backend\\HR-PROJECT-BACKEND\\HR_PROJECT.Domain\\Entities\\Employee.cs",
-              "RelativeToolTip": "HR_PROJECT.Domain\\Entities\\Employee.cs",
-              "ViewState": "AQIAAAYAAAAAAAAAAAAAABEAAAAmAAAA",
+              "DocumentIndex": 2,
+              "Title": "UpdateEmployeeCommandHandler.cs",
+              "DocumentMoniker": "C:\\Users\\Shohzod\\Desktop\\hr-project-backend\\HR-PROJECT-BACKEND\\HR_PROJECT.Application\\Features\\CQRS\\Handlers\\EmployeeHandlers\\Write\\UpdateEmployeeCommandHandler.cs",
+              "RelativeDocumentMoniker": "HR_PROJECT.Application\\Features\\CQRS\\Handlers\\EmployeeHandlers\\Write\\UpdateEmployeeCommandHandler.cs",
+              "ToolTip": "C:\\Users\\Shohzod\\Desktop\\hr-project-backend\\HR-PROJECT-BACKEND\\HR_PROJECT.Application\\Features\\CQRS\\Handlers\\EmployeeHandlers\\Write\\UpdateEmployeeCommandHandler.cs",
+              "RelativeToolTip": "HR_PROJECT.Application\\Features\\CQRS\\Handlers\\EmployeeHandlers\\Write\\UpdateEmployeeCommandHandler.cs",
+              "ViewState": "AQIAAA4AAAAAAAAAAAAQwAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-08T17:16:28.559Z",
+              "WhenOpened": "2024-03-08T18:06:04.598Z",
               "EditorCaption": ""
             }
           ]
