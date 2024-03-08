@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace HR_PROJECT.Application.Features.CQRS.Handlers.EmployeeHandlers
+namespace HR_PROJECT.Application.Features.CQRS.Handlers.EmployeeHandlers.Read
 {
     public class GetEmployeeQueryHandler
     {
@@ -24,7 +24,24 @@ namespace HR_PROJECT.Application.Features.CQRS.Handlers.EmployeeHandlers
             return values.Select(x => new GetEmployeeQueryResult
             {
                 Id = x.Id,
-                Name = x.Name
+                FirstName = x.FirstName,
+                SecondName = x.SecondName,
+                FirstSurname = x.FirstSurname,
+                SecondSurname = x.SecondSurname,
+                DateOfBirth = x.DateOfBirth,
+                BirthPlace = x.BirthPlace,
+                Tc = x.Tc,
+                StartDate = x.StartDate,
+                EndDate = x.EndDate,
+                IsActive = x.IsActive,
+                Position = x.Position,
+                Department = x.Department,
+                Company = x.Company,
+                Mail = x.Mail,
+                Wage = x.Wage,
+                ImagePath = x.ImagePath,
+                PhoneNumber = x.PhoneNumber,
+
             }).ToList();
         }
     }
