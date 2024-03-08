@@ -22,9 +22,10 @@ namespace HR_PROJECT.Application.Features.CQRS.Results.EmployeeResults
         public string Position { get; set; }
         public string Department { get; set; }
         public string Company { get; set; }
-        public string Mail { get; set; }
+        public string Email { get; set; }
         public decimal Wage { get; set; }
         public string ImagePath { get; set; }
         public string PhoneNumber { get; set; }
+        public string Address { get; set; }
     }
 }

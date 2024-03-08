@@ -24,18 +24,19 @@ namespace HR_PROJECT.Persistence.Configurations
                     Id = 1,
                     FirstName = "John",
                     FirstSurname = "Doe",
-                    DateOfBirth = new DateTime(1995-06-21),
+                    DateOfBirth = new DateTime(1995, 06, 21),
                     BirthPlace = "Antalya/Türkiye",
                     Tc = "19586478952",
-                    StartDate = new DateTime(2017-03-25),
+                    StartDate = new DateTime(2017, 03, 25),
                     IsActive = true,
                     Position = "Director",
                     Department = "Technology and Strategy",
                     Company = "Amazon Inc.",
-                    Mail = "john.doe@bilgeadam.com",
+                    Email = "john.doe@bilgeadam.com",
                     Wage = 95489,
                     ImagePath = "/Images/john_doe.jpg",
-                    PhoneNumber = "5417896325"
+                    PhoneNumber = "5417896325",
+                    Address = "19 Mayıs Mah. Halit Paşa Cad. Şişli/İstanbul"
                 },
                 new Employee
                 {
@@ -44,19 +45,20 @@ namespace HR_PROJECT.Persistence.Configurations
                     SecondName = "Margaret",
                     FirstSurname = "Doe",
                     SecondSurname = "Thatcher",
-                    DateOfBirth = new DateTime(1996 - 08 - 16),
+                    DateOfBirth = new DateTime(1996, 08, 16),
                     BirthPlace = "London/Great Britain",
                     Tc = "78952612374",
-                    StartDate = new DateTime(2020 - 07 - 28),
-                    EndDate = new DateTime(2023-09-14),
+                    StartDate = new DateTime(2020, 07, 28),
+                    EndDate = new DateTime(2023, 09, 14),
                     IsActive = false,
                     Position = "Lead Architect",
                     Department = "IT",
                     Company = "Koç Group",
-                    Mail = "jane.doe@bilgeadam.com",
+                    Email = "jane.doe@bilgeadam.com",
                     Wage = 63951,
                     ImagePath = "/Images/jane_doe.jpg",
-                    PhoneNumber = "5085234563"
+                    PhoneNumber = "5085234563",
+                    Address = "Ayvansaray Mah. Şemsi Paşa Sokak Fatih/İstanbul"
                 }
 
                 );

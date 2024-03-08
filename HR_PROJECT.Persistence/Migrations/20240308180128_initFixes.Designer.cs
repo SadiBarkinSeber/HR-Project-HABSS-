@@ -4,6 +4,7 @@ using HR_PROJECT.Persistence.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace HR_PROJECT.Persistence.Migrations
 {
     [DbContext(typeof(HRProjectContext))]
-    partial class HRProjectContextModelSnapshot : ModelSnapshot
+    [Migration("20240308180128_initFixes")]
+    partial class initFixes
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -106,7 +109,7 @@ namespace HR_PROJECT.Persistence.Migrations
                             Address = "19 Mayıs Mah. Halit Paşa Cad. Şişli/İstanbul",
                             BirthPlace = "Antalya/Türkiye",
                             Company = "Amazon Inc.",
-                            DateOfBirth = new DateTime(1995, 6, 21, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DateOfBirth = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified).AddTicks(1968),
                             Department = "Technology and Strategy",
                             Email = "john.doe@bilgeadam.com",
                             FirstName = "John",
@@ -115,7 +118,7 @@ namespace HR_PROJECT.Persistence.Migrations
                             IsActive = true,
                             PhoneNumber = "5417896325",
                             Position = "Director",
-                            StartDate = new DateTime(2017, 3, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            StartDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified).AddTicks(1989),
                             Tc = "19586478952",
                             Wage = 95489m
                         },
@@ -125,10 +128,10 @@ namespace HR_PROJECT.Persistence.Migrations
                             Address = "Ayvansaray Mah. Şemsi Paşa Sokak Fatih/İstanbul",
                             BirthPlace = "London/Great Britain",
                             Company = "Koç Group",
-                            DateOfBirth = new DateTime(1996, 8, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DateOfBirth = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified).AddTicks(1972),
                             Department = "IT",
                             Email = "jane.doe@bilgeadam.com",
-                            EndDate = new DateTime(2023, 9, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            EndDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified).AddTicks(2000),
                             FirstName = "Jane",
                             FirstSurname = "Doe",
                             ImagePath = "/Images/jane_doe.jpg",
@@ -137,7 +140,7 @@ namespace HR_PROJECT.Persistence.Migrations
                             Position = "Lead Architect",
                             SecondName = "Margaret",
                             SecondSurname = "Thatcher",
-                            StartDate = new DateTime(2020, 7, 28, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            StartDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified).AddTicks(1985),
                             Tc = "78952612374",
                             Wage = 63951m
                         });

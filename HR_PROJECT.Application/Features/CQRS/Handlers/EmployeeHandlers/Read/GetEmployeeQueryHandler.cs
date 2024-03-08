@@ -37,10 +37,11 @@ namespace HR_PROJECT.Application.Features.CQRS.Handlers.EmployeeHandlers.Read
                 Position = x.Position,
                 Department = x.Department,
                 Company = x.Company,
-                Mail = x.Mail,
+                Email = x.Email,
                 Wage = x.Wage,
                 ImagePath = x.ImagePath,
                 PhoneNumber = x.PhoneNumber,
+                Address = x.Address,
 
             }).ToList();
         }
