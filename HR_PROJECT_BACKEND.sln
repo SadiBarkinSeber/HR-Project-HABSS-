@@ -15,7 +15,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HR_PROJECT.Persistence", "H
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HR_PROJECT.WebAPI", "HR_PROJECT.WebAPI\HR_PROJECT.WebAPI.csproj", "{F98C2474-C9E4-4AC1-86DF-DD935ACD319D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HR_PROJECT.Application", "HR_PROJECT.Application\HR_PROJECT.Application.csproj", "{3B13A124-752A-4AF6-84DA-BDFF3DCAAB42}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HR_PROJECT.Application", "HR_PROJECT.Application\HR_PROJECT.Application.csproj", "{3B13A124-752A-4AF6-84DA-BDFF3DCAAB42}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
