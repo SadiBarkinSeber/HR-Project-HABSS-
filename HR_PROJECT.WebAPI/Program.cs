@@ -1,15 +1,22 @@
+using Azure.Storage.Blobs;
 using HR_PROJECT.Application.Features.CQRS.Handlers.EmployeeHandlers.Read;
 using HR_PROJECT.Application.Features.CQRS.Handlers.EmployeeHandlers.Write;
 using HR_PROJECT.Application.Interfaces;
 using HR_PROJECT.Persistence.Context;
 using HR_PROJECT.Persistence.Repositories;
+using HR_PROJECT.Persistence.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddScoped<HRProjectContext>();
 builder.Services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
+builder.Services.AddSingleton(x =>
+{
+    var connectionString = builder.Configuration.GetConnectionString("AzureStorage:ConnectionString");
 
+    return new BlobServiceClient(connectionString);
+});
 #region Dependency Injection of Handlers
 builder.Services.AddScoped<GetEmployeeByIdQueryHandler>();
 builder.Services.AddScoped<GetEmployeeQueryHandler>();
