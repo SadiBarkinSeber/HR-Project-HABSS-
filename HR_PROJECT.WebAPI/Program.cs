@@ -13,7 +13,7 @@ builder.Services.AddScoped<HRProjectContext>();
 builder.Services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
 builder.Services.AddSingleton(x =>
 {
-    var connectionString = builder.Configuration.GetConnectionString("AzureStorage:ConnectionString");
+    var connectionString = builder.Configuration.GetConnectionString("BlobStorageConnection");
 
     return new BlobServiceClient(connectionString);
 });

@@ -24,6 +24,7 @@ namespace HR_PROJECT.Application.Features.CQRS.Handlers.EmployeeHandlers.Write
 
             values.PhoneNumber = command.Phonenumber;
             values.Address = command.Address;
+            values.ImagePath = command.ImagePath;
 
             await _repository.UpdateAsync(values);
         }
