@@ -11,5 +11,6 @@ namespace HR_PROJECT.Application.Features.CQRS.Commands.EmployeeCommands
         public int Id { get; set; }
         public string Phonenumber { get; set; }
         public string Address { get; set; }
+        public string ImagePath { get; set; }
     }
 }

@@ -23,7 +23,7 @@ namespace HR_PROJECT.WebAPI.Controllers
         {
             if (file == null || file.Length == 0)
                 return BadRequest("No file was selected for upload.");
-            var blobContainerClient = _blobServiceClient.GetBlobContainerClient("hsabsphotos");
+            var blobContainerClient = _blobServiceClient.GetBlobContainerClient("photos");
 
             await blobContainerClient.CreateIfNotExistsAsync();
 
@@ -45,7 +45,7 @@ namespace HR_PROJECT.WebAPI.Controllers
             if (string.IsNullOrEmpty(fileName))
                 return BadRequest("File name is required for download.");
 
-            var blobContainerClient = _blobServiceClient.GetBlobContainerClient("hsabsphotos");
+            var blobContainerClient = _blobServiceClient.GetBlobContainerClient("photos");
             var blobClient = blobContainerClient.GetBlobClient(fileName);
 
             if (!await blobClient.ExistsAsync())
@@ -63,7 +63,7 @@ namespace HR_PROJECT.WebAPI.Controllers
         {
             if (string.IsNullOrWhiteSpace(fileName))
                 return BadRequest("File name is required for deletion.");
-            var blobContainerClient = _blobServiceClient.GetBlobContainerClient("hsabsphotos");
+            var blobContainerClient = _blobServiceClient.GetBlobContainerClient("photos");
             var blobClient = blobContainerClient.GetBlobClient(fileName);
 
             if (!await blobClient.ExistsAsync())
