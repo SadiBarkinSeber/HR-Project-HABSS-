@@ -41,6 +41,7 @@ namespace HR_PROJECT.Application.Features.CQRS.Handlers.EmployeeHandlers.Write
                 ImagePath = command.ImagePath,
                 PhoneNumber = command.PhoneNumber,
                 Address = command.Address,
+                UserId = command.UserId
             });
         }
     }

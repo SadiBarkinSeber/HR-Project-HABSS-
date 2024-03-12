@@ -21,7 +21,7 @@ namespace HR_PROJECT.Persistence.Configurations
 
                 new Employee
                 {
-                    Id = 1,
+                    EmployeeId = 1,
                     FirstName = "John",
                     FirstSurname = "Doe",
                     DateOfBirth = new DateTime(1995, 06, 21),
@@ -36,11 +36,12 @@ namespace HR_PROJECT.Persistence.Configurations
                     Wage = 95489,
                     ImagePath = "/Images/john_doe.jpg",
                     PhoneNumber = "5417896325",
-                    Address = "19 Mayıs Mah. Halit Paşa Cad. Şişli/İstanbul"
+                    Address = "19 Mayıs Mah. Halit Paşa Cad. Şişli/İstanbul",
+                    UserId = "df5a9b38-18e8-48b7-97bf-ad4a9b4afe0e"
                 },
                 new Employee
                 {
-                    Id = 2,
+                    EmployeeId = 2,
                     FirstName = "Jane",
                     SecondName = "Margaret",
                     FirstSurname = "Doe",
