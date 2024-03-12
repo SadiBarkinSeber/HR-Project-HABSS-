@@ -24,7 +24,7 @@ namespace HR_PROJECT.Application.Features.CQRS.Handlers.EmployeeHandlers.Read
             var values = await _repository.GetByIdAsync(query.Id);
             return new GetEmployeeByIdQueryResult
             {
-                Id = values.Id,
+                Id = values.EmployeeId,
                 FirstName = values.FirstName,
                 SecondName = values.SecondName,
                 FirstSurname = values.FirstSurname,

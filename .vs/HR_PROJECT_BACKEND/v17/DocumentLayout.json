@@ -1,7 +1,16 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\Shohzod\\Desktop\\hr-project-backend\\HR-PROJECT-BACKEND\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{F98C2474-C9E4-4AC1-86DF-DD935ACD319D}|HR_PROJECT.WebAPI\\HR_PROJECT.WebAPI.csproj|c:\\users\\shohzod\\desktop\\hr-project-backend\\hr-project-backend\\hr_project.webapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F98C2474-C9E4-4AC1-86DF-DD935ACD319D}|HR_PROJECT.WebAPI\\HR_PROJECT.WebAPI.csproj|solutionrelative:hr_project.webapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F98C2474-C9E4-4AC1-86DF-DD935ACD319D}|HR_PROJECT.WebAPI\\HR_PROJECT.WebAPI.csproj|c:\\users\\shohzod\\desktop\\hr-project-backend\\hr-project-backend\\hr_project.webapi\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F98C2474-C9E4-4AC1-86DF-DD935ACD319D}|HR_PROJECT.WebAPI\\HR_PROJECT.WebAPI.csproj|solutionrelative:hr_project.webapi\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -9,11 +18,37 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": -1,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Shohzod\\Desktop\\hr-project-backend\\HR-PROJECT-BACKEND\\HR_PROJECT.WebAPI\\Program.cs",
+              "RelativeDocumentMoniker": "HR_PROJECT.WebAPI\\Program.cs",
+              "ToolTip": "C:\\Users\\Shohzod\\Desktop\\hr-project-backend\\HR-PROJECT-BACKEND\\HR_PROJECT.WebAPI\\Program.cs",
+              "RelativeToolTip": "HR_PROJECT.WebAPI\\Program.cs",
+              "ViewState": "AQIAAA0AAAAAAAAAAAAAABYAAABHAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-12T21:12:32.425Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "AccountController.cs",
+              "DocumentMoniker": "C:\\Users\\Shohzod\\Desktop\\hr-project-backend\\HR-PROJECT-BACKEND\\HR_PROJECT.WebAPI\\Controllers\\AccountController.cs",
+              "RelativeDocumentMoniker": "HR_PROJECT.WebAPI\\Controllers\\AccountController.cs",
+              "ToolTip": "C:\\Users\\Shohzod\\Desktop\\hr-project-backend\\HR-PROJECT-BACKEND\\HR_PROJECT.WebAPI\\Controllers\\AccountController.cs",
+              "RelativeToolTip": "HR_PROJECT.WebAPI\\Controllers\\AccountController.cs",
+              "ViewState": "AQIAAAsAAAAAAAAAAAAQwAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-12T21:11:23.304Z",
+              "EditorCaption": ""
             }
           ]
         }

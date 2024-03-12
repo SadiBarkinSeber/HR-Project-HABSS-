@@ -23,7 +23,7 @@ namespace HR_PROJECT.Application.Features.CQRS.Handlers.EmployeeHandlers.Read
             var values = await _repository.GetAllAsync();
             return values.Select(x => new GetEmployeeQueryResult
             {
-                Id = x.Id,
+                Id = x.EmployeeId,
                 FirstName = x.FirstName,
                 SecondName = x.SecondName,
                 FirstSurname = x.FirstSurname,
@@ -42,6 +42,7 @@ namespace HR_PROJECT.Application.Features.CQRS.Handlers.EmployeeHandlers.Read
                 ImagePath = x.ImagePath,
                 PhoneNumber = x.PhoneNumber,
                 Address = x.Address,
+                UserId = x.UserId,
 
             }).ToList();
         }

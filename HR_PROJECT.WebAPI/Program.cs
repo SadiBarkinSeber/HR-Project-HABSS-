@@ -1,15 +1,32 @@
+#region Dependincies
 using Azure.Storage.Blobs;
 using HR_PROJECT.Application.Features.CQRS.Handlers.EmployeeHandlers.Read;
 using HR_PROJECT.Application.Features.CQRS.Handlers.EmployeeHandlers.Write;
 using HR_PROJECT.Application.Interfaces;
+using HR_PROJECT.Domain.Entities;
 using HR_PROJECT.Persistence.Context;
 using HR_PROJECT.Persistence.Repositories;
 using HR_PROJECT.Persistence.Services;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
+#endregion
+
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+
 builder.Services.AddScoped<HRProjectContext>();
+
+builder.Services.AddIdentity<ApplicationUser, IdentityRole>().AddEntityFrameworkStores<HRProjectContext>();
+
+builder.Services.ConfigureApplicationCookie(opts => opts.LoginPath = "/Account/Login");
+
+builder.Services.Configure<IdentityOptions>(opt =>
+{
+    opt.User.RequireUniqueEmail = true;
+});
+
 builder.Services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
 builder.Services.AddSingleton(x =>
 {
@@ -17,6 +34,7 @@ builder.Services.AddSingleton(x =>
 
     return new BlobServiceClient(connectionString);
 });
+
 #region Dependency Injection of Handlers
 builder.Services.AddScoped<GetEmployeeByIdQueryHandler>();
 builder.Services.AddScoped<GetEmployeeQueryHandler>();
@@ -56,12 +74,13 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+app.UseStaticFiles();
 app.UseRouting();
 
 app.UseCors("AllowAll");
 
 
-
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllers();
