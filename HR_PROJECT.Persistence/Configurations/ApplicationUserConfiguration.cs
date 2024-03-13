@@ -32,7 +32,7 @@ namespace HR_PROJECT.Persistence.Configurations
                 NormalizedUserName = "SAHZOD",
                 Email = "sahzod.irgas@bilgeadam.com",
                 NormalizedEmail = "SAHZOD.IRGAS@BILGEADAM.COM",
-                PasswordHash = hasher.HashPassword(null, "Anyela123+"),
+                PasswordHash = hasher.HashPassword(null, "Anyela123."),
                 SecurityStamp = string.Empty,   
                 EmployeeId = 1
             });
