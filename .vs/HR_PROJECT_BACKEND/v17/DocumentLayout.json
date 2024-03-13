@@ -3,16 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\Shohzod\\Desktop\\hr-project-backend\\HR-PROJECT-BACKEND\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Shohzod\\Desktop\\hr-project-backend\\HR-PROJECT-BACKEND\\HR_PROJECT.Persistence\\Migrations\\20240313102350_initPasswordFix.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:HR_PROJECT.Persistence\\Migrations\\20240313102350_initPasswordFix.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8761977A-42D5-4803-9F60-0B774D5AE1BE}|HR_PROJECT.Persistence\\HR_PROJECT.Persistence.csproj|c:\\users\\shohzod\\desktop\\hr-project-backend\\hr-project-backend\\hr_project.persistence\\configurations\\applicationuserconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8761977A-42D5-4803-9F60-0B774D5AE1BE}|HR_PROJECT.Persistence\\HR_PROJECT.Persistence.csproj|solutionrelative:hr_project.persistence\\configurations\\applicationuserconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{F98C2474-C9E4-4AC1-86DF-DD935ACD319D}|HR_PROJECT.WebAPI\\HR_PROJECT.WebAPI.csproj|c:\\users\\shohzod\\desktop\\hr-project-backend\\hr-project-backend\\hr_project.webapi\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F98C2474-C9E4-4AC1-86DF-DD935ACD319D}|HR_PROJECT.WebAPI\\HR_PROJECT.WebAPI.csproj|solutionrelative:hr_project.webapi\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F98C2474-C9E4-4AC1-86DF-DD935ACD319D}|HR_PROJECT.WebAPI\\HR_PROJECT.WebAPI.csproj|c:\\users\\shohzod\\desktop\\hr-project-backend\\hr-project-backend\\hr_project.webapi\\dtos\\loginapplicationuserdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F98C2474-C9E4-4AC1-86DF-DD935ACD319D}|HR_PROJECT.WebAPI\\HR_PROJECT.WebAPI.csproj|solutionrelative:hr_project.webapi\\dtos\\loginapplicationuserdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,7 +18,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Bookmark",
@@ -30,39 +26,26 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "20240313102350_initPasswordFix.cs",
-              "DocumentMoniker": "C:\\Users\\Shohzod\\Desktop\\hr-project-backend\\HR-PROJECT-BACKEND\\HR_PROJECT.Persistence\\Migrations\\20240313102350_initPasswordFix.cs",
-              "RelativeDocumentMoniker": "HR_PROJECT.Persistence\\Migrations\\20240313102350_initPasswordFix.cs",
-              "ToolTip": "C:\\Users\\Shohzod\\Desktop\\hr-project-backend\\HR-PROJECT-BACKEND\\HR_PROJECT.Persistence\\Migrations\\20240313102350_initPasswordFix.cs",
-              "RelativeToolTip": "HR_PROJECT.Persistence\\Migrations\\20240313102350_initPasswordFix.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-13T10:23:50.746Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "ApplicationUserConfiguration.cs",
-              "DocumentMoniker": "C:\\Users\\Shohzod\\Desktop\\hr-project-backend\\HR-PROJECT-BACKEND\\HR_PROJECT.Persistence\\Configurations\\ApplicationUserConfiguration.cs",
-              "RelativeDocumentMoniker": "HR_PROJECT.Persistence\\Configurations\\ApplicationUserConfiguration.cs",
-              "ToolTip": "C:\\Users\\Shohzod\\Desktop\\hr-project-backend\\HR-PROJECT-BACKEND\\HR_PROJECT.Persistence\\Configurations\\ApplicationUserConfiguration.cs",
-              "RelativeToolTip": "HR_PROJECT.Persistence\\Configurations\\ApplicationUserConfiguration.cs",
-              "ViewState": "AQIAABcAAAAAAAAAAAAiwCIAAABEAAAA",
+              "Title": "LoginApplicationUserDTO.cs",
+              "DocumentMoniker": "C:\\Users\\Shohzod\\Desktop\\hr-project-backend\\HR-PROJECT-BACKEND\\HR_PROJECT.WebAPI\\DTOs\\LoginApplicationUserDTO.cs",
+              "RelativeDocumentMoniker": "HR_PROJECT.WebAPI\\DTOs\\LoginApplicationUserDTO.cs",
+              "ToolTip": "C:\\Users\\Shohzod\\Desktop\\hr-project-backend\\HR-PROJECT-BACKEND\\HR_PROJECT.WebAPI\\DTOs\\LoginApplicationUserDTO.cs",
+              "RelativeToolTip": "HR_PROJECT.WebAPI\\DTOs\\LoginApplicationUserDTO.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-13T09:51:31.22Z",
+              "WhenOpened": "2024-03-13T10:34:25.94Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "AccountController.cs",
               "DocumentMoniker": "C:\\Users\\Shohzod\\Desktop\\hr-project-backend\\HR-PROJECT-BACKEND\\HR_PROJECT.WebAPI\\Controllers\\AccountController.cs",
               "RelativeDocumentMoniker": "HR_PROJECT.WebAPI\\Controllers\\AccountController.cs",
               "ToolTip": "C:\\Users\\Shohzod\\Desktop\\hr-project-backend\\HR-PROJECT-BACKEND\\HR_PROJECT.WebAPI\\Controllers\\AccountController.cs",
               "RelativeToolTip": "HR_PROJECT.WebAPI\\Controllers\\AccountController.cs",
-              "ViewState": "AQIAABMAAAAAAAAAAAAgwCEAAAAQAAAA",
+              "ViewState": "AQIAAAoAAAAAAAAAAAAAABAAAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-03-13T09:33:00.12Z",
               "EditorCaption": ""
