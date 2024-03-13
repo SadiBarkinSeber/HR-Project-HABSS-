@@ -3,8 +3,8 @@
   "WorkspaceRootPath": "C:\\Users\\Shohzod\\Desktop\\hr-project-backend\\HR-PROJECT-BACKEND\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{F98C2474-C9E4-4AC1-86DF-DD935ACD319D}|HR_PROJECT.WebAPI\\HR_PROJECT.WebAPI.csproj|c:\\users\\shohzod\\desktop\\hr-project-backend\\hr-project-backend\\hr_project.webapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F98C2474-C9E4-4AC1-86DF-DD935ACD319D}|HR_PROJECT.WebAPI\\HR_PROJECT.WebAPI.csproj|solutionrelative:hr_project.webapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{8761977A-42D5-4803-9F60-0B774D5AE1BE}|HR_PROJECT.Persistence\\HR_PROJECT.Persistence.csproj|c:\\users\\shohzod\\desktop\\hr-project-backend\\hr-project-backend\\hr_project.persistence\\configurations\\applicationuserconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8761977A-42D5-4803-9F60-0B774D5AE1BE}|HR_PROJECT.Persistence\\HR_PROJECT.Persistence.csproj|solutionrelative:hr_project.persistence\\configurations\\applicationuserconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{F98C2474-C9E4-4AC1-86DF-DD935ACD319D}|HR_PROJECT.WebAPI\\HR_PROJECT.WebAPI.csproj|c:\\users\\shohzod\\desktop\\hr-project-backend\\hr-project-backend\\hr_project.webapi\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -27,14 +27,14 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\Shohzod\\Desktop\\hr-project-backend\\HR-PROJECT-BACKEND\\HR_PROJECT.WebAPI\\Program.cs",
-              "RelativeDocumentMoniker": "HR_PROJECT.WebAPI\\Program.cs",
-              "ToolTip": "C:\\Users\\Shohzod\\Desktop\\hr-project-backend\\HR-PROJECT-BACKEND\\HR_PROJECT.WebAPI\\Program.cs",
-              "RelativeToolTip": "HR_PROJECT.WebAPI\\Program.cs",
-              "ViewState": "AQIAAA0AAAAAAAAAAAAAABYAAABHAAAA",
+              "Title": "ApplicationUserConfiguration.cs",
+              "DocumentMoniker": "C:\\Users\\Shohzod\\Desktop\\hr-project-backend\\HR-PROJECT-BACKEND\\HR_PROJECT.Persistence\\Configurations\\ApplicationUserConfiguration.cs",
+              "RelativeDocumentMoniker": "HR_PROJECT.Persistence\\Configurations\\ApplicationUserConfiguration.cs",
+              "ToolTip": "C:\\Users\\Shohzod\\Desktop\\hr-project-backend\\HR-PROJECT-BACKEND\\HR_PROJECT.Persistence\\Configurations\\ApplicationUserConfiguration.cs",
+              "RelativeToolTip": "HR_PROJECT.Persistence\\Configurations\\ApplicationUserConfiguration.cs",
+              "ViewState": "AQIAAA4AAAAAAAAAAAAQwCUAAAAPAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-12T21:12:32.425Z",
+              "WhenOpened": "2024-03-13T09:51:31.22Z",
               "EditorCaption": ""
             },
             {
@@ -45,9 +45,9 @@
               "RelativeDocumentMoniker": "HR_PROJECT.WebAPI\\Controllers\\AccountController.cs",
               "ToolTip": "C:\\Users\\Shohzod\\Desktop\\hr-project-backend\\HR-PROJECT-BACKEND\\HR_PROJECT.WebAPI\\Controllers\\AccountController.cs",
               "RelativeToolTip": "HR_PROJECT.WebAPI\\Controllers\\AccountController.cs",
-              "ViewState": "AQIAAAsAAAAAAAAAAAAQwAAAAAAAAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAACEAAAAQAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-12T21:11:23.304Z",
+              "WhenOpened": "2024-03-13T09:33:00.12Z",
               "EditorCaption": ""
             }
           ]
