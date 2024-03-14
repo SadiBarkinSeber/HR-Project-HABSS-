@@ -94,14 +94,14 @@ namespace HR_PROJECT.Persistence.Migrations
                         {
                             Id = "df5a9b38-18e8-48b7-97bf-ad4a9b4afe0e",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "afe71676-be16-47cb-8f3f-68a71c3257ff",
+                            ConcurrencyStamp = "cade5859-f426-4870-875c-73667d0cabae",
                             Email = "sahzod.irgas@bilgeadam.com",
                             EmailConfirmed = false,
                             EmployeeId = 1,
                             LockoutEnabled = false,
                             NormalizedEmail = "SAHZOD.IRGAS@BILGEADAM.COM",
                             NormalizedUserName = "SAHZOD",
-                            PasswordHash = "AQAAAAIAAYagAAAAEAxahd9QX+Rpxt1e/sA4SHfkGzo6bh5NawcHM0H352p/aMnoI73KDQi5/fMhxwcK7A==",
+                            PasswordHash = "AQAAAAIAAYagAAAAENrddw2yBVZ/Rjiw88SdQba+6dyAJeZMA8bQpU/rYAEpKQrgTmGXwZJsEYZOIqq5Kg==",
                             PhoneNumberConfirmed = false,
                             SecurityStamp = "",
                             TwoFactorEnabled = false,
@@ -235,6 +235,78 @@ namespace HR_PROJECT.Persistence.Migrations
                             StartDate = new DateTime(2020, 7, 28, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Tc = "78952612374",
                             Wage = 63951m
+                        });
+                });
+
+            modelBuilder.Entity("HR_PROJECT.Domain.Entities.Expense", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<decimal>("Amount")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<string>("ApprovalStatus")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Currency")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("EmployeeId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("FileName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("Permission")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTime>("RequestDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Response")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Type")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("EmployeeId");
+
+                    b.ToTable("Expenses");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Amount = 5631.45m,
+                            ApprovalStatus = "Pending",
+                            Currency = "TL",
+                            EmployeeId = 1,
+                            Permission = false,
+                            RequestDate = new DateTime(2024, 3, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Response = "Please provide necessary documents.",
+                            Type = "İş Seyahati"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Amount = 6592.45m,
+                            ApprovalStatus = "Approved",
+                            Currency = "TL",
+                            EmployeeId = 1,
+                            Permission = true,
+                            RequestDate = new DateTime(2024, 3, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Response = "Request have been approved.",
+                            Type = "Yemek Gideri"
                         });
                 });
 
@@ -380,6 +452,17 @@ namespace HR_PROJECT.Persistence.Migrations
                     b.Navigation("User");
                 });
 
+            modelBuilder.Entity("HR_PROJECT.Domain.Entities.Expense", b =>
+                {
+                    b.HasOne("HR_PROJECT.Domain.Entities.Employee", "Employee")
+                        .WithMany("Expenses")
+                        .HasForeignKey("EmployeeId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Employee");
+                });
+
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
                 {
                     b.HasOne("Microsoft.AspNetCore.Identity.IdentityRole", null)
@@ -435,6 +518,11 @@ namespace HR_PROJECT.Persistence.Migrations
                 {
                     b.Navigation("Employee")
                         .IsRequired();
+                });
+
+            modelBuilder.Entity("HR_PROJECT.Domain.Entities.Employee", b =>
+                {
+                    b.Navigation("Expenses");
                 });
 #pragma warning restore 612, 618
         }
