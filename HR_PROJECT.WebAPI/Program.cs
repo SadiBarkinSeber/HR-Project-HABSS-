@@ -32,6 +32,8 @@ builder.Services.Configure<IdentityOptions>(opt =>
 });
 
 builder.Services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
+builder.Services.AddScoped(typeof(IPermissionRepository), typeof(PermissionRepositoty));
+
 builder.Services.AddSingleton(x =>
 {
     var connectionString = builder.Configuration.GetConnectionString("BlobStorageConnection");
@@ -45,6 +47,10 @@ builder.Services.AddScoped<GetEmployeeQueryHandler>();
 builder.Services.AddScoped<CreateEmployeeCommandHandler>();
 builder.Services.AddScoped<UpdateEmployeeCommandHandler>();
 builder.Services.AddScoped<RemoveEmployeeCommandHandler>();
+
+#endregion
+
+#region Dependency Injection of Permission Handlers
 builder.Services.AddScoped<GetPermissionsByEmployeeIDHandler>();
 builder.Services.AddScoped<CreatePermissionCommandHandler>();
 #endregion
