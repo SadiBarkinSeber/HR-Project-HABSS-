@@ -13,6 +13,8 @@ using HR_PROJECT.Persistence.Repositories;
 using HR_PROJECT.Persistence.Services;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using HR_PROJECT.Application.Features.CQRS.Handlers.AdvanceHandlers.Write;
+using HR_PROJECT.Application.Features.CQRS.Handlers.AdvanceHandlers.Read;
 #endregion
 
 
@@ -33,6 +35,7 @@ builder.Services.Configure<IdentityOptions>(opt =>
 
 builder.Services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
 builder.Services.AddScoped(typeof(IPermissionRepository), typeof(PermissionRepositoty));
+builder.Services.AddScoped(typeof(IAdvanceRepository), typeof(AdvanceRepository));
 
 builder.Services.AddSingleton(x =>
 {
@@ -65,7 +68,18 @@ builder.Services.AddScoped<RemoveExpenseCommandHandler>();
 
 #endregion
 
-builder.Services.AddControllers();
+#region Dependency Injection of Advance Handlers
+
+builder.Services.AddScoped<GetAdvanceByIdQueryHandler>();
+builder.Services.AddScoped<GetAdvanceQueryHandler>();
+builder.Services.AddScoped<CreateAdvanceCommandHandler>();
+builder.Services.AddScoped<UpdateAdvanceCommandHandler>();
+builder.Services.AddScoped<RemoveAdvanceCommandHandler>();
+
+#endregion
+
+
+builder.Services.AddControllers(); 
 
 #region CORS Policy
 

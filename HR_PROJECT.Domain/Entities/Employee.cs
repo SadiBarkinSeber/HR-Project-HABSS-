@@ -27,11 +27,14 @@ namespace HR_PROJECT.Domain.Entities
         public string ImagePath { get; set; }
         public string PhoneNumber { get; set; }
         public string Address { get; set; }
+
         
         public string UserId { get; set; }
         public ApplicationUser User { get; set; }
         public ICollection<Expense> Expenses { get; set; }
 
         public ICollection<Permission> Permissions { get; set; }
+
+        public ICollection<Advance> Advances { get; set; }
     }
 }

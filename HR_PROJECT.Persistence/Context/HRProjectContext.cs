@@ -19,6 +19,7 @@ namespace HR_PROJECT.Persistence.Context
         public DbSet<Employee> Employees { get; set; }
         public DbSet<Expense> Expenses { get; set; }
         public DbSet<Permission> Permissions { get; set; }
+        public DbSet<Advance> Advances { get; set; }
 
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
@@ -38,7 +39,7 @@ namespace HR_PROJECT.Persistence.Context
             modelBuilder.ApplyConfiguration(new ApplicationUserConfiguration());
             modelBuilder.ApplyConfiguration(new ExpenseConfiguration());
             modelBuilder.ApplyConfiguration(new PermissionConfiguration());
-
+            modelBuilder.ApplyConfiguration(new AdvanceConfiguration());
 
             base.OnModelCreating(modelBuilder);
         }
