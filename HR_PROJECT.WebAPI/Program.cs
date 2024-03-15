@@ -2,6 +2,8 @@
 using Azure.Storage.Blobs;
 using HR_PROJECT.Application.Features.CQRS.Handlers.EmployeeHandlers.Read;
 using HR_PROJECT.Application.Features.CQRS.Handlers.EmployeeHandlers.Write;
+using HR_PROJECT.Application.Features.CQRS.Handlers.ExpenseHandlers.Read;
+using HR_PROJECT.Application.Features.CQRS.Handlers.ExpenseHandlers.Write;
 using HR_PROJECT.Application.Interfaces;
 using HR_PROJECT.Domain.Entities;
 using HR_PROJECT.Persistence.Context;
@@ -35,12 +37,22 @@ builder.Services.AddSingleton(x =>
     return new BlobServiceClient(connectionString);
 });
 
-#region Dependency Injection of Handlers
+#region Dependency Injection of Employee Handlers
 builder.Services.AddScoped<GetEmployeeByIdQueryHandler>();
 builder.Services.AddScoped<GetEmployeeQueryHandler>();
 builder.Services.AddScoped<CreateEmployeeCommandHandler>();
 builder.Services.AddScoped<UpdateEmployeeCommandHandler>();
 builder.Services.AddScoped<RemoveEmployeeCommandHandler>();
+#endregion
+
+#region Dependency Injection of Expense Handlers
+
+builder.Services.AddScoped<GetExpenseByIdQueryHandler>();
+builder.Services.AddScoped<GetExpenseQueryHandler>();
+builder.Services.AddScoped<CreateExpenseCommandHandler>();
+builder.Services.AddScoped<UpdateExpenseCommandHandler>();
+builder.Services.AddScoped<RemoveExpenseCommandHandler>();
+
 #endregion
 
 builder.Services.AddControllers();

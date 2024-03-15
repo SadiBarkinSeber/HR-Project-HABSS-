@@ -1,4 +1,5 @@
-﻿using HR_PROJECT.Application.Features.CQRS.Results.ExpenseResults;
+﻿using HR_PROJECT.Application.Features.CQRS.Queries.ExpenseQueries;
+using HR_PROJECT.Application.Features.CQRS.Results.ExpenseResults;
 using HR_PROJECT.Application.Interfaces;
 using HR_PROJECT.Domain.Entities;
 using System;
@@ -18,7 +19,7 @@ namespace HR_PROJECT.Application.Features.CQRS.Handlers.ExpenseHandlers.Read
             _repository = repository;
         }
 
-        public async Task<GetExpenseByIdQueryResult> Handle(GetExpenseByIdQueryResult query)
+        public async Task<GetExpenseByIdQueryResult> Handle(GetExpenseByIdQuery query)
         {
             var values = await _repository.GetByIdAsync(query.Id);
             return new GetExpenseByIdQueryResult
