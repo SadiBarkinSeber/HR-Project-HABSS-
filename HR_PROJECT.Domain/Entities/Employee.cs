@@ -31,5 +31,7 @@ namespace HR_PROJECT.Domain.Entities
         public string UserId { get; set; }
         public ApplicationUser User { get; set; }
         public ICollection<Expense> Expenses { get; set; }
+
+        public ICollection<Permission> Permissions { get; set; }
     }
 }
