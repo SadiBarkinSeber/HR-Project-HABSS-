@@ -8,6 +8,6 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = HR_PROJECT.Domain
-build_property.ProjectDir = C:\Users\Harun\Source\Repos\HR-PROJECT-BACKEND\HR_PROJECT.Domain\
+build_property.ProjectDir = C:\Users\Shohzod\source\repos\hr-project-backend2\HR_PROJECT.Domain\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
