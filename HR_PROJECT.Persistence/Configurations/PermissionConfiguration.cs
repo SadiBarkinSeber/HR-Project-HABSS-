@@ -34,6 +34,33 @@ namespace HR_PROJECT.Persistence.Configurations
                 .WithMany(e => e.Permissions)
                 .HasForeignKey(p => p.EmployeeId)
                 .IsRequired();
+
+
+            #region Seed Data
+
+            builder.HasData(
+                
+            new Permission
+            {
+                Id = 1,
+                PermissionType = "Baba izni",
+                StartDate = new DateTime(2024, 3, 14),
+                EndDate = new DateTime(2024, 3, 24),
+                NumberOfDays = 10,
+                EmployeeId = 1
+            },
+            new Permission
+            {
+                   Id = 2,
+                   PermissionType = "Annelik izni",
+                   StartDate = new DateTime(2024, 3, 15),
+                   EndDate = new DateTime(2024, 4, 15),
+                   NumberOfDays = 30,
+                   EmployeeId = 1
+            }
+            );
+
+            #endregion
         }
     }
 }
