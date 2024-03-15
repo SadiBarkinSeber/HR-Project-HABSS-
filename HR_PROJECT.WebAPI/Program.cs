@@ -2,8 +2,6 @@
 using Azure.Storage.Blobs;
 using HR_PROJECT.Application.Features.CQRS.Handlers.EmployeeHandlers.Read;
 using HR_PROJECT.Application.Features.CQRS.Handlers.EmployeeHandlers.Write;
-using HR_PROJECT.Application.Features.CQRS.Handlers.PermissionHandlers.Read;
-using HR_PROJECT.Application.Features.CQRS.Handlers.PermissionHandlers.Write;
 using HR_PROJECT.Application.Interfaces;
 using HR_PROJECT.Domain.Entities;
 using HR_PROJECT.Persistence.Context;
@@ -43,8 +41,6 @@ builder.Services.AddScoped<GetEmployeeQueryHandler>();
 builder.Services.AddScoped<CreateEmployeeCommandHandler>();
 builder.Services.AddScoped<UpdateEmployeeCommandHandler>();
 builder.Services.AddScoped<RemoveEmployeeCommandHandler>();
-builder.Services.AddScoped<GetPermissionsByEmployeeIDHandler>();
-builder.Services.AddScoped<CreatePermissionCommandHandler>();
 #endregion
 
 builder.Services.AddControllers();
