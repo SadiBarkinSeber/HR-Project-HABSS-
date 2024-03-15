@@ -21,7 +21,7 @@ namespace HR_PROJECT.Persistence.Repositories
         public async Task<List<Permission>> GetAllPermissionsByEmployeeID(int id)
         {
             var permissions = await _context.Permissions
-            .Where(p => p.Id == id)
+            .Where(p => p.EmployeeId == id)
             .ToListAsync();
 
             return permissions;
