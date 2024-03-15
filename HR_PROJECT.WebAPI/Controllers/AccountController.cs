@@ -1,4 +1,5 @@
-﻿using HR_PROJECT.Domain.Entities;
+﻿using HR_PROJECT.Application.Features.CQRS.Commands.ApplicationUserCommands;
+using HR_PROJECT.Domain.Entities;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
@@ -18,14 +19,14 @@ namespace HR_PROJECT.WebAPI.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Login(string userName, string password)
+        public async Task<IActionResult> Login(LoginApplicationUserDTO dto)
         {
-            if (string.IsNullOrEmpty(userName) || string.IsNullOrEmpty(password))
+            if (string.IsNullOrEmpty(dto.UserName) || string.IsNullOrEmpty(dto.Password))
             {
                 return BadRequest("Kullanıcı adı ve şifre gerekli.");
             }
 
-            var result = await _signInManager.PasswordSignInAsync(userName, password, false, false);
+            var result = await _signInManager.PasswordSignInAsync(dto.UserName, dto.Password, false, false);
 
             if (result.Succeeded)
             {
