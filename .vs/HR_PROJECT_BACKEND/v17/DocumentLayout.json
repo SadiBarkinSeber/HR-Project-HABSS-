@@ -3,32 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\Shohzod\\Desktop\\hr-project-backend\\HR-PROJECT-BACKEND\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{F98C2474-C9E4-4AC1-86DF-DD935ACD319D}|HR_PROJECT.WebAPI\\HR_PROJECT.WebAPI.csproj|c:\\users\\shohzod\\desktop\\hr-project-backend\\hr-project-backend\\hr_project.webapi\\controllers\\expensescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F98C2474-C9E4-4AC1-86DF-DD935ACD319D}|HR_PROJECT.WebAPI\\HR_PROJECT.WebAPI.csproj|solutionrelative:hr_project.webapi\\controllers\\expensescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{3B13A124-752A-4AF6-84DA-BDFF3DCAAB42}|HR_PROJECT.Application\\HR_PROJECT.Application.csproj|c:\\users\\shohzod\\desktop\\hr-project-backend\\hr-project-backend\\hr_project.application\\features\\cqrs\\handlers\\expensehandlers\\write\\updateexpensecommandhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3B13A124-752A-4AF6-84DA-BDFF3DCAAB42}|HR_PROJECT.Application\\HR_PROJECT.Application.csproj|solutionrelative:hr_project.application\\features\\cqrs\\handlers\\expensehandlers\\write\\updateexpensecommandhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F98C2474-C9E4-4AC1-86DF-DD935ACD319D}|HR_PROJECT.WebAPI\\HR_PROJECT.WebAPI.csproj|c:\\users\\shohzod\\desktop\\hr-project-backend\\hr-project-backend\\hr_project.webapi\\controllers\\employeescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F98C2474-C9E4-4AC1-86DF-DD935ACD319D}|HR_PROJECT.WebAPI\\HR_PROJECT.WebAPI.csproj|solutionrelative:hr_project.webapi\\controllers\\employeescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3B13A124-752A-4AF6-84DA-BDFF3DCAAB42}|HR_PROJECT.Application\\HR_PROJECT.Application.csproj|c:\\users\\shohzod\\desktop\\hr-project-backend\\hr-project-backend\\hr_project.application\\features\\cqrs\\handlers\\expensehandlers\\read\\getexpensebyidqueryhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3B13A124-752A-4AF6-84DA-BDFF3DCAAB42}|HR_PROJECT.Application\\HR_PROJECT.Application.csproj|solutionrelative:hr_project.application\\features\\cqrs\\handlers\\expensehandlers\\read\\getexpensebyidqueryhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3B13A124-752A-4AF6-84DA-BDFF3DCAAB42}|HR_PROJECT.Application\\HR_PROJECT.Application.csproj|c:\\users\\shohzod\\desktop\\hr-project-backend\\hr-project-backend\\hr_project.application\\features\\cqrs\\handlers\\employeehandlers\\read\\getemployeebyidqueryhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3B13A124-752A-4AF6-84DA-BDFF3DCAAB42}|HR_PROJECT.Application\\HR_PROJECT.Application.csproj|solutionrelative:hr_project.application\\features\\cqrs\\handlers\\employeehandlers\\read\\getemployeebyidqueryhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3B13A124-752A-4AF6-84DA-BDFF3DCAAB42}|HR_PROJECT.Application\\HR_PROJECT.Application.csproj|c:\\users\\shohzod\\desktop\\hr-project-backend\\hr-project-backend\\hr_project.application\\features\\cqrs\\queries\\expensequeries\\getexpensebyidquery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3B13A124-752A-4AF6-84DA-BDFF3DCAAB42}|HR_PROJECT.Application\\HR_PROJECT.Application.csproj|solutionrelative:hr_project.application\\features\\cqrs\\queries\\expensequeries\\getexpensebyidquery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3B13A124-752A-4AF6-84DA-BDFF3DCAAB42}|HR_PROJECT.Application\\HR_PROJECT.Application.csproj|c:\\users\\shohzod\\desktop\\hr-project-backend\\hr-project-backend\\hr_project.application\\features\\cqrs\\queries\\employeequeries\\getemployeebyidquery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3B13A124-752A-4AF6-84DA-BDFF3DCAAB42}|HR_PROJECT.Application\\HR_PROJECT.Application.csproj|solutionrelative:hr_project.application\\features\\cqrs\\queries\\employeequeries\\getemployeebyidquery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F98C2474-C9E4-4AC1-86DF-DD935ACD319D}|HR_PROJECT.WebAPI\\HR_PROJECT.WebAPI.csproj|c:\\users\\shohzod\\desktop\\hr-project-backend\\hr-project-backend\\hr_project.webapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F98C2474-C9E4-4AC1-86DF-DD935ACD319D}|HR_PROJECT.WebAPI\\HR_PROJECT.WebAPI.csproj|solutionrelative:hr_project.webapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{3B13A124-752A-4AF6-84DA-BDFF3DCAAB42}|HR_PROJECT.Application\\HR_PROJECT.Application.csproj|c:\\users\\shohzod\\desktop\\hr-project-backend\\hr-project-backend\\hr_project.application\\features\\cqrs\\handlers\\employeehandlers\\write\\updateemployeecommandhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3B13A124-752A-4AF6-84DA-BDFF3DCAAB42}|HR_PROJECT.Application\\HR_PROJECT.Application.csproj|solutionrelative:hr_project.application\\features\\cqrs\\handlers\\employeehandlers\\write\\updateemployeecommandhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -38,7 +18,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 7,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Bookmark",
@@ -46,114 +26,28 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "GetEmployeeByIdQueryHandler.cs",
-              "DocumentMoniker": "C:\\Users\\Shohzod\\Desktop\\hr-project-backend\\HR-PROJECT-BACKEND\\HR_PROJECT.Application\\Features\\CQRS\\Handlers\\EmployeeHandlers\\Read\\GetEmployeeByIdQueryHandler.cs",
-              "RelativeDocumentMoniker": "HR_PROJECT.Application\\Features\\CQRS\\Handlers\\EmployeeHandlers\\Read\\GetEmployeeByIdQueryHandler.cs",
-              "ToolTip": "C:\\Users\\Shohzod\\Desktop\\hr-project-backend\\HR-PROJECT-BACKEND\\HR_PROJECT.Application\\Features\\CQRS\\Handlers\\EmployeeHandlers\\Read\\GetEmployeeByIdQueryHandler.cs",
-              "RelativeToolTip": "HR_PROJECT.Application\\Features\\CQRS\\Handlers\\EmployeeHandlers\\Read\\GetEmployeeByIdQueryHandler.cs",
-              "ViewState": "AQIAAAoAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-15T08:06:14.394Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "GetExpenseByIdQueryHandler.cs",
-              "DocumentMoniker": "C:\\Users\\Shohzod\\Desktop\\hr-project-backend\\HR-PROJECT-BACKEND\\HR_PROJECT.Application\\Features\\CQRS\\Handlers\\ExpenseHandlers\\Read\\GetExpenseByIdQueryHandler.cs",
-              "RelativeDocumentMoniker": "HR_PROJECT.Application\\Features\\CQRS\\Handlers\\ExpenseHandlers\\Read\\GetExpenseByIdQueryHandler.cs",
-              "ToolTip": "C:\\Users\\Shohzod\\Desktop\\hr-project-backend\\HR-PROJECT-BACKEND\\HR_PROJECT.Application\\Features\\CQRS\\Handlers\\ExpenseHandlers\\Read\\GetExpenseByIdQueryHandler.cs",
-              "RelativeToolTip": "HR_PROJECT.Application\\Features\\CQRS\\Handlers\\ExpenseHandlers\\Read\\GetExpenseByIdQueryHandler.cs",
-              "ViewState": "AQIAAAwAAAAAAAAAAAAxwBUAAABOAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-15T08:06:04.164Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "GetEmployeeByIdQuery.cs",
-              "DocumentMoniker": "C:\\Users\\Shohzod\\Desktop\\hr-project-backend\\HR-PROJECT-BACKEND\\HR_PROJECT.Application\\Features\\CQRS\\Queries\\EmployeeQueries\\GetEmployeeByIdQuery.cs",
-              "RelativeDocumentMoniker": "HR_PROJECT.Application\\Features\\CQRS\\Queries\\EmployeeQueries\\GetEmployeeByIdQuery.cs",
-              "ToolTip": "C:\\Users\\Shohzod\\Desktop\\hr-project-backend\\HR-PROJECT-BACKEND\\HR_PROJECT.Application\\Features\\CQRS\\Queries\\EmployeeQueries\\GetEmployeeByIdQuery.cs",
-              "RelativeToolTip": "HR_PROJECT.Application\\Features\\CQRS\\Queries\\EmployeeQueries\\GetEmployeeByIdQuery.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-15T08:05:44.062Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "GetExpenseByIdQuery.cs",
-              "DocumentMoniker": "C:\\Users\\Shohzod\\Desktop\\hr-project-backend\\HR-PROJECT-BACKEND\\HR_PROJECT.Application\\Features\\CQRS\\Queries\\ExpenseQueries\\GetExpenseByIdQuery.cs",
-              "RelativeDocumentMoniker": "HR_PROJECT.Application\\Features\\CQRS\\Queries\\ExpenseQueries\\GetExpenseByIdQuery.cs",
-              "ToolTip": "C:\\Users\\Shohzod\\Desktop\\hr-project-backend\\HR-PROJECT-BACKEND\\HR_PROJECT.Application\\Features\\CQRS\\Queries\\ExpenseQueries\\GetExpenseByIdQuery.cs",
-              "RelativeToolTip": "HR_PROJECT.Application\\Features\\CQRS\\Queries\\ExpenseQueries\\GetExpenseByIdQuery.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-15T08:05:26.925Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\Shohzod\\Desktop\\hr-project-backend\\HR-PROJECT-BACKEND\\HR_PROJECT.WebAPI\\Program.cs",
-              "RelativeDocumentMoniker": "HR_PROJECT.WebAPI\\Program.cs",
-              "ToolTip": "C:\\Users\\Shohzod\\Desktop\\hr-project-backend\\HR-PROJECT-BACKEND\\HR_PROJECT.WebAPI\\Program.cs",
-              "RelativeToolTip": "HR_PROJECT.WebAPI\\Program.cs",
-              "ViewState": "AQIAABwAAAAAAAAAAAAAADIAAAA1AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-15T07:55:51.672Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "EmployeesController.cs",
-              "DocumentMoniker": "C:\\Users\\Shohzod\\Desktop\\hr-project-backend\\HR-PROJECT-BACKEND\\HR_PROJECT.WebAPI\\Controllers\\EmployeesController.cs",
-              "RelativeDocumentMoniker": "HR_PROJECT.WebAPI\\Controllers\\EmployeesController.cs",
-              "ToolTip": "C:\\Users\\Shohzod\\Desktop\\hr-project-backend\\HR-PROJECT-BACKEND\\HR_PROJECT.WebAPI\\Controllers\\EmployeesController.cs",
-              "RelativeToolTip": "HR_PROJECT.WebAPI\\Controllers\\EmployeesController.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Title": "UpdateEmployeeCommandHandler.cs",
+              "DocumentMoniker": "C:\\Users\\Shohzod\\Desktop\\hr-project-backend\\HR-PROJECT-BACKEND\\HR_PROJECT.Application\\Features\\CQRS\\Handlers\\EmployeeHandlers\\Write\\UpdateEmployeeCommandHandler.cs",
+              "RelativeDocumentMoniker": "HR_PROJECT.Application\\Features\\CQRS\\Handlers\\EmployeeHandlers\\Write\\UpdateEmployeeCommandHandler.cs",
+              "ToolTip": "C:\\Users\\Shohzod\\Desktop\\hr-project-backend\\HR-PROJECT-BACKEND\\HR_PROJECT.Application\\Features\\CQRS\\Handlers\\EmployeeHandlers\\Write\\UpdateEmployeeCommandHandler.cs",
+              "RelativeToolTip": "HR_PROJECT.Application\\Features\\CQRS\\Handlers\\EmployeeHandlers\\Write\\UpdateEmployeeCommandHandler.cs",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-15T07:57:40.701Z",
+              "WhenOpened": "2024-03-15T09:21:39.84Z",
               "EditorCaption": ""
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "Orientation": 0,
-      "VerticalTabListWidth": 256,
-      "FloatingWindowState": {
-        "Id": "f6ee0331-2cd2-4d0b-8167-3c4c66e9e854",
-        "Display": 0,
-        "X": 43,
-        "Y": 80,
-        "Width": 1882,
-        "Height": 957,
-        "WindowState": 0
-      },
-      "DocumentGroups": [
-        {
-          "DockedWidth": 200,
-          "SelectedChildIndex": 0,
-          "Children": [
+            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "ExpensesController.cs",
-              "DocumentMoniker": "C:\\Users\\Shohzod\\Desktop\\hr-project-backend\\HR-PROJECT-BACKEND\\HR_PROJECT.WebAPI\\Controllers\\ExpensesController.cs",
-              "RelativeDocumentMoniker": "HR_PROJECT.WebAPI\\Controllers\\ExpensesController.cs",
-              "ToolTip": "C:\\Users\\Shohzod\\Desktop\\hr-project-backend\\HR-PROJECT-BACKEND\\HR_PROJECT.WebAPI\\Controllers\\ExpensesController.cs",
-              "RelativeToolTip": "HR_PROJECT.WebAPI\\Controllers\\ExpensesController.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAEwAAAA2AAAA",
+              "Title": "UpdateExpenseCommandHandler.cs",
+              "DocumentMoniker": "C:\\Users\\Shohzod\\Desktop\\hr-project-backend\\HR-PROJECT-BACKEND\\HR_PROJECT.Application\\Features\\CQRS\\Handlers\\ExpenseHandlers\\Write\\UpdateExpenseCommandHandler.cs",
+              "RelativeDocumentMoniker": "HR_PROJECT.Application\\Features\\CQRS\\Handlers\\ExpenseHandlers\\Write\\UpdateExpenseCommandHandler.cs",
+              "ToolTip": "C:\\Users\\Shohzod\\Desktop\\hr-project-backend\\HR-PROJECT-BACKEND\\HR_PROJECT.Application\\Features\\CQRS\\Handlers\\ExpenseHandlers\\Write\\UpdateExpenseCommandHandler.cs",
+              "RelativeToolTip": "HR_PROJECT.Application\\Features\\CQRS\\Handlers\\ExpenseHandlers\\Write\\UpdateExpenseCommandHandler.cs",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAACEAAAAyAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-15T07:57:37.444Z",
+              "WhenOpened": "2024-03-15T09:19:40.833Z",
               "EditorCaption": ""
             }
           ]

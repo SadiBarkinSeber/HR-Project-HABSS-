@@ -1,5 +1,5 @@
-﻿using HR_PROJECT.Application.Features.CQRS.Commands.ApplicationUserCommands;
-using HR_PROJECT.Domain.Entities;
+﻿using HR_PROJECT.Domain.Entities;
+using HR_PROJECT.WebAPI.DTOs.ApplicationUserDTOs;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace HR_PROJECT.Application.Features.CQRS.Commands.ApplicationUserCommands
+namespace HR_PROJECT.WebAPI.DTOs.ApplicationUserDTOs
 {
     public class LoginApplicationUserDTO
     {

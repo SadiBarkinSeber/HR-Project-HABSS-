@@ -30,6 +30,8 @@ namespace HR_PROJECT.Application.Features.CQRS.Handlers.ExpenseHandlers.Write
             values.Permission = command.Permission;
             values.EmployeeId = command.EmployeeId;
             values.FileName = command.FileName;
+
+            await _repository.UpdateAsync(values);
         }
     }
 }
