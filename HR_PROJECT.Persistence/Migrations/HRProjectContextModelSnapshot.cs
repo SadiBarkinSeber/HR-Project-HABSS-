@@ -22,6 +22,82 @@ namespace HR_PROJECT.Persistence.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
+            modelBuilder.Entity("HR_PROJECT.Domain.Entities.Advance", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("AdvanceType")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<decimal>("Amount")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<string>("ApprovalStatus")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Currency")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasMaxLength(200)
+                        .HasColumnType("nvarchar(200)");
+
+                    b.Property<int>("EmployeeId")
+                        .HasColumnType("int");
+
+                    b.Property<bool>("Permission")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTime>("RequestDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Response")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("EmployeeId");
+
+                    b.ToTable("Advances");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            AdvanceType = "Bireysel",
+                            Amount = 5631.45m,
+                            ApprovalStatus = "Pending",
+                            Currency = "TL",
+                            Description = "Araba alıcam",
+                            EmployeeId = 1,
+                            Permission = false,
+                            RequestDate = new DateTime(2024, 3, 16, 15, 10, 8, 138, DateTimeKind.Local).AddTicks(8537),
+                            Response = "Please provide necessary documents."
+                        },
+                        new
+                        {
+                            Id = 2,
+                            AdvanceType = "Kurumsal",
+                            Amount = 6592.45m,
+                            ApprovalStatus = "Approved",
+                            Currency = "TL",
+                            Description = "Motor alıcam",
+                            EmployeeId = 1,
+                            Permission = true,
+                            RequestDate = new DateTime(2024, 3, 16, 15, 10, 8, 138, DateTimeKind.Local).AddTicks(8543),
+                            Response = "Request have been approved."
+                        });
+                });
+
             modelBuilder.Entity("HR_PROJECT.Domain.Entities.ApplicationUser", b =>
                 {
                     b.Property<string>("Id")
@@ -94,14 +170,14 @@ namespace HR_PROJECT.Persistence.Migrations
                         {
                             Id = "df5a9b38-18e8-48b7-97bf-ad4a9b4afe0e",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "7caeb8bb-8ca9-41f9-95e3-2000ec122253",
+                            ConcurrencyStamp = "067da5aa-b0d7-45c8-968e-4c31b82deb3f",
                             Email = "sahzod.irgas@bilgeadam.com",
                             EmailConfirmed = false,
                             EmployeeId = 1,
                             LockoutEnabled = false,
                             NormalizedEmail = "SAHZOD.IRGAS@BILGEADAM.COM",
                             NormalizedUserName = "SAHZOD",
-                            PasswordHash = "AQAAAAIAAYagAAAAEOsuNCiu3ehVwJhgudsJKCoG2boSfHeZMdFm8FHM3u5eQVggMgiWNVumH9OYygaJ3g==",
+                            PasswordHash = "AQAAAAIAAYagAAAAELMl8Yke1PQtr/Dx11NBLAryVoACMd0ICHHgeHQsqaJfP+lS/NsRBFwD4TCAM3RFDA==",
                             PhoneNumberConfirmed = false,
                             SecurityStamp = "",
                             TwoFactorEnabled = false,
@@ -360,7 +436,7 @@ namespace HR_PROJECT.Persistence.Migrations
                             EndDate = new DateTime(2024, 3, 24, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             NumberOfDays = 10,
                             PermissionType = "Baba izni",
-                            RequestDate = new DateTime(2024, 3, 15, 17, 56, 0, 421, DateTimeKind.Local).AddTicks(8544),
+                            RequestDate = new DateTime(2024, 3, 16, 15, 10, 8, 138, DateTimeKind.Local).AddTicks(7516),
                             StartDate = new DateTime(2024, 3, 14, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
@@ -371,7 +447,7 @@ namespace HR_PROJECT.Persistence.Migrations
                             EndDate = new DateTime(2024, 4, 15, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             NumberOfDays = 30,
                             PermissionType = "Annelik izni",
-                            RequestDate = new DateTime(2024, 3, 15, 17, 56, 0, 421, DateTimeKind.Local).AddTicks(8561),
+                            RequestDate = new DateTime(2024, 3, 16, 15, 10, 8, 138, DateTimeKind.Local).AddTicks(7535),
                             StartDate = new DateTime(2024, 3, 15, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         });
                 });
@@ -509,6 +585,17 @@ namespace HR_PROJECT.Persistence.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
+            modelBuilder.Entity("HR_PROJECT.Domain.Entities.Advance", b =>
+                {
+                    b.HasOne("HR_PROJECT.Domain.Entities.Employee", "Employee")
+                        .WithMany("Advances")
+                        .HasForeignKey("EmployeeId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Employee");
+                });
+
             modelBuilder.Entity("HR_PROJECT.Domain.Entities.Employee", b =>
                 {
                     b.HasOne("HR_PROJECT.Domain.Entities.ApplicationUser", "User")
@@ -599,6 +686,8 @@ namespace HR_PROJECT.Persistence.Migrations
 
             modelBuilder.Entity("HR_PROJECT.Domain.Entities.Employee", b =>
                 {
+                    b.Navigation("Advances");
+
                     b.Navigation("Expenses");
 
                     b.Navigation("Permissions");
