@@ -56,6 +56,8 @@ builder.Services.AddScoped<RemoveEmployeeCommandHandler>();
 #region Dependency Injection of Permission Handlers
 builder.Services.AddScoped<GetPermissionsByEmployeeIDHandler>();
 builder.Services.AddScoped<CreatePermissionCommandHandler>();
+builder.Services.AddScoped<RemovePermissionCommandHandler>();
+builder.Services.AddScoped<UpdatePermissionCommandHandler>();
 #endregion
 
 #region Dependency Injection of Expense Handlers
