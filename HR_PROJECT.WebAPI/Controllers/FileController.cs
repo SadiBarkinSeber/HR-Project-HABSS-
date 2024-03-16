@@ -28,8 +28,8 @@ namespace HR_PROJECT.WebAPI.Controllers
 
             await blobContainerClient.CreateIfNotExistsAsync();
 
-            var blobName = Path.GetFileName(file.FileName);
-            var blobClient = blobContainerClient.GetBlobClient(blobName);
+            var uniqueFileName = $"{Guid.NewGuid().ToString()}-{Path.GetFileName(file.FileName)}";
+            var blobClient = blobContainerClient.GetBlobClient(uniqueFileName);
 
             using (var stream = file.OpenReadStream())
             {
@@ -37,7 +37,7 @@ namespace HR_PROJECT.WebAPI.Controllers
             }
 
             string message = "File uploaded successfully.";
-            string fileName = blobName;
+            string fileName = uniqueFileName;
 
             var response = new UploadFileDTO
             {
