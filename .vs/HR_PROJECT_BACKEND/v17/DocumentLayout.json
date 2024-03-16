@@ -1,7 +1,20 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\Shohzod\\source\\repos\\hr-project-backend2\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{F98C2474-C9E4-4AC1-86DF-DD935ACD319D}|HR_PROJECT.WebAPI\\HR_PROJECT.WebAPI.csproj|c:\\users\\shohzod\\source\\repos\\hr-project-backend2\\hr_project.webapi\\controllers\\filecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F98C2474-C9E4-4AC1-86DF-DD935ACD319D}|HR_PROJECT.WebAPI\\HR_PROJECT.WebAPI.csproj|solutionrelative:hr_project.webapi\\controllers\\filecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F98C2474-C9E4-4AC1-86DF-DD935ACD319D}|HR_PROJECT.WebAPI\\HR_PROJECT.WebAPI.csproj|c:\\users\\shohzod\\source\\repos\\hr-project-backend2\\hr_project.webapi\\dtos\\filedtos\\uploadfiledto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F98C2474-C9E4-4AC1-86DF-DD935ACD319D}|HR_PROJECT.WebAPI\\HR_PROJECT.WebAPI.csproj|solutionrelative:hr_project.webapi\\dtos\\filedtos\\uploadfiledto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F98C2474-C9E4-4AC1-86DF-DD935ACD319D}|HR_PROJECT.WebAPI\\HR_PROJECT.WebAPI.csproj|c:\\users\\shohzod\\source\\repos\\hr-project-backend2\\hr_project.webapi\\controllers\\advancescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F98C2474-C9E4-4AC1-86DF-DD935ACD319D}|HR_PROJECT.WebAPI\\HR_PROJECT.WebAPI.csproj|solutionrelative:hr_project.webapi\\controllers\\advancescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -9,11 +22,50 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": -1,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "UploadFileDTO.cs",
+              "DocumentMoniker": "C:\\Users\\Shohzod\\source\\repos\\hr-project-backend2\\HR_PROJECT.WebAPI\\DTOs\\FileDTOs\\UploadFileDTO.cs",
+              "RelativeDocumentMoniker": "HR_PROJECT.WebAPI\\DTOs\\FileDTOs\\UploadFileDTO.cs",
+              "ToolTip": "C:\\Users\\Shohzod\\source\\repos\\hr-project-backend2\\HR_PROJECT.WebAPI\\DTOs\\FileDTOs\\UploadFileDTO.cs",
+              "RelativeToolTip": "HR_PROJECT.WebAPI\\DTOs\\FileDTOs\\UploadFileDTO.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAtAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-16T12:44:32.726Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "FileController.cs",
+              "DocumentMoniker": "C:\\Users\\Shohzod\\source\\repos\\hr-project-backend2\\HR_PROJECT.WebAPI\\Controllers\\FileController.cs",
+              "RelativeDocumentMoniker": "HR_PROJECT.WebAPI\\Controllers\\FileController.cs",
+              "ToolTip": "C:\\Users\\Shohzod\\source\\repos\\hr-project-backend2\\HR_PROJECT.WebAPI\\Controllers\\FileController.cs",
+              "RelativeToolTip": "HR_PROJECT.WebAPI\\Controllers\\FileController.cs",
+              "ViewState": "AQIAABUAAAAAAAAAAAAiwC8AAAAeAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-16T12:42:04.704Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "AdvancesController.cs",
+              "DocumentMoniker": "C:\\Users\\Shohzod\\source\\repos\\hr-project-backend2\\HR_PROJECT.WebAPI\\Controllers\\AdvancesController.cs",
+              "RelativeDocumentMoniker": "HR_PROJECT.WebAPI\\Controllers\\AdvancesController.cs",
+              "ToolTip": "C:\\Users\\Shohzod\\source\\repos\\hr-project-backend2\\HR_PROJECT.WebAPI\\Controllers\\AdvancesController.cs",
+              "RelativeToolTip": "HR_PROJECT.WebAPI\\Controllers\\AdvancesController.cs",
+              "ViewState": "AQIAAC4AAAAAAAAAAAA5wAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-16T12:14:07.305Z",
+              "EditorCaption": ""
             }
           ]
         }

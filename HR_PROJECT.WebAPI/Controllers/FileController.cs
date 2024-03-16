@@ -1,7 +1,7 @@
 ﻿
 
 using Azure.Storage.Blobs;
-
+using HR_PROJECT.WebAPI.DTOs.FileDTOs;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -36,7 +36,16 @@ namespace HR_PROJECT.WebAPI.Controllers
                 await blobClient.UploadAsync(stream, true);
             }
 
-            return Ok("File uploaded successfully.");
+            string message = "File uploaded successfully.";
+            string fileName = blobName;
+
+            var response = new UploadFileDTO
+            {
+                FileName = fileName,
+                Message = message
+            };
+
+            return Ok(response);
         }
 
         [HttpGet]
