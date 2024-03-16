@@ -25,7 +25,7 @@ namespace HR_PROJECT.Application.Features.CQRS.Handlers.AdvanceHandlers.Write
                 AdvanceType = command.AdvanceType,
                 Amount = command.Amount,
                 ApprovalStatus = command.ApprovalStatus,
-                RequestDate = command.RequestDate,
+                
                 Currency = command.Currency,
                 Permission = command.Permission,
                 EmployeeId = command.EmployeeId,

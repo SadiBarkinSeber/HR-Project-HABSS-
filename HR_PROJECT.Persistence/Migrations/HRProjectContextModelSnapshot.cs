@@ -60,7 +60,6 @@ namespace HR_PROJECT.Persistence.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Response")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
@@ -80,7 +79,7 @@ namespace HR_PROJECT.Persistence.Migrations
                             Description = "Araba alıcam",
                             EmployeeId = 1,
                             Permission = false,
-                            RequestDate = new DateTime(2024, 3, 16, 15, 10, 8, 138, DateTimeKind.Local).AddTicks(8537),
+                            RequestDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Response = "Please provide necessary documents."
                         },
                         new
@@ -93,7 +92,7 @@ namespace HR_PROJECT.Persistence.Migrations
                             Description = "Motor alıcam",
                             EmployeeId = 1,
                             Permission = true,
-                            RequestDate = new DateTime(2024, 3, 16, 15, 10, 8, 138, DateTimeKind.Local).AddTicks(8543),
+                            RequestDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Response = "Request have been approved."
                         });
                 });
@@ -170,14 +169,14 @@ namespace HR_PROJECT.Persistence.Migrations
                         {
                             Id = "df5a9b38-18e8-48b7-97bf-ad4a9b4afe0e",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "067da5aa-b0d7-45c8-968e-4c31b82deb3f",
+                            ConcurrencyStamp = "54267b75-707a-4772-b5fd-b34db7911955",
                             Email = "sahzod.irgas@bilgeadam.com",
                             EmailConfirmed = false,
                             EmployeeId = 1,
                             LockoutEnabled = false,
                             NormalizedEmail = "SAHZOD.IRGAS@BILGEADAM.COM",
                             NormalizedUserName = "SAHZOD",
-                            PasswordHash = "AQAAAAIAAYagAAAAELMl8Yke1PQtr/Dx11NBLAryVoACMd0ICHHgeHQsqaJfP+lS/NsRBFwD4TCAM3RFDA==",
+                            PasswordHash = "AQAAAAIAAYagAAAAEDho+x/8Nt+7pJ2Fy2zWIADGwvOn8loBE31ZdkjQVxhjKQxRlTH3dccxt9WphBNhHw==",
                             PhoneNumberConfirmed = false,
                             SecurityStamp = "",
                             TwoFactorEnabled = false,
@@ -436,7 +435,7 @@ namespace HR_PROJECT.Persistence.Migrations
                             EndDate = new DateTime(2024, 3, 24, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             NumberOfDays = 10,
                             PermissionType = "Baba izni",
-                            RequestDate = new DateTime(2024, 3, 16, 15, 10, 8, 138, DateTimeKind.Local).AddTicks(7516),
+                            RequestDate = new DateTime(2024, 3, 17, 0, 26, 31, 512, DateTimeKind.Local).AddTicks(59),
                             StartDate = new DateTime(2024, 3, 14, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
@@ -447,7 +446,7 @@ namespace HR_PROJECT.Persistence.Migrations
                             EndDate = new DateTime(2024, 4, 15, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             NumberOfDays = 30,
                             PermissionType = "Annelik izni",
-                            RequestDate = new DateTime(2024, 3, 16, 15, 10, 8, 138, DateTimeKind.Local).AddTicks(7535),
+                            RequestDate = new DateTime(2024, 3, 17, 0, 26, 31, 512, DateTimeKind.Local).AddTicks(75),
                             StartDate = new DateTime(2024, 3, 15, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         });
                 });

@@ -10,10 +10,14 @@ namespace HR_PROJECT.Application.Features.CQRS.Commands.AdvanceCommands
 {
     public class CreateAdvanceCommand
     {
+        public CreateAdvanceCommand()
+        {
+            RequestDate = DateTime.Now;
+        }
         public string AdvanceType { get; set; }
         public decimal Amount { get; set; }
         public string ApprovalStatus { get; set; }
-        public DateTime RequestDate { get; set; } = DateTime.Now;
+        public DateTime RequestDate { get; set; }
         public int EmployeeId { get; set; }
         public string Currency { get; set; }
         public string Description { get; set; }
