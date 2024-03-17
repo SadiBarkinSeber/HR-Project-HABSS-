@@ -14,7 +14,7 @@ namespace HR_PROJECT.Application.Features.CQRS.Commands.PermissionComands
             RequestDate = DateTime.Now;
         }
         public string PermissionType { get; set; }
-        public DateTime RequestDate { get; } = DateTime.Now;
+        public DateTime RequestDate { get; }
         public DateTime StartDate { get; set; }
         public DateTime EndDate { get; set; }
         public int? NumberOfDays { get; set; }
