@@ -9,6 +9,10 @@ namespace HR_PROJECT.Application.Features.CQRS.Commands.PermissionComands
 {
     public class CreatePermissionCommand
     {
+        public CreatePermissionCommand()
+        {
+            RequestDate = DateTime.Now;
+        }
         public string PermissionType { get; set; }
         public DateTime RequestDate { get; } = DateTime.Now;
         public DateTime StartDate { get; set; }

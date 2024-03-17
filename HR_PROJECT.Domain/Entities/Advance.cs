@@ -8,6 +8,11 @@ namespace HR_PROJECT.Domain.Entities
 {
     public class Advance
     {
+        public Advance()
+        {
+            Permission = false;
+        }
+
         public int Id { get; set; }
         public string AdvanceType { get; set; }
         public decimal Amount { get; set; }

@@ -19,18 +19,19 @@ namespace HR_PROJECT.WebAPI.Controllers
         private readonly GetExpenseQueryHandler _getExpenseQueryHandler;
         private readonly UpdateExpenseCommandHandler _updateExpenseCommandhandler;
         private readonly RemoveExpenseCommandHandler _removeExpenseCommandHandler;
-
+        private readonly GetExpenseByEmployeeIdQueryHandler _getExpensesByEmployee; 
         #endregion
 
         #region Constructor
 
-        public ExpensesController(CreateExpenseCommandHandler createExpenseCommandHandler, GetExpenseByIdQueryHandler getExpenseByIdQueryHandler, GetExpenseQueryHandler getExpenseQueryHandler, UpdateExpenseCommandHandler updateExpenseCommandHandler, RemoveExpenseCommandHandler removeExpenseCommandHandler)
+        public ExpensesController(CreateExpenseCommandHandler createExpenseCommandHandler, GetExpenseByIdQueryHandler getExpenseByIdQueryHandler, GetExpenseQueryHandler getExpenseQueryHandler, UpdateExpenseCommandHandler updateExpenseCommandHandler, RemoveExpenseCommandHandler removeExpenseCommandHandler, GetExpenseByEmployeeIdQueryHandler getExpensesByEmployee)
         {
             _createExpenseCommandhandler = createExpenseCommandHandler;
             _getExpenseByIdQueryHandler = getExpenseByIdQueryHandler;
             _getExpenseQueryHandler = getExpenseQueryHandler;
             _updateExpenseCommandhandler = updateExpenseCommandHandler;
             _removeExpenseCommandHandler = removeExpenseCommandHandler;
+            _getExpensesByEmployee = getExpensesByEmployee;
         }
 
         #endregion
@@ -39,17 +40,32 @@ namespace HR_PROJECT.WebAPI.Controllers
         #region Read Methods
 
         [HttpGet]
-        public async Task<IActionResult> ExpenseList()
+        public async Task<IActionResult> GetExpenses()
         {
             var values = await _getExpenseQueryHandler.Handle();
             return Ok(values);
         }
 
         [HttpGet("{id}")]
-        public async Task<IActionResult> GetExpense(int id)
+        public async Task<IActionResult> GetExpenseById(int id)
         {
             var value = await _getExpenseByIdQueryHandler.Handle(new GetExpenseByIdQuery(id));
             return Ok(value);
+        }
+
+        [HttpGet("{employeeId}/byEmployee")]
+        public async Task<IActionResult> GetExpensesByEmployee(int employeeId)
+        {
+            
+            var expenses = await _getExpensesByEmployee.Handle(new GetExpensesByEmployeeIdQuery(employeeId));
+
+            if (expenses == null)
+            {
+                return NotFound();
+            }
+
+            return Ok(expenses);
+
         }
 
         #endregion

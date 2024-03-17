@@ -24,29 +24,37 @@ namespace HR_PROJECT.WebAPI.Controllers
         private readonly GetPermissionsByEmployeeIDHandler _getPermissionsByEmployeeIDHandler;
         private readonly RemovePermissionCommandHandler _removePermissionCommandHandler;
         private readonly UpdatePermissionCommandHandler _updatePermissionCommandHandler;
-
+        private readonly GetPermissionQueryHandler _getPermissionQueryHandler;
         #endregion
 
 
         #region Constructor
 
-       public PermissionController(CreatePermissionCommandHandler createPermissionCommandHandler, GetPermissionsByEmployeeIDHandler getPermissionsByEmployeeIDHandler, RemovePermissionCommandHandler removePermissionCommandHandler, UpdatePermissionCommandHandler updatePermissionCommandHandler  )
+       public PermissionController(CreatePermissionCommandHandler createPermissionCommandHandler, GetPermissionsByEmployeeIDHandler getPermissionsByEmployeeIDHandler, RemovePermissionCommandHandler removePermissionCommandHandler, UpdatePermissionCommandHandler updatePermissionCommandHandler, GetPermissionQueryHandler getPermissionQueryHandler  )
         {
             _createPermissionCommandHandler = createPermissionCommandHandler;
             _getPermissionsByEmployeeIDHandler = getPermissionsByEmployeeIDHandler;
             _removePermissionCommandHandler = removePermissionCommandHandler;
-            _updatePermissionCommandHandler = updatePermissionCommandHandler;   
+            _updatePermissionCommandHandler = updatePermissionCommandHandler; 
+            _getPermissionQueryHandler = getPermissionQueryHandler;
         }
         #endregion
 
    
         #region Read Methods
 
-        [HttpGet("{id}")]
-        public async Task<IActionResult> GetPermissions(int id)
+        [HttpGet("{employeeId}/byEmployee")]
+        public async Task<IActionResult> GetPermissionsByEmployee(int employeeId)
         {
-            var value = await _getPermissionsByEmployeeIDHandler.Handle(new GetPermissionsByEmployeeIDQuery(id));
+            var value = await _getPermissionsByEmployeeIDHandler.Handle(new GetPermissionsByEmployeeIDQuery(employeeId));
             return Ok(value);
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> GetPermissions()
+        {
+            var values = await _getPermissionQueryHandler.Handle();
+            return Ok(values);
         }
         #endregion
 
