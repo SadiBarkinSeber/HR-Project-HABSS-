@@ -9,6 +9,11 @@ namespace HR_PROJECT.Domain.Entities
 {
     public class Expense
     {
+        public Expense()
+        {
+            Permission = false;
+        }
+
         public int Id { get; set; }
         public string Type { get; set; }
         public decimal Amount { get; set; }

@@ -2,6 +2,8 @@
 using HR_PROJECT.Application.Features.CQRS.Handlers.AdvanceHandlers.Read;
 using HR_PROJECT.Application.Features.CQRS.Handlers.AdvanceHandlers.Write;
 using HR_PROJECT.Application.Features.CQRS.Queries.AdvanceQueries;
+using HR_PROJECT.Application.Features.CQRS.Queries.EmployeeQueries;
+using HR_PROJECT.WebAPI.HelperFunctions;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -18,18 +20,22 @@ namespace HR_PROJECT.WebAPI.Controllers
         private readonly GetAdvanceQueryHandler _getAdvanceQueryHandler;
         private readonly UpdateAdvanceCommandHandler _updateAdvanceCommandhandler;
         private readonly RemoveAdvanceCommandHandler _removeAdvanceCommandHandler;
-
+        private readonly GetAdvanceByEmployeeIdQueryHandler _getAdvanceByEmployeeIdQueryHandler;
         #endregion
+
+        private readonly CheckEmployeeWage _checkEmployeeWage;
 
         #region Constructor
 
-        public AdvancesController(CreateAdvanceCommandHandler createAdvanceCommandHandler, GetAdvanceByIdQueryHandler getAdvanceByIdQueryHandler, GetAdvanceQueryHandler getAdvanceQueryHandler, UpdateAdvanceCommandHandler updateAdvanceCommandHandler, RemoveAdvanceCommandHandler removeAdvanceCommandHandler)
+        public AdvancesController(CreateAdvanceCommandHandler createAdvanceCommandHandler, GetAdvanceByIdQueryHandler getAdvanceByIdQueryHandler, GetAdvanceQueryHandler getAdvanceQueryHandler, UpdateAdvanceCommandHandler updateAdvanceCommandHandler, RemoveAdvanceCommandHandler removeAdvanceCommandHandler, CheckEmployeeWage checkEmployeeWage, GetAdvanceByEmployeeIdQueryHandler getAdvanceByEmployeeIdQueryHandler)
         {
             _createAdvanceCommandhandler = createAdvanceCommandHandler;
             _getAdvanceByIdQueryHandler = getAdvanceByIdQueryHandler;
             _getAdvanceQueryHandler = getAdvanceQueryHandler;
             _updateAdvanceCommandhandler = updateAdvanceCommandHandler;
             _removeAdvanceCommandHandler = removeAdvanceCommandHandler;
+            _getAdvanceByEmployeeIdQueryHandler = getAdvanceByEmployeeIdQueryHandler;
+            _checkEmployeeWage = checkEmployeeWage;
         }
 
         #endregion
@@ -50,6 +56,13 @@ namespace HR_PROJECT.WebAPI.Controllers
             return Ok(value);
         }
 
+        [HttpGet("{employeeId}/byEmployee")]
+        public async Task<IActionResult> GetAdvancesByEmployee(int employeeId)
+        {
+            var values = await _getAdvanceByEmployeeIdQueryHandler.Handle(new GetAdvancesByEmployeeIdQuery(employeeId));
+            return Ok(values);
+        }
+
         #endregion
 
         #region Write Methods
@@ -57,6 +70,13 @@ namespace HR_PROJECT.WebAPI.Controllers
         [HttpPost]
         public async Task<IActionResult> CreateAdvance(CreateAdvanceCommand command)
         {
+            var value = await _checkEmployeeWage.Helper(new GetEmployeeByIdQuery(command.EmployeeId), command.Amount);
+
+            if (!value)
+            {
+                return BadRequest("The requested advance amount exceeds the allowed limit. Please select an amount that is lesser than the 3 times value of the requesting employees wage.");
+            }
+
             await _createAdvanceCommandhandler.Handle(command);
             return Ok("Avans bilgisi eklendi.");
         }

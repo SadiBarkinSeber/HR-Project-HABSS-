@@ -13,6 +13,7 @@ namespace HR_PROJECT.Application.Features.CQRS.Commands.AdvanceCommands
         public CreateAdvanceCommand()
         {
             RequestDate = DateTime.Now;
+            
         }
         public string AdvanceType { get; set; }
         public decimal Amount { get; set; }
@@ -21,6 +22,6 @@ namespace HR_PROJECT.Application.Features.CQRS.Commands.AdvanceCommands
         public int EmployeeId { get; set; }
         public string Currency { get; set; }
         public string Description { get; set; }
-        public bool Permission { get; set; }
+        
     }
 }

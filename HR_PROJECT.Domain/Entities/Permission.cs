@@ -8,6 +8,11 @@ namespace HR_PROJECT.Domain.Entities
 {
     public class Permission
     {
+        public Permission()
+        {
+            IsApproved = false;
+        }
+
         public int Id { get; set; }
         public string PermissionType { get; set; }
         public DateTime RequestDate { get; } = DateTime.Now;
@@ -18,5 +23,6 @@ namespace HR_PROJECT.Domain.Entities
         public string ApprovalStatus { get; set; } = "Onay bekleniyor";
         public int? EmployeeId { get; set; }
         public Employee Employee { get; set; }
+        public bool IsApproved { get; set; }
     }
 }

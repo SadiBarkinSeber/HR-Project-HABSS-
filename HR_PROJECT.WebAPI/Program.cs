@@ -15,6 +15,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using HR_PROJECT.Application.Features.CQRS.Handlers.AdvanceHandlers.Write;
 using HR_PROJECT.Application.Features.CQRS.Handlers.AdvanceHandlers.Read;
+using HR_PROJECT.WebAPI.HelperFunctions;
 #endregion
 
 
@@ -36,6 +37,7 @@ builder.Services.Configure<IdentityOptions>(opt =>
 builder.Services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
 builder.Services.AddScoped(typeof(IPermissionRepository), typeof(PermissionRepositoty));
 builder.Services.AddScoped(typeof(IAdvanceRepository), typeof(AdvanceRepository));
+builder.Services.AddScoped(typeof(IExpenseRepository), typeof(ExpenseRepository));
 
 builder.Services.AddSingleton(x =>
 {
@@ -58,6 +60,7 @@ builder.Services.AddScoped<GetPermissionsByEmployeeIDHandler>();
 builder.Services.AddScoped<CreatePermissionCommandHandler>();
 builder.Services.AddScoped<RemovePermissionCommandHandler>();
 builder.Services.AddScoped<UpdatePermissionCommandHandler>();
+builder.Services.AddScoped<GetPermissionQueryHandler>();
 #endregion
 
 #region Dependency Injection of Expense Handlers
@@ -67,6 +70,7 @@ builder.Services.AddScoped<GetExpenseQueryHandler>();
 builder.Services.AddScoped<CreateExpenseCommandHandler>();
 builder.Services.AddScoped<UpdateExpenseCommandHandler>();
 builder.Services.AddScoped<RemoveExpenseCommandHandler>();
+builder.Services.AddScoped<GetExpenseByEmployeeIdQueryHandler>();
 
 #endregion
 
@@ -77,9 +81,14 @@ builder.Services.AddScoped<GetAdvanceQueryHandler>();
 builder.Services.AddScoped<CreateAdvanceCommandHandler>();
 builder.Services.AddScoped<UpdateAdvanceCommandHandler>();
 builder.Services.AddScoped<RemoveAdvanceCommandHandler>();
-
+builder.Services.AddScoped<GetAdvanceByEmployeeIdQueryHandler>();
 #endregion
 
+#region Dependency Injection of Helper Functions
+
+builder.Services.AddScoped<CheckEmployeeWage>();
+
+#endregion
 
 builder.Services.AddControllers(); 
 
