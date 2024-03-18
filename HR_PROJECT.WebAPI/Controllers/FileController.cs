@@ -64,6 +64,8 @@ namespace HR_PROJECT.WebAPI.Controllers
             var response = await blobClient.DownloadAsync();
             var stream = response.Value.Content;
 
+            var contentType = response.Value.ContentType ?? "application/octet-stream";
+
             return File(stream, response.Value.ContentType, fileName);
         }
 
