@@ -3,40 +3,8 @@
   "WorkspaceRootPath": "C:\\Users\\Shohzod\\source\\repos\\hr-project-backend2\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{F98C2474-C9E4-4AC1-86DF-DD935ACD319D}|HR_PROJECT.WebAPI\\HR_PROJECT.WebAPI.csproj|c:\\users\\shohzod\\source\\repos\\hr-project-backend2\\hr_project.webapi\\controllers\\permissioncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F98C2474-C9E4-4AC1-86DF-DD935ACD319D}|HR_PROJECT.WebAPI\\HR_PROJECT.WebAPI.csproj|solutionrelative:hr_project.webapi\\controllers\\permissioncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F98C2474-C9E4-4AC1-86DF-DD935ACD319D}|HR_PROJECT.WebAPI\\HR_PROJECT.WebAPI.csproj|c:\\users\\shohzod\\source\\repos\\hr-project-backend2\\hr_project.webapi\\controllers\\expensescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F98C2474-C9E4-4AC1-86DF-DD935ACD319D}|HR_PROJECT.WebAPI\\HR_PROJECT.WebAPI.csproj|solutionrelative:hr_project.webapi\\controllers\\expensescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F98C2474-C9E4-4AC1-86DF-DD935ACD319D}|HR_PROJECT.WebAPI\\HR_PROJECT.WebAPI.csproj|c:\\users\\shohzod\\source\\repos\\hr-project-backend2\\hr_project.webapi\\controllers\\advancescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F98C2474-C9E4-4AC1-86DF-DD935ACD319D}|HR_PROJECT.WebAPI\\HR_PROJECT.WebAPI.csproj|solutionrelative:hr_project.webapi\\controllers\\advancescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3B13A124-752A-4AF6-84DA-BDFF3DCAAB42}|HR_PROJECT.Application\\HR_PROJECT.Application.csproj|c:\\users\\shohzod\\source\\repos\\hr-project-backend2\\hr_project.application\\features\\cqrs\\handlers\\advancehandlers\\read\\getadvancebyemployeeidqueryhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3B13A124-752A-4AF6-84DA-BDFF3DCAAB42}|HR_PROJECT.Application\\HR_PROJECT.Application.csproj|solutionrelative:hr_project.application\\features\\cqrs\\handlers\\advancehandlers\\read\\getadvancebyemployeeidqueryhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3B13A124-752A-4AF6-84DA-BDFF3DCAAB42}|HR_PROJECT.Application\\HR_PROJECT.Application.csproj|c:\\users\\shohzod\\source\\repos\\hr-project-backend2\\hr_project.application\\features\\cqrs\\commands\\advancecommands\\createadvancecommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3B13A124-752A-4AF6-84DA-BDFF3DCAAB42}|HR_PROJECT.Application\\HR_PROJECT.Application.csproj|solutionrelative:hr_project.application\\features\\cqrs\\commands\\advancecommands\\createadvancecommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3B13A124-752A-4AF6-84DA-BDFF3DCAAB42}|HR_PROJECT.Application\\HR_PROJECT.Application.csproj|c:\\users\\shohzod\\source\\repos\\hr-project-backend2\\hr_project.application\\features\\cqrs\\commands\\expensecommands\\createexpensecommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3B13A124-752A-4AF6-84DA-BDFF3DCAAB42}|HR_PROJECT.Application\\HR_PROJECT.Application.csproj|solutionrelative:hr_project.application\\features\\cqrs\\commands\\expensecommands\\createexpensecommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3B13A124-752A-4AF6-84DA-BDFF3DCAAB42}|HR_PROJECT.Application\\HR_PROJECT.Application.csproj|c:\\users\\shohzod\\source\\repos\\hr-project-backend2\\hr_project.application\\features\\cqrs\\commands\\permissioncomands\\createpermissioncommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3B13A124-752A-4AF6-84DA-BDFF3DCAAB42}|HR_PROJECT.Application\\HR_PROJECT.Application.csproj|solutionrelative:hr_project.application\\features\\cqrs\\commands\\permissioncomands\\createpermissioncommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3B13A124-752A-4AF6-84DA-BDFF3DCAAB42}|HR_PROJECT.Application\\HR_PROJECT.Application.csproj|c:\\users\\shohzod\\source\\repos\\hr-project-backend2\\hr_project.application\\features\\cqrs\\commands\\employeecommands\\createemployeecommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3B13A124-752A-4AF6-84DA-BDFF3DCAAB42}|HR_PROJECT.Application\\HR_PROJECT.Application.csproj|solutionrelative:hr_project.application\\features\\cqrs\\commands\\employeecommands\\createemployeecommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F98C2474-C9E4-4AC1-86DF-DD935ACD319D}|HR_PROJECT.WebAPI\\HR_PROJECT.WebAPI.csproj|c:\\users\\shohzod\\source\\repos\\hr-project-backend2\\hr_project.webapi\\helperfunctions\\checkemployeewage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F98C2474-C9E4-4AC1-86DF-DD935ACD319D}|HR_PROJECT.WebAPI\\HR_PROJECT.WebAPI.csproj|solutionrelative:hr_project.webapi\\helperfunctions\\checkemployeewage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{F98C2474-C9E4-4AC1-86DF-DD935ACD319D}|HR_PROJECT.WebAPI\\HR_PROJECT.WebAPI.csproj|c:\\users\\shohzod\\source\\repos\\hr-project-backend2\\hr_project.webapi\\controllers\\filecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F98C2474-C9E4-4AC1-86DF-DD935ACD319D}|HR_PROJECT.WebAPI\\HR_PROJECT.WebAPI.csproj|solutionrelative:hr_project.webapi\\controllers\\filecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -55,118 +23,14 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "PermissionController.cs",
-              "DocumentMoniker": "C:\\Users\\Shohzod\\source\\repos\\hr-project-backend2\\HR_PROJECT.WebAPI\\Controllers\\PermissionController.cs",
-              "RelativeDocumentMoniker": "HR_PROJECT.WebAPI\\Controllers\\PermissionController.cs",
-              "ToolTip": "C:\\Users\\Shohzod\\source\\repos\\hr-project-backend2\\HR_PROJECT.WebAPI\\Controllers\\PermissionController.cs",
-              "RelativeToolTip": "HR_PROJECT.WebAPI\\Controllers\\PermissionController.cs",
-              "ViewState": "AQIAACMAAAAAAAAAAAAgwC0AAAAsAAAA",
+              "Title": "FileController.cs",
+              "DocumentMoniker": "C:\\Users\\Shohzod\\source\\repos\\hr-project-backend2\\HR_PROJECT.WebAPI\\Controllers\\FileController.cs",
+              "RelativeDocumentMoniker": "HR_PROJECT.WebAPI\\Controllers\\FileController.cs",
+              "ToolTip": "C:\\Users\\Shohzod\\source\\repos\\hr-project-backend2\\HR_PROJECT.WebAPI\\Controllers\\FileController.cs",
+              "RelativeToolTip": "HR_PROJECT.WebAPI\\Controllers\\FileController.cs",
+              "ViewState": "AQIAADcAAAAAAAAAAAAAAEIAAABVAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-17T19:53:09.235Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "ExpensesController.cs",
-              "DocumentMoniker": "C:\\Users\\Shohzod\\source\\repos\\hr-project-backend2\\HR_PROJECT.WebAPI\\Controllers\\ExpensesController.cs",
-              "RelativeDocumentMoniker": "HR_PROJECT.WebAPI\\Controllers\\ExpensesController.cs",
-              "ToolTip": "C:\\Users\\Shohzod\\source\\repos\\hr-project-backend2\\HR_PROJECT.WebAPI\\Controllers\\ExpensesController.cs",
-              "RelativeToolTip": "HR_PROJECT.WebAPI\\Controllers\\ExpensesController.cs",
-              "ViewState": "AQIAACkAAAAAAAAAAAAgwDcAAAAYAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-17T19:52:48.415Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "GetAdvanceByEmployeeIdQueryHandler.cs",
-              "DocumentMoniker": "C:\\Users\\Shohzod\\source\\repos\\hr-project-backend2\\HR_PROJECT.Application\\Features\\CQRS\\Handlers\\AdvanceHandlers\\Read\\GetAdvanceByEmployeeIdQueryHandler.cs",
-              "RelativeDocumentMoniker": "HR_PROJECT.Application\\Features\\CQRS\\Handlers\\AdvanceHandlers\\Read\\GetAdvanceByEmployeeIdQueryHandler.cs",
-              "ToolTip": "C:\\Users\\Shohzod\\source\\repos\\hr-project-backend2\\HR_PROJECT.Application\\Features\\CQRS\\Handlers\\AdvanceHandlers\\Read\\GetAdvanceByEmployeeIdQueryHandler.cs",
-              "RelativeToolTip": "HR_PROJECT.Application\\Features\\CQRS\\Handlers\\AdvanceHandlers\\Read\\GetAdvanceByEmployeeIdQueryHandler.cs",
-              "ViewState": "AQIAAAYAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-17T19:52:24.125Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "CreateEmployeeCommand.cs",
-              "DocumentMoniker": "C:\\Users\\Shohzod\\source\\repos\\hr-project-backend2\\HR_PROJECT.Application\\Features\\CQRS\\Commands\\EmployeeCommands\\CreateEmployeeCommand.cs",
-              "RelativeDocumentMoniker": "HR_PROJECT.Application\\Features\\CQRS\\Commands\\EmployeeCommands\\CreateEmployeeCommand.cs",
-              "ToolTip": "C:\\Users\\Shohzod\\source\\repos\\hr-project-backend2\\HR_PROJECT.Application\\Features\\CQRS\\Commands\\EmployeeCommands\\CreateEmployeeCommand.cs",
-              "RelativeToolTip": "HR_PROJECT.Application\\Features\\CQRS\\Commands\\EmployeeCommands\\CreateEmployeeCommand.cs",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-17T19:51:12.297Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "CreatePermissionCommand.cs",
-              "DocumentMoniker": "C:\\Users\\Shohzod\\source\\repos\\hr-project-backend2\\HR_PROJECT.Application\\Features\\CQRS\\Commands\\PermissionComands\\CreatePermissionCommand.cs",
-              "RelativeDocumentMoniker": "HR_PROJECT.Application\\Features\\CQRS\\Commands\\PermissionComands\\CreatePermissionCommand.cs",
-              "ToolTip": "C:\\Users\\Shohzod\\source\\repos\\hr-project-backend2\\HR_PROJECT.Application\\Features\\CQRS\\Commands\\PermissionComands\\CreatePermissionCommand.cs",
-              "RelativeToolTip": "HR_PROJECT.Application\\Features\\CQRS\\Commands\\PermissionComands\\CreatePermissionCommand.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAAsAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-17T19:50:12.716Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "CreateExpenseCommand.cs",
-              "DocumentMoniker": "C:\\Users\\Shohzod\\source\\repos\\hr-project-backend2\\HR_PROJECT.Application\\Features\\CQRS\\Commands\\ExpenseCommands\\CreateExpenseCommand.cs",
-              "RelativeDocumentMoniker": "HR_PROJECT.Application\\Features\\CQRS\\Commands\\ExpenseCommands\\CreateExpenseCommand.cs",
-              "ToolTip": "C:\\Users\\Shohzod\\source\\repos\\hr-project-backend2\\HR_PROJECT.Application\\Features\\CQRS\\Commands\\ExpenseCommands\\CreateExpenseCommand.cs*",
-              "RelativeToolTip": "HR_PROJECT.Application\\Features\\CQRS\\Commands\\ExpenseCommands\\CreateExpenseCommand.cs*",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAAqAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-17T19:50:08.762Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "CreateAdvanceCommand.cs",
-              "DocumentMoniker": "C:\\Users\\Shohzod\\source\\repos\\hr-project-backend2\\HR_PROJECT.Application\\Features\\CQRS\\Commands\\AdvanceCommands\\CreateAdvanceCommand.cs",
-              "RelativeDocumentMoniker": "HR_PROJECT.Application\\Features\\CQRS\\Commands\\AdvanceCommands\\CreateAdvanceCommand.cs",
-              "ToolTip": "C:\\Users\\Shohzod\\source\\repos\\hr-project-backend2\\HR_PROJECT.Application\\Features\\CQRS\\Commands\\AdvanceCommands\\CreateAdvanceCommand.cs",
-              "RelativeToolTip": "HR_PROJECT.Application\\Features\\CQRS\\Commands\\AdvanceCommands\\CreateAdvanceCommand.cs",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAAAA4AAAAnAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-17T19:49:50.321Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "AdvancesController.cs",
-              "DocumentMoniker": "C:\\Users\\Shohzod\\source\\repos\\hr-project-backend2\\HR_PROJECT.WebAPI\\Controllers\\AdvancesController.cs",
-              "RelativeDocumentMoniker": "HR_PROJECT.WebAPI\\Controllers\\AdvancesController.cs",
-              "ToolTip": "C:\\Users\\Shohzod\\source\\repos\\hr-project-backend2\\HR_PROJECT.WebAPI\\Controllers\\AdvancesController.cs",
-              "RelativeToolTip": "HR_PROJECT.WebAPI\\Controllers\\AdvancesController.cs",
-              "ViewState": "AQIAACYAAAAAAAAAAAAgwAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-17T19:49:25.555Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "CheckEmployeeWage.cs",
-              "DocumentMoniker": "C:\\Users\\Shohzod\\source\\repos\\hr-project-backend2\\HR_PROJECT.WebAPI\\HelperFunctions\\CheckEmployeeWage.cs",
-              "RelativeDocumentMoniker": "HR_PROJECT.WebAPI\\HelperFunctions\\CheckEmployeeWage.cs",
-              "ToolTip": "C:\\Users\\Shohzod\\source\\repos\\hr-project-backend2\\HR_PROJECT.WebAPI\\HelperFunctions\\CheckEmployeeWage.cs",
-              "RelativeToolTip": "HR_PROJECT.WebAPI\\HelperFunctions\\CheckEmployeeWage.cs",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-17T19:49:15.65Z",
+              "WhenOpened": "2024-03-17T21:37:07.502Z",
               "EditorCaption": ""
             }
           ]
