@@ -2,6 +2,7 @@
 using HR_PROJECT.Application.Features.CQRS.Handlers.EmployeeHandlers.Read;
 using HR_PROJECT.Application.Features.CQRS.Handlers.EmployeeHandlers.Write;
 using HR_PROJECT.Application.Features.CQRS.Queries.EmployeeQueries;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -9,6 +10,7 @@ namespace HR_PROJECT.WebAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize]
     public class EmployeesController : ControllerBase
     {
         #region Employee Handlers
@@ -33,6 +35,8 @@ namespace HR_PROJECT.WebAPI.Controllers
         #endregion
 
         #region Read Methods
+
+        [Authorize(Roles = "manager")]
         [HttpGet]
         public async Task<IActionResult> EmployeeList()
         {
@@ -41,6 +45,7 @@ namespace HR_PROJECT.WebAPI.Controllers
             return Ok(values);
         }
 
+        [Authorize(Roles = "employee")]
         [HttpGet("{id}")]
         public async Task<IActionResult> GetEmployee(int id)
         {
@@ -50,6 +55,8 @@ namespace HR_PROJECT.WebAPI.Controllers
         #endregion
 
         #region Write Methods
+
+        [Authorize(Roles = "manager")]
         [HttpPost]
         public async Task<IActionResult> CreateEmployee(CreateEmployeeCommand command)
         {
@@ -57,6 +64,7 @@ namespace HR_PROJECT.WebAPI.Controllers
             return Ok("Çalışan bilgileri eklendi.");    
         }
 
+        [Authorize(Roles = "manager")]
         [HttpDelete]
         public async Task<IActionResult> RemoveEmployee(int id)
         {
@@ -65,6 +73,7 @@ namespace HR_PROJECT.WebAPI.Controllers
             return Ok("Çalışan silindi.");
         }
 
+        [Authorize(Roles = "manager")]
         [HttpPut]
         public async Task<IActionResult> UpdateEmployee(UpdateEmployeeCommand command)
         {

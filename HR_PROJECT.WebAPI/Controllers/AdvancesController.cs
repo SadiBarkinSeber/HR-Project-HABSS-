@@ -4,11 +4,13 @@ using HR_PROJECT.Application.Features.CQRS.Handlers.AdvanceHandlers.Write;
 using HR_PROJECT.Application.Features.CQRS.Queries.AdvanceQueries;
 using HR_PROJECT.Application.Features.CQRS.Queries.EmployeeQueries;
 using HR_PROJECT.WebAPI.HelperFunctions;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace HR_PROJECT.WebAPI.Controllers
 {
+    [Authorize]
     [Route("api/[controller]")]
     [ApiController]
     public class AdvancesController : ControllerBase
@@ -23,7 +25,9 @@ namespace HR_PROJECT.WebAPI.Controllers
         private readonly GetAdvanceByEmployeeIdQueryHandler _getAdvanceByEmployeeIdQueryHandler;
         #endregion
 
+        #region Helper Functions
         private readonly CheckEmployeeWage _checkEmployeeWage;
+        #endregion
 
         #region Constructor
 
@@ -42,6 +46,7 @@ namespace HR_PROJECT.WebAPI.Controllers
 
         #region Read Methods
 
+        [Authorize(Roles = "manager")]
         [HttpGet]
         public async Task<IActionResult> AdvanceList()
         {
@@ -49,6 +54,7 @@ namespace HR_PROJECT.WebAPI.Controllers
             return Ok(values);
         }
 
+        [Authorize(Roles = "manager")]
         [HttpGet("{id}")]
         public async Task<IActionResult> GetAdvance(int id)
         {
@@ -56,6 +62,7 @@ namespace HR_PROJECT.WebAPI.Controllers
             return Ok(value);
         }
 
+        [Authorize(Roles = "employee")]
         [HttpGet("{employeeId}/byEmployee")]
         public async Task<IActionResult> GetAdvancesByEmployee(int employeeId)
         {
@@ -67,6 +74,7 @@ namespace HR_PROJECT.WebAPI.Controllers
 
         #region Write Methods
 
+        [Authorize(Roles = "employee")]
         [HttpPost]
         public async Task<IActionResult> CreateAdvance(CreateAdvanceCommand command)
         {
@@ -81,6 +89,7 @@ namespace HR_PROJECT.WebAPI.Controllers
             return Ok("Avans bilgisi eklendi.");
         }
 
+        [Authorize(Roles = "manager")]
         [HttpDelete]
         public async Task<IActionResult> RemoveAdvance(int id)
         {
@@ -88,6 +97,7 @@ namespace HR_PROJECT.WebAPI.Controllers
             return Ok("Avans bilgisi silindi.");
         }
 
+        [Authorize(Roles = "manager")]
         [HttpPut]
         public async Task<IActionResult> UpdateAdvance(UpdateAdvanceCommand command)
         {
