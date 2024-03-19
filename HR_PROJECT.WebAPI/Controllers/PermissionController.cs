@@ -8,6 +8,7 @@ using HR_PROJECT.Application.Features.CQRS.Handlers.PermissionHandlers.Read;
 using HR_PROJECT.Application.Features.CQRS.Handlers.PermissionHandlers.Write;
 using HR_PROJECT.Application.Features.CQRS.Queries.EmployeeQueries;
 using HR_PROJECT.Application.Features.CQRS.Queries.PermissionQueries;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Identity.Client;
@@ -16,6 +17,7 @@ namespace HR_PROJECT.WebAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize]
     public class PermissionController : ControllerBase
     {
         #region Permission Handlers
@@ -40,9 +42,10 @@ namespace HR_PROJECT.WebAPI.Controllers
         }
         #endregion
 
-   
+
         #region Read Methods
 
+        [Authorize(Roles = "employee")]
         [HttpGet("{employeeId}/byEmployee")]
         public async Task<IActionResult> GetPermissionsByEmployee(int employeeId)
         {
@@ -50,6 +53,7 @@ namespace HR_PROJECT.WebAPI.Controllers
             return Ok(value);
         }
 
+        [Authorize(Roles = "manager")]
         [HttpGet]
         public async Task<IActionResult> GetPermissions()
         {
@@ -61,6 +65,7 @@ namespace HR_PROJECT.WebAPI.Controllers
 
         #region Write Methods
 
+        [Authorize(Roles = "employee")]
         [HttpPost]
         public async Task<IActionResult> CreatePermission(CreatePermissionCommand command)
         {
@@ -68,6 +73,7 @@ namespace HR_PROJECT.WebAPI.Controllers
             return Ok("Izin talebi basarili bir sekilde gonderildi.");
         }
 
+        [Authorize(Roles = "manager")]
         [HttpDelete]
         public async Task<IActionResult> RemovePermission(int id)
         {
@@ -75,6 +81,7 @@ namespace HR_PROJECT.WebAPI.Controllers
             return Ok("Izin talebi basarili bir sekilde  silindi.");
         }
 
+        [Authorize(Roles = "manager")]
         [HttpPut]
         public async Task<IActionResult> UpdatePermission(UpdatePermissionCommand command)
         {

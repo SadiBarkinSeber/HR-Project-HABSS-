@@ -13,8 +13,11 @@ namespace HR_PROJECT.Persistence.Configurations
     {
         public void Configure(EntityTypeBuilder<Employee> builder)
         {
+            
             builder.Property(e => e.Wage)
                 .HasColumnType("decimal(18,2)");
+
+            
 
             #region Seed Data
             builder.HasData(

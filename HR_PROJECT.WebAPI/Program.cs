@@ -16,10 +16,34 @@ using Microsoft.EntityFrameworkCore;
 using HR_PROJECT.Application.Features.CQRS.Handlers.AdvanceHandlers.Write;
 using HR_PROJECT.Application.Features.CQRS.Handlers.AdvanceHandlers.Read;
 using HR_PROJECT.WebAPI.HelperFunctions;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.IdentityModel.Tokens;
+using System.Text;
 #endregion
 
 
 var builder = WebApplication.CreateBuilder(args);
+
+#region JWT Configuration
+// Configure Jwt
+var jwtIssuer = builder.Configuration.GetSection("Jwt:Issuer").Get<string>();
+var jwtKey = builder.Configuration.GetSection("Jwt:Key").Get<string>();
+
+builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+    .AddJwtBearer(options =>
+    {
+        options.TokenValidationParameters = new TokenValidationParameters
+        {
+            ValidateIssuer = true,
+            ValidateAudience = true,
+            ValidateLifetime = true,
+            ValidateIssuerSigningKey = true,
+            ValidIssuer = jwtIssuer,
+            ValidAudience = jwtIssuer,
+            IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(jwtKey))
+        };
+    });
+#endregion
 
 // Add services to the container.
 
@@ -34,17 +58,22 @@ builder.Services.Configure<IdentityOptions>(opt =>
     opt.User.RequireUniqueEmail = true;
 });
 
+
+#region DependencyInjection of Repositories
 builder.Services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
 builder.Services.AddScoped(typeof(IPermissionRepository), typeof(PermissionRepositoty));
 builder.Services.AddScoped(typeof(IAdvanceRepository), typeof(AdvanceRepository));
 builder.Services.AddScoped(typeof(IExpenseRepository), typeof(ExpenseRepository));
+#endregion
 
+#region Dependency Injection of Blob Connection
 builder.Services.AddSingleton(x =>
 {
     var connectionString = builder.Configuration.GetConnectionString("BlobStorageConnection");
 
     return new BlobServiceClient(connectionString);
 });
+#endregion
 
 #region Dependency Injection of Employee Handlers
 builder.Services.AddScoped<GetEmployeeByIdQueryHandler>();

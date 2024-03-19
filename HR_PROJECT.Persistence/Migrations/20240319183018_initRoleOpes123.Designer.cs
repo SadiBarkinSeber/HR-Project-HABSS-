@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace HR_PROJECT.Persistence.Migrations
 {
     [DbContext(typeof(HRProjectContext))]
-    [Migration("20240314134100_initExpenseOps2")]
-    partial class initExpenseOps2
+    [Migration("20240319183018_initRoleOpes123")]
+    partial class initRoleOpes123
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -24,6 +24,86 @@ namespace HR_PROJECT.Persistence.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
+
+            modelBuilder.Entity("HR_PROJECT.Domain.Entities.Advance", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("AdvanceType")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<decimal>("Amount")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<string>("ApprovalStatus")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Currency")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasMaxLength(200)
+                        .HasColumnType("nvarchar(200)");
+
+                    b.Property<int>("EmployeeId")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("ManagerEmployeeId")
+                        .HasColumnType("int");
+
+                    b.Property<bool>("Permission")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTime>("RequestDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Response")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("EmployeeId");
+
+                    b.HasIndex("ManagerEmployeeId");
+
+                    b.ToTable("Advances");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            AdvanceType = "Bireysel",
+                            Amount = 5631.45m,
+                            ApprovalStatus = "Pending",
+                            Currency = "TL",
+                            Description = "Araba alıcam",
+                            EmployeeId = 1,
+                            Permission = false,
+                            RequestDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Response = "Please provide necessary documents."
+                        },
+                        new
+                        {
+                            Id = 2,
+                            AdvanceType = "Kurumsal",
+                            Amount = 6592.45m,
+                            ApprovalStatus = "Approved",
+                            Currency = "TL",
+                            Description = "Motor alıcam",
+                            EmployeeId = 1,
+                            Permission = true,
+                            RequestDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Response = "Request have been approved."
+                        });
+                });
 
             modelBuilder.Entity("HR_PROJECT.Domain.Entities.ApplicationUser", b =>
                 {
@@ -52,6 +132,9 @@ namespace HR_PROJECT.Persistence.Migrations
 
                     b.Property<DateTimeOffset?>("LockoutEnd")
                         .HasColumnType("datetimeoffset");
+
+                    b.Property<int?>("ManagerId")
+                        .HasColumnType("int");
 
                     b.Property<string>("NormalizedEmail")
                         .HasMaxLength(256)
@@ -97,18 +180,35 @@ namespace HR_PROJECT.Persistence.Migrations
                         {
                             Id = "df5a9b38-18e8-48b7-97bf-ad4a9b4afe0e",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "55d2c23f-4329-45fc-8693-44ae4210c542",
+                            ConcurrencyStamp = "00de0d80-4fc1-49ac-b73a-5e55dcebae3b",
                             Email = "sahzod.irgas@bilgeadam.com",
                             EmailConfirmed = false,
                             EmployeeId = 1,
                             LockoutEnabled = false,
                             NormalizedEmail = "SAHZOD.IRGAS@BILGEADAM.COM",
                             NormalizedUserName = "SAHZOD",
-                            PasswordHash = "AQAAAAIAAYagAAAAEDB4SVVq4OalHHRNWRbcEF+VE5123doSHs+G7Kz9Ncq1993rx7WtM8gGMRorqikg3A==",
+                            PasswordHash = "AQAAAAIAAYagAAAAEFW0IEdUPO2XdxMUvuffKRI7M/n0xHrvTeUw4+M7PIac+r4ae67mRd+rrDnUhn5W3Q==",
                             PhoneNumberConfirmed = false,
                             SecurityStamp = "",
                             TwoFactorEnabled = false,
                             UserName = "sahzod"
+                        },
+                        new
+                        {
+                            Id = "29eee336-e6a2-40f2-9305-159eed59ed75",
+                            AccessFailedCount = 0,
+                            ConcurrencyStamp = "d99ccf5b-cb3e-4f4a-97df-393936372882",
+                            Email = "admin@bilgeadam.com",
+                            EmailConfirmed = false,
+                            LockoutEnabled = false,
+                            ManagerId = 3,
+                            NormalizedEmail = "ADMIN@BILGEADAM.COM",
+                            NormalizedUserName = "ADMIN",
+                            PasswordHash = "AQAAAAIAAYagAAAAEFBtn6BwpuCNLG578Z1tYV2Qe41k8SnDa2e2ArGI8oN0YMphukoqKMgom+B5DBY5Mw==",
+                            PhoneNumberConfirmed = false,
+                            SecurityStamp = "",
+                            TwoFactorEnabled = false,
+                            UserName = "admin"
                         });
                 });
 
@@ -250,7 +350,7 @@ namespace HR_PROJECT.Persistence.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<decimal>("Amount")
-                        .HasColumnType("decimal(18,2");
+                        .HasColumnType("decimal(18,2)");
 
                     b.Property<string>("ApprovalStatus")
                         .IsRequired()
@@ -265,6 +365,9 @@ namespace HR_PROJECT.Persistence.Migrations
 
                     b.Property<string>("FileName")
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("ManagerEmployeeId")
+                        .HasColumnType("int");
 
                     b.Property<bool>("Permission")
                         .HasColumnType("bit");
@@ -283,6 +386,8 @@ namespace HR_PROJECT.Persistence.Migrations
                     b.HasKey("Id");
 
                     b.HasIndex("EmployeeId");
+
+                    b.HasIndex("ManagerEmployeeId");
 
                     b.ToTable("Expenses");
 
@@ -313,6 +418,189 @@ namespace HR_PROJECT.Persistence.Migrations
                         });
                 });
 
+            modelBuilder.Entity("HR_PROJECT.Domain.Entities.Manager", b =>
+                {
+                    b.Property<int>("EmployeeId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("EmployeeId"));
+
+                    b.Property<string>("Address")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("BirthPlace")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Company")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("DateOfBirth")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Department")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime?>("EndDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("FirstName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("FirstSurname")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ImagePath")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("IsActive")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("PhoneNumber")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Position")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("SecondName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("SecondSurname")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("StartDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Tc")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("UserId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<decimal>("Wage")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.HasKey("EmployeeId");
+
+                    b.HasIndex("UserId")
+                        .IsUnique()
+                        .HasFilter("[UserId] IS NOT NULL");
+
+                    b.ToTable("Manager");
+
+                    b.HasData(
+                        new
+                        {
+                            EmployeeId = 3,
+                            Address = "Yıldız Mah. Barbaros Bulvarı Beşiktaş/İstanbul",
+                            BirthPlace = "Florence/Italy",
+                            Company = "Amazon Inc.",
+                            DateOfBirth = new DateTime(1990, 8, 15, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Department = "Technology and Strategy",
+                            Email = "leonardo.davinci@bilgeadam.com",
+                            FirstName = "Leonardo",
+                            FirstSurname = "Da Vinci",
+                            ImagePath = "file.jpg",
+                            IsActive = true,
+                            PhoneNumber = "5075217896",
+                            Position = "IT Manager",
+                            StartDate = new DateTime(2015, 12, 26, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Tc = "54696378921",
+                            UserId = "29eee336-e6a2-40f2-9305-159eed59ed75",
+                            Wage = 156245m
+                        });
+                });
+
+            modelBuilder.Entity("HR_PROJECT.Domain.Entities.Permission", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("ApprovalStatus")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("EmployeeId")
+                        .IsRequired()
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("EndDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("FileName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("IsApproved")
+                        .HasColumnType("bit");
+
+                    b.Property<int?>("ManagerEmployeeId")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("NumberOfDays")
+                        .HasColumnType("int");
+
+                    b.Property<string>("PermissionType")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("RequestDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("StartDate")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("EmployeeId");
+
+                    b.HasIndex("ManagerEmployeeId");
+
+                    b.ToTable("Permissions");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            ApprovalStatus = "Onay bekleniyor",
+                            EmployeeId = 1,
+                            EndDate = new DateTime(2024, 3, 24, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            IsApproved = false,
+                            NumberOfDays = 10,
+                            PermissionType = "Baba izni",
+                            RequestDate = new DateTime(2024, 3, 19, 21, 30, 17, 663, DateTimeKind.Local).AddTicks(164),
+                            StartDate = new DateTime(2024, 3, 14, 0, 0, 0, 0, DateTimeKind.Unspecified)
+                        },
+                        new
+                        {
+                            Id = 2,
+                            ApprovalStatus = "Onay bekleniyor",
+                            EmployeeId = 1,
+                            EndDate = new DateTime(2024, 4, 15, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            IsApproved = false,
+                            NumberOfDays = 30,
+                            PermissionType = "Annelik izni",
+                            RequestDate = new DateTime(2024, 3, 19, 21, 30, 17, 663, DateTimeKind.Local).AddTicks(183),
+                            StartDate = new DateTime(2024, 3, 15, 0, 0, 0, 0, DateTimeKind.Unspecified)
+                        });
+                });
+
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
                 {
                     b.Property<string>("Id")
@@ -338,6 +626,20 @@ namespace HR_PROJECT.Persistence.Migrations
                         .HasFilter("[NormalizedName] IS NOT NULL");
 
                     b.ToTable("AspNetRoles", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            Id = "f6040633-db1b-4a48-be54-9f214e77ac9d",
+                            Name = "employee",
+                            NormalizedName = "EMPLOYEE"
+                        },
+                        new
+                        {
+                            Id = "f7deff55-ad53-4946-bce3-1208ff6c52e7",
+                            Name = "manager",
+                            NormalizedName = "MANAGER"
+                        });
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -425,6 +727,23 @@ namespace HR_PROJECT.Persistence.Migrations
                     b.HasIndex("RoleId");
 
                     b.ToTable("AspNetUserRoles", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            UserId = "29eee336-e6a2-40f2-9305-159eed59ed75",
+                            RoleId = "f7deff55-ad53-4946-bce3-1208ff6c52e7"
+                        },
+                        new
+                        {
+                            UserId = "df5a9b38-18e8-48b7-97bf-ad4a9b4afe0e",
+                            RoleId = "f6040633-db1b-4a48-be54-9f214e77ac9d"
+                        },
+                        new
+                        {
+                            UserId = "29eee336-e6a2-40f2-9305-159eed59ed75",
+                            RoleId = "f6040633-db1b-4a48-be54-9f214e77ac9d"
+                        });
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<string>", b =>
@@ -446,6 +765,21 @@ namespace HR_PROJECT.Persistence.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
+            modelBuilder.Entity("HR_PROJECT.Domain.Entities.Advance", b =>
+                {
+                    b.HasOne("HR_PROJECT.Domain.Entities.Employee", "Employee")
+                        .WithMany("Advances")
+                        .HasForeignKey("EmployeeId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("HR_PROJECT.Domain.Entities.Manager", null)
+                        .WithMany("Advances")
+                        .HasForeignKey("ManagerEmployeeId");
+
+                    b.Navigation("Employee");
+                });
+
             modelBuilder.Entity("HR_PROJECT.Domain.Entities.Employee", b =>
                 {
                     b.HasOne("HR_PROJECT.Domain.Entities.ApplicationUser", "User")
@@ -462,6 +796,34 @@ namespace HR_PROJECT.Persistence.Migrations
                         .HasForeignKey("EmployeeId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.HasOne("HR_PROJECT.Domain.Entities.Manager", null)
+                        .WithMany("Expenses")
+                        .HasForeignKey("ManagerEmployeeId");
+
+                    b.Navigation("Employee");
+                });
+
+            modelBuilder.Entity("HR_PROJECT.Domain.Entities.Manager", b =>
+                {
+                    b.HasOne("HR_PROJECT.Domain.Entities.ApplicationUser", "User")
+                        .WithOne("Manager")
+                        .HasForeignKey("HR_PROJECT.Domain.Entities.Manager", "UserId");
+
+                    b.Navigation("User");
+                });
+
+            modelBuilder.Entity("HR_PROJECT.Domain.Entities.Permission", b =>
+                {
+                    b.HasOne("HR_PROJECT.Domain.Entities.Employee", "Employee")
+                        .WithMany("Permissions")
+                        .HasForeignKey("EmployeeId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("HR_PROJECT.Domain.Entities.Manager", null)
+                        .WithMany("Permissions")
+                        .HasForeignKey("ManagerEmployeeId");
 
                     b.Navigation("Employee");
                 });
@@ -519,13 +881,27 @@ namespace HR_PROJECT.Persistence.Migrations
 
             modelBuilder.Entity("HR_PROJECT.Domain.Entities.ApplicationUser", b =>
                 {
-                    b.Navigation("Employee")
-                        .IsRequired();
+                    b.Navigation("Employee");
+
+                    b.Navigation("Manager");
                 });
 
             modelBuilder.Entity("HR_PROJECT.Domain.Entities.Employee", b =>
                 {
+                    b.Navigation("Advances");
+
                     b.Navigation("Expenses");
+
+                    b.Navigation("Permissions");
+                });
+
+            modelBuilder.Entity("HR_PROJECT.Domain.Entities.Manager", b =>
+                {
+                    b.Navigation("Advances");
+
+                    b.Navigation("Expenses");
+
+                    b.Navigation("Permissions");
                 });
 #pragma warning restore 612, 618
         }

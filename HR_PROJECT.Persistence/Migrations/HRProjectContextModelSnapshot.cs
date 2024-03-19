@@ -53,6 +53,9 @@ namespace HR_PROJECT.Persistence.Migrations
                     b.Property<int>("EmployeeId")
                         .HasColumnType("int");
 
+                    b.Property<int?>("ManagerEmployeeId")
+                        .HasColumnType("int");
+
                     b.Property<bool>("Permission")
                         .HasColumnType("bit");
 
@@ -65,6 +68,8 @@ namespace HR_PROJECT.Persistence.Migrations
                     b.HasKey("Id");
 
                     b.HasIndex("EmployeeId");
+
+                    b.HasIndex("ManagerEmployeeId");
 
                     b.ToTable("Advances");
 
@@ -125,6 +130,9 @@ namespace HR_PROJECT.Persistence.Migrations
                     b.Property<DateTimeOffset?>("LockoutEnd")
                         .HasColumnType("datetimeoffset");
 
+                    b.Property<int?>("ManagerId")
+                        .HasColumnType("int");
+
                     b.Property<string>("NormalizedEmail")
                         .HasMaxLength(256)
                         .HasColumnType("nvarchar(256)");
@@ -169,18 +177,35 @@ namespace HR_PROJECT.Persistence.Migrations
                         {
                             Id = "df5a9b38-18e8-48b7-97bf-ad4a9b4afe0e",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "ff75d0b1-1a47-40ed-b71e-0011c7dfde88",
+                            ConcurrencyStamp = "fad0de63-5b32-46e1-a81b-5db4d905a161",
                             Email = "sahzod.irgas@bilgeadam.com",
                             EmailConfirmed = false,
                             EmployeeId = 1,
                             LockoutEnabled = false,
                             NormalizedEmail = "SAHZOD.IRGAS@BILGEADAM.COM",
                             NormalizedUserName = "SAHZOD",
-                            PasswordHash = "AQAAAAIAAYagAAAAEMxBm/n5Iddf7j/PM7CZPiXRdNaO4Ybf1bbQv8/wOnQVtKwnBrX7eVw62mghyDQvHQ==",
+                            PasswordHash = "AQAAAAIAAYagAAAAEEtFkZZUY6iSf8zdgKugioZaHzWUWe2aTXvYzyKXJQSomyTJpvg1eYhZt6DITwFBbQ==",
                             PhoneNumberConfirmed = false,
                             SecurityStamp = "",
                             TwoFactorEnabled = false,
                             UserName = "sahzod"
+                        },
+                        new
+                        {
+                            Id = "29eee336-e6a2-40f2-9305-159eed59ed75",
+                            AccessFailedCount = 0,
+                            ConcurrencyStamp = "74ce04e7-684c-4d0f-84c9-7161b8ae5933",
+                            Email = "admin@bilgeadam.com",
+                            EmailConfirmed = false,
+                            LockoutEnabled = false,
+                            ManagerId = 3,
+                            NormalizedEmail = "ADMIN@BILGEADAM.COM",
+                            NormalizedUserName = "ADMIN",
+                            PasswordHash = "AQAAAAIAAYagAAAAEBRiX3jdQskehDysKZd0V3OUeMSjmJGU5otLQqq1VR9QyIw3N7Emqlk7gw5AupXsxg==",
+                            PhoneNumberConfirmed = false,
+                            SecurityStamp = "",
+                            TwoFactorEnabled = false,
+                            UserName = "admin"
                         });
                 });
 
@@ -338,6 +363,9 @@ namespace HR_PROJECT.Persistence.Migrations
                     b.Property<string>("FileName")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int?>("ManagerEmployeeId")
+                        .HasColumnType("int");
+
                     b.Property<bool>("Permission")
                         .HasColumnType("bit");
 
@@ -355,6 +383,8 @@ namespace HR_PROJECT.Persistence.Migrations
                     b.HasKey("Id");
 
                     b.HasIndex("EmployeeId");
+
+                    b.HasIndex("ManagerEmployeeId");
 
                     b.ToTable("Expenses");
 
@@ -385,6 +415,113 @@ namespace HR_PROJECT.Persistence.Migrations
                         });
                 });
 
+            modelBuilder.Entity("HR_PROJECT.Domain.Entities.Manager", b =>
+                {
+                    b.Property<int>("EmployeeId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("EmployeeId"));
+
+                    b.Property<string>("Address")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("BirthPlace")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Company")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("DateOfBirth")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Department")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime?>("EndDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("FirstName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("FirstSurname")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ImagePath")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("IsActive")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("PhoneNumber")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Position")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("SecondName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("SecondSurname")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("StartDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Tc")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("UserId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<decimal>("Wage")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.HasKey("EmployeeId");
+
+                    b.HasIndex("UserId")
+                        .IsUnique()
+                        .HasFilter("[UserId] IS NOT NULL");
+
+                    b.ToTable("Manager");
+
+                    b.HasData(
+                        new
+                        {
+                            EmployeeId = 3,
+                            Address = "Yıldız Mah. Barbaros Bulvarı Beşiktaş/İstanbul",
+                            BirthPlace = "Florence/Italy",
+                            Company = "Amazon Inc.",
+                            DateOfBirth = new DateTime(1990, 8, 15, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Department = "Technology and Strategy",
+                            Email = "leonardo.davinci@bilgeadam.com",
+                            FirstName = "Leonardo",
+                            FirstSurname = "Da Vinci",
+                            ImagePath = "file.jpg",
+                            IsActive = true,
+                            PhoneNumber = "5075217896",
+                            Position = "IT Manager",
+                            StartDate = new DateTime(2015, 12, 26, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Tc = "54696378921",
+                            UserId = "29eee336-e6a2-40f2-9305-159eed59ed75",
+                            Wage = 156245m
+                        });
+                });
+
             modelBuilder.Entity("HR_PROJECT.Domain.Entities.Permission", b =>
                 {
                     b.Property<int>("Id")
@@ -410,6 +547,9 @@ namespace HR_PROJECT.Persistence.Migrations
                     b.Property<bool>("IsApproved")
                         .HasColumnType("bit");
 
+                    b.Property<int?>("ManagerEmployeeId")
+                        .HasColumnType("int");
+
                     b.Property<int?>("NumberOfDays")
                         .HasColumnType("int");
 
@@ -427,6 +567,8 @@ namespace HR_PROJECT.Persistence.Migrations
 
                     b.HasIndex("EmployeeId");
 
+                    b.HasIndex("ManagerEmployeeId");
+
                     b.ToTable("Permissions");
 
                     b.HasData(
@@ -439,7 +581,7 @@ namespace HR_PROJECT.Persistence.Migrations
                             IsApproved = false,
                             NumberOfDays = 10,
                             PermissionType = "Baba izni",
-                            RequestDate = new DateTime(2024, 3, 17, 21, 18, 23, 198, DateTimeKind.Local).AddTicks(8943),
+                            RequestDate = new DateTime(2024, 3, 19, 23, 42, 13, 914, DateTimeKind.Local).AddTicks(2852),
                             StartDate = new DateTime(2024, 3, 14, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
@@ -451,7 +593,7 @@ namespace HR_PROJECT.Persistence.Migrations
                             IsApproved = false,
                             NumberOfDays = 30,
                             PermissionType = "Annelik izni",
-                            RequestDate = new DateTime(2024, 3, 17, 21, 18, 23, 198, DateTimeKind.Local).AddTicks(8958),
+                            RequestDate = new DateTime(2024, 3, 19, 23, 42, 13, 914, DateTimeKind.Local).AddTicks(2870),
                             StartDate = new DateTime(2024, 3, 15, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         });
                 });
@@ -481,6 +623,20 @@ namespace HR_PROJECT.Persistence.Migrations
                         .HasFilter("[NormalizedName] IS NOT NULL");
 
                     b.ToTable("AspNetRoles", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            Id = "f6040633-db1b-4a48-be54-9f214e77ac9d",
+                            Name = "employee",
+                            NormalizedName = "EMPLOYEE"
+                        },
+                        new
+                        {
+                            Id = "f7deff55-ad53-4946-bce3-1208ff6c52e7",
+                            Name = "manager",
+                            NormalizedName = "MANAGER"
+                        });
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -568,6 +724,23 @@ namespace HR_PROJECT.Persistence.Migrations
                     b.HasIndex("RoleId");
 
                     b.ToTable("AspNetUserRoles", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            UserId = "29eee336-e6a2-40f2-9305-159eed59ed75",
+                            RoleId = "f7deff55-ad53-4946-bce3-1208ff6c52e7"
+                        },
+                        new
+                        {
+                            UserId = "df5a9b38-18e8-48b7-97bf-ad4a9b4afe0e",
+                            RoleId = "f6040633-db1b-4a48-be54-9f214e77ac9d"
+                        },
+                        new
+                        {
+                            UserId = "29eee336-e6a2-40f2-9305-159eed59ed75",
+                            RoleId = "f6040633-db1b-4a48-be54-9f214e77ac9d"
+                        });
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<string>", b =>
@@ -597,6 +770,10 @@ namespace HR_PROJECT.Persistence.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.HasOne("HR_PROJECT.Domain.Entities.Manager", null)
+                        .WithMany("Advances")
+                        .HasForeignKey("ManagerEmployeeId");
+
                     b.Navigation("Employee");
                 });
 
@@ -617,7 +794,20 @@ namespace HR_PROJECT.Persistence.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.HasOne("HR_PROJECT.Domain.Entities.Manager", null)
+                        .WithMany("Expenses")
+                        .HasForeignKey("ManagerEmployeeId");
+
                     b.Navigation("Employee");
+                });
+
+            modelBuilder.Entity("HR_PROJECT.Domain.Entities.Manager", b =>
+                {
+                    b.HasOne("HR_PROJECT.Domain.Entities.ApplicationUser", "User")
+                        .WithOne("Manager")
+                        .HasForeignKey("HR_PROJECT.Domain.Entities.Manager", "UserId");
+
+                    b.Navigation("User");
                 });
 
             modelBuilder.Entity("HR_PROJECT.Domain.Entities.Permission", b =>
@@ -627,6 +817,10 @@ namespace HR_PROJECT.Persistence.Migrations
                         .HasForeignKey("EmployeeId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.HasOne("HR_PROJECT.Domain.Entities.Manager", null)
+                        .WithMany("Permissions")
+                        .HasForeignKey("ManagerEmployeeId");
 
                     b.Navigation("Employee");
                 });
@@ -684,11 +878,21 @@ namespace HR_PROJECT.Persistence.Migrations
 
             modelBuilder.Entity("HR_PROJECT.Domain.Entities.ApplicationUser", b =>
                 {
-                    b.Navigation("Employee")
-                        .IsRequired();
+                    b.Navigation("Employee");
+
+                    b.Navigation("Manager");
                 });
 
             modelBuilder.Entity("HR_PROJECT.Domain.Entities.Employee", b =>
+                {
+                    b.Navigation("Advances");
+
+                    b.Navigation("Expenses");
+
+                    b.Navigation("Permissions");
+                });
+
+            modelBuilder.Entity("HR_PROJECT.Domain.Entities.Manager", b =>
                 {
                     b.Navigation("Advances");
 

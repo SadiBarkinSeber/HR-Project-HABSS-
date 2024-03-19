@@ -3,6 +3,7 @@ using HR_PROJECT.Application.Features.CQRS.Handlers.EmployeeHandlers.Write;
 using HR_PROJECT.Application.Features.CQRS.Handlers.ExpenseHandlers.Read;
 using HR_PROJECT.Application.Features.CQRS.Handlers.ExpenseHandlers.Write;
 using HR_PROJECT.Application.Features.CQRS.Queries.ExpenseQueries;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -10,6 +11,7 @@ namespace HR_PROJECT.WebAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize]
     public class ExpensesController : ControllerBase
     {
         #region Expense Handlers
@@ -39,6 +41,7 @@ namespace HR_PROJECT.WebAPI.Controllers
 
         #region Read Methods
 
+        [Authorize(Roles = "manager")]
         [HttpGet]
         public async Task<IActionResult> GetExpenses()
         {
@@ -46,6 +49,7 @@ namespace HR_PROJECT.WebAPI.Controllers
             return Ok(values);
         }
 
+        [Authorize(Roles = "manager")]
         [HttpGet("{id}")]
         public async Task<IActionResult> GetExpenseById(int id)
         {
@@ -53,6 +57,7 @@ namespace HR_PROJECT.WebAPI.Controllers
             return Ok(value);
         }
 
+        [Authorize(Roles = "employee")]
         [HttpGet("{employeeId}/byEmployee")]
         public async Task<IActionResult> GetExpensesByEmployee(int employeeId)
         {
@@ -72,6 +77,7 @@ namespace HR_PROJECT.WebAPI.Controllers
 
         #region Write Methods
 
+        [Authorize(Roles = "employee")]
         [HttpPost]
         public async Task<IActionResult> CreateExpense(CreateExpenseCommand command)
         {
@@ -79,6 +85,7 @@ namespace HR_PROJECT.WebAPI.Controllers
             return Ok("Harcama bilgisi eklendi.");
         }
 
+        [Authorize(Roles = "manager")]
         [HttpDelete]
         public async Task<IActionResult> RemoveExpense(int id)
         {
@@ -86,6 +93,7 @@ namespace HR_PROJECT.WebAPI.Controllers
             return Ok("Harcama bilgisi silindi.");
         }
 
+        [Authorize(Roles = "manager")]
         [HttpPut]
         public async Task<IActionResult> UpdateExpense(UpdateExpenseCommand command)
         {

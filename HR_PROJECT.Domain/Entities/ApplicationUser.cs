@@ -10,6 +10,8 @@ namespace HR_PROJECT.Domain.Entities
     public class ApplicationUser : IdentityUser
     {
         public int? EmployeeId { get; set; }
-        public Employee Employee { get; set; }
+        public Employee? Employee { get; set; }
+        public int? ManagerId { get; set; }
+        public Manager? Manager { get; set; }
     }
 }
