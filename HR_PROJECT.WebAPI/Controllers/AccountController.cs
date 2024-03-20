@@ -1,5 +1,6 @@
 ﻿using HR_PROJECT.Domain.Entities;
 using HR_PROJECT.WebAPI.DTOs.ApplicationUserDTOs;
+using HR_PROJECT.WebAPI.Services;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
@@ -16,52 +17,38 @@ namespace HR_PROJECT.WebAPI.Controllers
     public class AccountController : ControllerBase
     {
 
-        private readonly SignInManager<ApplicationUser> _signInManager;
-        private IConfiguration _config;
+        private readonly IAuthService authService;
+        private readonly ILogger<AccountController> logger;
 
-        public AccountController(SignInManager<ApplicationUser> signInManager, IConfiguration config)
+        public AccountController(ILogger<AccountController> logger, IAuthService authService)
         {
-            _signInManager = signInManager;
-            _config = config;
+            this.logger = logger;
+            this.authService = authService;
         }
 
         [AllowAnonymous]
         [HttpPost]
-        public async Task<IActionResult> Login([FromBody] LoginApplicationUserDTO dto)
+        public async Task<IActionResult> Login(LoginApplicationUserDTO dto)
         {
-            #region Login Validation
-            if (string.IsNullOrEmpty(dto.UserName) || string.IsNullOrEmpty(dto.Password))
+            try
             {
-                return BadRequest("Kullanıcı adı ve şifre gerekli.");
+                if (!ModelState.IsValid)
+                {
+                    return BadRequest("Invalid payload");
+                }
+                var (status, message) = await authService.Login(dto);
+                if (status == 0)
+                {
+                    return BadRequest(message);
+                }
+                return Ok(message);
+                
             }
-            #endregion
-
-            #region Login Authentication
-            var result = await _signInManager.PasswordSignInAsync(dto.UserName, dto.Password, false, false);
-            if (!result.Succeeded)
+            catch (Exception ex)
             {
-                return BadRequest("Kullanıcı adı veya şifre yanlış.");
+                logger.LogError(ex.Message);
+                return StatusCode(StatusCodes.Status500InternalServerError, ex.Message);
             }
-            #endregion
-
-            #region Jwt Authentication 
-
-            var securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_config["Jwt:Key"]));
-            var credentials = new SigningCredentials(securityKey, SecurityAlgorithms.HmacSha256);
-
-            var Sectoken = new JwtSecurityToken(_config["Jwt:Issuer"],
-                _config["Jwt:Issuer"],
-                null,
-                expires: DateTime.Now.AddMinutes(120),
-                signingCredentials: credentials);
-
-            var token = new JwtSecurityTokenHandler().WriteToken(Sectoken);
-
-            return Ok(token);
-
-
-
-            #endregion
         }
     }
 }
