@@ -177,14 +177,14 @@ namespace HR_PROJECT.Persistence.Migrations
                         {
                             Id = "df5a9b38-18e8-48b7-97bf-ad4a9b4afe0e",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "fad0de63-5b32-46e1-a81b-5db4d905a161",
+                            ConcurrencyStamp = "4cbd3132-fe7c-46ec-87e9-9d645e174ff8",
                             Email = "sahzod.irgas@bilgeadam.com",
                             EmailConfirmed = false,
                             EmployeeId = 1,
                             LockoutEnabled = false,
                             NormalizedEmail = "SAHZOD.IRGAS@BILGEADAM.COM",
                             NormalizedUserName = "SAHZOD",
-                            PasswordHash = "AQAAAAIAAYagAAAAEEtFkZZUY6iSf8zdgKugioZaHzWUWe2aTXvYzyKXJQSomyTJpvg1eYhZt6DITwFBbQ==",
+                            PasswordHash = "AQAAAAIAAYagAAAAEDeix3A6tu50JL2DwmI0nT8HV6kHfmTSLkn1yU8W/odA9WLSv0Tu9dbbN/HZlkRzOg==",
                             PhoneNumberConfirmed = false,
                             SecurityStamp = "",
                             TwoFactorEnabled = false,
@@ -194,14 +194,14 @@ namespace HR_PROJECT.Persistence.Migrations
                         {
                             Id = "29eee336-e6a2-40f2-9305-159eed59ed75",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "74ce04e7-684c-4d0f-84c9-7161b8ae5933",
+                            ConcurrencyStamp = "6bddc2d1-e6db-4083-9e1f-11f4c15fea82",
                             Email = "admin@bilgeadam.com",
                             EmailConfirmed = false,
                             LockoutEnabled = false,
                             ManagerId = 3,
                             NormalizedEmail = "ADMIN@BILGEADAM.COM",
                             NormalizedUserName = "ADMIN",
-                            PasswordHash = "AQAAAAIAAYagAAAAEBRiX3jdQskehDysKZd0V3OUeMSjmJGU5otLQqq1VR9QyIw3N7Emqlk7gw5AupXsxg==",
+                            PasswordHash = "AQAAAAIAAYagAAAAEAkNGx7BQ45vFaO/ewqCvVsxbemSvhhnn5sYGU8V4qK6WyKgrL1w1JU6SS5asXIy2g==",
                             PhoneNumberConfirmed = false,
                             SecurityStamp = "",
                             TwoFactorEnabled = false,
@@ -581,7 +581,7 @@ namespace HR_PROJECT.Persistence.Migrations
                             IsApproved = false,
                             NumberOfDays = 10,
                             PermissionType = "Baba izni",
-                            RequestDate = new DateTime(2024, 3, 19, 23, 42, 13, 914, DateTimeKind.Local).AddTicks(2852),
+                            RequestDate = new DateTime(2024, 3, 20, 19, 23, 49, 15, DateTimeKind.Local).AddTicks(3368),
                             StartDate = new DateTime(2024, 3, 14, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
@@ -593,7 +593,7 @@ namespace HR_PROJECT.Persistence.Migrations
                             IsApproved = false,
                             NumberOfDays = 30,
                             PermissionType = "Annelik izni",
-                            RequestDate = new DateTime(2024, 3, 19, 23, 42, 13, 914, DateTimeKind.Local).AddTicks(2870),
+                            RequestDate = new DateTime(2024, 3, 20, 19, 23, 49, 15, DateTimeKind.Local).AddTicks(3388),
                             StartDate = new DateTime(2024, 3, 15, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         });
                 });
