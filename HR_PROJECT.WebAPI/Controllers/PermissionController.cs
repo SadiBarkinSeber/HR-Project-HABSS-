@@ -17,7 +17,7 @@ namespace HR_PROJECT.WebAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    [Authorize]
+    //[Authorize]
     public class PermissionController : ControllerBase
     {
         #region Permission Handlers
@@ -45,7 +45,7 @@ namespace HR_PROJECT.WebAPI.Controllers
 
         #region Read Methods
 
-        [Authorize(Roles = "employee")]
+        //[Authorize(Roles = "employee")]
         [HttpGet("{employeeId}/byEmployee")]
         public async Task<IActionResult> GetPermissionsByEmployee(int employeeId)
         {
@@ -53,7 +53,7 @@ namespace HR_PROJECT.WebAPI.Controllers
             return Ok(value);
         }
 
-        [Authorize(Roles = "manager")]
+        //[Authorize(Roles = "manager")]
         [HttpGet]
         public async Task<IActionResult> GetPermissions()
         {
@@ -65,7 +65,7 @@ namespace HR_PROJECT.WebAPI.Controllers
 
         #region Write Methods
 
-        [Authorize(Roles = "employee")]
+        //[Authorize(Roles = "employee")]
         [HttpPost]
         public async Task<IActionResult> CreatePermission(CreatePermissionCommand command)
         {
@@ -73,7 +73,7 @@ namespace HR_PROJECT.WebAPI.Controllers
             return Ok("Izin talebi basarili bir sekilde gonderildi.");
         }
 
-        [Authorize(Roles = "manager")]
+        //[Authorize(Roles = "manager")]
         [HttpDelete]
         public async Task<IActionResult> RemovePermission(int id)
         {
@@ -81,7 +81,7 @@ namespace HR_PROJECT.WebAPI.Controllers
             return Ok("Izin talebi basarili bir sekilde  silindi.");
         }
 
-        [Authorize(Roles = "manager")]
+        //[Authorize(Roles = "manager")]
         [HttpPut]
         public async Task<IActionResult> UpdatePermission(UpdatePermissionCommand command)
         {

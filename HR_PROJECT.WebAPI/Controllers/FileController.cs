@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace HR_PROJECT.WebAPI.Controllers
 {
-    [Authorize]
+    //[Authorize]
     [Route("api/[controller]")]
     [ApiController]
     public class FileController : ControllerBase

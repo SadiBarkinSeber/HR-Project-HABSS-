@@ -10,7 +10,7 @@ namespace HR_PROJECT.WebAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    [Authorize]
+    //[Authorize]
     public class EmployeesController : ControllerBase
     {
         #region Employee Handlers
@@ -36,7 +36,7 @@ namespace HR_PROJECT.WebAPI.Controllers
 
         #region Read Methods
 
-        [Authorize(Roles = "manager")]
+        //[Authorize(Roles = "manager")]
         [HttpGet]
         public async Task<IActionResult> EmployeeList()
         {
@@ -45,7 +45,7 @@ namespace HR_PROJECT.WebAPI.Controllers
             return Ok(values);
         }
 
-        [Authorize(Roles = "employee")]
+        //[Authorize(Roles = "employee")]
         [HttpGet("{id}")]
         public async Task<IActionResult> GetEmployee(int id)
         {
@@ -56,7 +56,7 @@ namespace HR_PROJECT.WebAPI.Controllers
 
         #region Write Methods
 
-        [Authorize(Roles = "manager")]
+        //[Authorize(Roles = "manager")]
         [HttpPost]
         public async Task<IActionResult> CreateEmployee(CreateEmployeeCommand command)
         {
@@ -64,7 +64,7 @@ namespace HR_PROJECT.WebAPI.Controllers
             return Ok("Çalışan bilgileri eklendi.");    
         }
 
-        [Authorize(Roles = "manager")]
+        //[Authorize(Roles = "manager")]
         [HttpDelete]
         public async Task<IActionResult> RemoveEmployee(int id)
         {
@@ -73,7 +73,7 @@ namespace HR_PROJECT.WebAPI.Controllers
             return Ok("Çalışan silindi.");
         }
 
-        [Authorize(Roles = "manager")]
+        //[Authorize(Roles = "manager")]
         [HttpPut]
         public async Task<IActionResult> UpdateEmployee(UpdateEmployeeCommand command)
         {
