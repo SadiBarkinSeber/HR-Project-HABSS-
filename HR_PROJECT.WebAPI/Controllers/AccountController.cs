@@ -12,10 +12,12 @@ namespace HR_PROJECT.WebAPI.Controllers
     {
 
         private readonly SignInManager<ApplicationUser> _signInManager;
+        private readonly UserManager<ApplicationUser> _userManager; 
 
-        public AccountController(SignInManager<ApplicationUser> signInManager)
+        public AccountController(SignInManager<ApplicationUser> signInManager, UserManager<ApplicationUser> userManager) 
         {
             _signInManager = signInManager;
+            _userManager = userManager; 
         }
 
         [HttpPost]
@@ -37,6 +39,20 @@ namespace HR_PROJECT.WebAPI.Controllers
                 return Unauthorized("Kullanıcı adı veya şifre yanlış.");
             }
             
+        }
+
+        [HttpPost("check-email")]
+        public async Task<IActionResult> CheckEmailExists(string email)
+        {
+            var user = await _userManager.FindByEmailAsync(email);
+            if (user != null)
+            {
+                return Ok(new { exists = true });
+            }
+            else
+            {
+                return Ok(new { exists = false });
+            }
         }
     }
 }
