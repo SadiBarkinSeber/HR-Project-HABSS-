@@ -60,32 +60,34 @@ namespace HR_PROJECT.WebAPI.Controllers
             var user = await _userManager.FindByEmailAsync(email);
             if (user == null)
             {
-                return BadRequest("Bu e-posta adresi ile ilişkili bir hesap bulunamadı.");
+                return NotFound("Bu e-posta adresi ile ilişkili bir hesap bulunamadı.");
             }
 
             var token = await _userManager.GeneratePasswordResetTokenAsync(user);
 
+            var tokenEncoded = WebUtility.UrlEncode(token);
+            var resetPasswordLink = $"https://comforting-marzipan-f52585.netlify.app/resetpassword?email={email}&token={tokenEncoded}";
+
             var mailMessage = new MailMessage
             {
-                From = new MailAddress("your@email.com"),
+                From = new MailAddress("habss.hr@gmail.com"),
                 Subject = "Şifre Sıfırlama",
-                Body = $"Şifrenizi sıfırlamak için bu bağlantıyı kullanın: http://www.example.com/resetpassword?email={email}&token={token}",
-                IsBodyHtml = true, 
+                Body = $"Şifrenizi sıfırlamak için bu bağlantıyı kullanın: {resetPasswordLink}",
+                IsBodyHtml = true,
             };
+
             mailMessage.To.Add(email);
 
-            using (var smtpClient = new SmtpClient("mail.example.com"))
+            using (var smtpClient = new SmtpClient("smtp.gmail.com"))
             {
                 smtpClient.Port = 587;
-                smtpClient.Credentials = new NetworkCredential("username", "password");
+                smtpClient.Credentials = new NetworkCredential("habss.hr@gmail.com", "Habss123.");
                 smtpClient.EnableSsl = true;
-               
+
                 await smtpClient.SendMailAsync(mailMessage);
             }
 
-            return Ok("Dogrulama kodu basarili bir sekilde gonderildi.");
+            return Ok("Doğrulama kodu başarılı bir şekilde gönderildi.");
         }
-
-
     }
 }
