@@ -54,38 +54,40 @@ namespace HR_PROJECT.WebAPI.Controllers
             }
         }
 
+        [AllowAnonymous]
         [HttpPost("resetpassword")]
         public async Task<IActionResult> ResetPassword(string email)
         {
             var user = await _userManager.FindByEmailAsync(email);
             if (user == null)
             {
-                return BadRequest("Bu e-posta adresi ile ilişkili bir hesap bulunamadı.");
+                return NotFound("Bu e-posta adresi ile ilişkili bir hesap bulunamadı.");
             }
 
             var token = await _userManager.GeneratePasswordResetTokenAsync(user);
 
+            var resetPasswordLink = $"https://comforting-marzipan-f52585.netlify.app/resetpassword?email={email}&token={WebUtility.UrlEncode(token)}";
+
             var mailMessage = new MailMessage
             {
-                From = new MailAddress("your@email.com"),
+                From = new MailAddress("habss.hr@gmail.com"),
                 Subject = "Şifre Sıfırlama",
-                Body = $"Şifrenizi sıfırlamak için bu bağlantıyı kullanın: http://www.example.com/resetpassword?email={email}&token={token}",
-                IsBodyHtml = true, 
+                Body = $"Şifrenizi sıfırlamak için bu bağlantıyı kullanın: {resetPasswordLink}",
+                IsBodyHtml = true,
             };
-            mailMessage.To.Add(email);
+            mailMessage.To.Add("azizogluharun@gmail.com");
 
-            using (var smtpClient = new SmtpClient("mail.example.com"))
+            using (var smtpClient = new SmtpClient("smtp.gmail.com"))
             {
                 smtpClient.Port = 587;
-                smtpClient.Credentials = new NetworkCredential("username", "password");
+                smtpClient.Credentials = new NetworkCredential("habss.hr@gmail.com", "mvwo msab napt efvc");
                 smtpClient.EnableSsl = true;
-               
+
                 await smtpClient.SendMailAsync(mailMessage);
             }
 
-            return Ok("Dogrulama kodu basarili bir sekilde gonderildi.");
+            return Ok("Doğrulama kodu başarılı bir şekilde gönderildi.");
         }
-
 
     }
 }
