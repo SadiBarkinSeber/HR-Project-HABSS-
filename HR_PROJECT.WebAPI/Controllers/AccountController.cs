@@ -15,7 +15,7 @@ namespace HR_PROJECT.WebAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    [Authorize]
+    //[Authorize]
     public class AccountController : ControllerBase
     {
         private readonly UserManager<ApplicationUser> _userManager;
@@ -54,7 +54,7 @@ namespace HR_PROJECT.WebAPI.Controllers
             }
         }
 
-        [HttpPost]
+        [HttpPost("resetpassword")]
         public async Task<IActionResult> ResetPassword(string email)
         {
             var user = await _userManager.FindByEmailAsync(email);

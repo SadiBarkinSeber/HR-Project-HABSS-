@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace HR_PROJECT.Persistence.Migrations
 {
     /// <inheritdoc />
-    public partial class initRoleOps : Migration
+    public partial class init : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -238,15 +238,16 @@ namespace HR_PROJECT.Persistence.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
+                    ApprovalStatus = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Response = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Permission = table.Column<bool>(type: "bit", nullable: false),
                     AdvanceType = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Amount = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
-                    ApprovalStatus = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    AmountValue = table.Column<decimal>(type: "decimal(18,2)", nullable: true),
                     RequestDate = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    Response = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Currency = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Permission = table.Column<bool>(type: "bit", nullable: false),
                     EmployeeId = table.Column<int>(type: "int", nullable: false),
-                    Description = table.Column<string>(type: "nvarchar(200)", maxLength: 200, nullable: false),
+                    Currency = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Description = table.Column<string>(type: "nvarchar(500)", maxLength: 500, nullable: false),
                     ManagerEmployeeId = table.Column<int>(type: "int", nullable: true)
                 },
                 constraints: table =>
@@ -271,15 +272,16 @@ namespace HR_PROJECT.Persistence.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Type = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    ExpenseType = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Amount = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
                     ApprovalStatus = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     RequestDate = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    Response = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Response = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Currency = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Permission = table.Column<bool>(type: "bit", nullable: false),
                     EmployeeId = table.Column<int>(type: "int", nullable: false),
                     FileName = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    AmountValue = table.Column<decimal>(type: "decimal(18,2)", nullable: true),
                     ManagerEmployeeId = table.Column<int>(type: "int", nullable: true)
                 },
                 constraints: table =>
@@ -332,41 +334,22 @@ namespace HR_PROJECT.Persistence.Migrations
                 });
 
             migrationBuilder.InsertData(
-                table: "AspNetRoles",
-                columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
-                values: new object[,]
-                {
-                    { "f6040633-db1b-4a48-be54-9f214e77ac9d", null, "employee", "EMPLOYEE" },
-                    { "f7deff55-ad53-4946-bce3-1208ff6c52e7", null, "manager", "MANAGER" }
-                });
-
-            migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "EmployeeId", "LockoutEnabled", "LockoutEnd", "ManagerId", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
                 values: new object[,]
                 {
-                    { "29eee336-e6a2-40f2-9305-159eed59ed75", 0, "c7d1dec2-fdbd-48e6-ba70-313c8ba30082", "admin@bilgeadam.com", false, null, false, null, 3, "ADMIN@BILGEADAM.COM", "ADMIN", "AQAAAAIAAYagAAAAEEfMJiROmYA8jeXEMBnEYeUqKd+15JKNYRHLASO70U1GFbrpqVXGpeGuGxfDL9Vojg==", null, false, "", false, "admin" },
-                    { "df5a9b38-18e8-48b7-97bf-ad4a9b4afe0e", 0, "0d79b9d4-623c-420d-86a0-5bb5ad81c68c", "sahzod.irgas@bilgeadam.com", false, 1, false, null, null, "SAHZOD.IRGAS@BILGEADAM.COM", "SAHZOD", "AQAAAAIAAYagAAAAEJ+o0VVdoXUNOjCnkZqWQJffZloxB7H+3YRcwth6/UxZFdPBc9n0ho8jcowmfQpBfg==", null, false, "", false, "sahzod" }
+                    { "29eee336-e6a2-40f2-9305-159eed59ed75", 0, "40c3c4c4-eb7c-48da-8ebc-edca429c3f89", "admin@bilgeadam.com", false, null, false, null, 3, "ADMIN@BILGEADAM.COM", "ADMIN", "AQAAAAIAAYagAAAAEJQW8pxrCw5f9fYwPMDpHxYmggWsl4fWCpsYI5Ui7KRlHNyCCmqtC8XZu5kFcp0/4w==", null, false, "", false, "admin" },
+                    { "df5a9b38-18e8-48b7-97bf-ad4a9b4afe0e", 0, "7079e1ef-2439-4314-8a7c-4b752e719975", "sahzod.irgas@bilgeadam.com", false, 1, false, null, null, "SAHZOD.IRGAS@BILGEADAM.COM", "SAHZOD", "AQAAAAIAAYagAAAAEEgKjknnFSnP7qebzwktwoWK9hEVIUlqdl3VaFgEplVu4cA2qhpy0lEfkFuSBC1jZg==", null, false, "", false, "sahzod" }
                 });
 
             migrationBuilder.InsertData(
                 table: "Employees",
                 columns: new[] { "EmployeeId", "Address", "BirthPlace", "Company", "DateOfBirth", "Department", "Email", "EndDate", "FirstName", "FirstSurname", "ImagePath", "IsActive", "PhoneNumber", "Position", "SecondName", "SecondSurname", "StartDate", "Tc", "UserId", "Wage" },
-                values: new object[] { 2, "Ayvansaray Mah. Şemsi Paşa Sokak Fatih/İstanbul", "London/Great Britain", "Koç Group", new DateTime(1996, 8, 16, 0, 0, 0, 0, DateTimeKind.Unspecified), "IT", "jane.doe@bilgeadam.com", new DateTime(2023, 9, 14, 0, 0, 0, 0, DateTimeKind.Unspecified), "Jane", "Doe", "/Images/jane_doe.jpg", false, "5085234563", "Lead Architect", "Margaret", "Thatcher", new DateTime(2020, 7, 28, 0, 0, 0, 0, DateTimeKind.Unspecified), "78952612374", null, 63951m });
-
-            migrationBuilder.InsertData(
-                table: "AspNetUserRoles",
-                columns: new[] { "RoleId", "UserId" },
                 values: new object[,]
                 {
-                    { "f7deff55-ad53-4946-bce3-1208ff6c52e7", "29eee336-e6a2-40f2-9305-159eed59ed75" },
-                    { "f6040633-db1b-4a48-be54-9f214e77ac9d", "df5a9b38-18e8-48b7-97bf-ad4a9b4afe0e" }
+                    { 2, "Ayvansaray Mah. Şemsi Paşa Sokak Fatih/İstanbul", "London/Great Britain", "Koç Group", new DateTime(1996, 8, 16, 0, 0, 0, 0, DateTimeKind.Unspecified), "IT", "jane.doe@bilgeadam.com", new DateTime(2023, 9, 14, 0, 0, 0, 0, DateTimeKind.Unspecified), "Jane", "Doe", "/Images/jane_doe.jpg", false, "5085234563", "Lead Architect", "Margaret", "Thatcher", new DateTime(2020, 7, 28, 0, 0, 0, 0, DateTimeKind.Unspecified), "78952612374", null, 63951m },
+                    { 1, "19 Mayıs Mah. Halit Paşa Cad. Şişli/İstanbul", "Antalya/Türkiye", "Amazon Inc.", new DateTime(1995, 6, 21, 0, 0, 0, 0, DateTimeKind.Unspecified), "Technology and Strategy", "john.doe@bilgeadam.com", null, "John", "Doe", "/Images/john_doe.jpg", true, "5417896325", "Director", null, null, new DateTime(2017, 3, 25, 0, 0, 0, 0, DateTimeKind.Unspecified), "19586478952", "df5a9b38-18e8-48b7-97bf-ad4a9b4afe0e", 95489m }
                 });
-
-            migrationBuilder.InsertData(
-                table: "Employees",
-                columns: new[] { "EmployeeId", "Address", "BirthPlace", "Company", "DateOfBirth", "Department", "Email", "EndDate", "FirstName", "FirstSurname", "ImagePath", "IsActive", "PhoneNumber", "Position", "SecondName", "SecondSurname", "StartDate", "Tc", "UserId", "Wage" },
-                values: new object[] { 1, "19 Mayıs Mah. Halit Paşa Cad. Şişli/İstanbul", "Antalya/Türkiye", "Amazon Inc.", new DateTime(1995, 6, 21, 0, 0, 0, 0, DateTimeKind.Unspecified), "Technology and Strategy", "john.doe@bilgeadam.com", null, "John", "Doe", "/Images/john_doe.jpg", true, "5417896325", "Director", null, null, new DateTime(2017, 3, 25, 0, 0, 0, 0, DateTimeKind.Unspecified), "19586478952", "df5a9b38-18e8-48b7-97bf-ad4a9b4afe0e", 95489m });
 
             migrationBuilder.InsertData(
                 table: "Manager",
@@ -375,20 +358,20 @@ namespace HR_PROJECT.Persistence.Migrations
 
             migrationBuilder.InsertData(
                 table: "Advances",
-                columns: new[] { "Id", "AdvanceType", "Amount", "ApprovalStatus", "Currency", "Description", "EmployeeId", "ManagerEmployeeId", "Permission", "RequestDate", "Response" },
+                columns: new[] { "Id", "AdvanceType", "Amount", "AmountValue", "ApprovalStatus", "Currency", "Description", "EmployeeId", "ManagerEmployeeId", "Permission", "RequestDate", "Response" },
                 values: new object[,]
                 {
-                    { 1, "Bireysel", 5631.45m, "Pending", "TL", "Araba alıcam", 1, null, false, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "Please provide necessary documents." },
-                    { 2, "Kurumsal", 6592.45m, "Approved", "TL", "Motor alıcam", 1, null, true, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "Request have been approved." }
+                    { 1, "Bireysel", 5631.45m, null, "Pending", "TL", "Araba alıcam", 1, null, false, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "Please provide necessary documents." },
+                    { 2, "Kurumsal", 6592.45m, null, "Approved", "TL", "Motor alıcam", 1, null, true, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "Request have been approved." }
                 });
 
             migrationBuilder.InsertData(
                 table: "Expenses",
-                columns: new[] { "Id", "Amount", "ApprovalStatus", "Currency", "EmployeeId", "FileName", "ManagerEmployeeId", "Permission", "RequestDate", "Response", "Type" },
+                columns: new[] { "Id", "Amount", "AmountValue", "ApprovalStatus", "Currency", "EmployeeId", "ExpenseType", "FileName", "ManagerEmployeeId", "Permission", "RequestDate", "Response" },
                 values: new object[,]
                 {
-                    { 1, 5631.45m, "Pending", "TL", 1, null, null, false, new DateTime(2024, 3, 14, 0, 0, 0, 0, DateTimeKind.Unspecified), "Please provide necessary documents.", "İş Seyahati" },
-                    { 2, 6592.45m, "Approved", "TL", 1, null, null, true, new DateTime(2024, 3, 10, 0, 0, 0, 0, DateTimeKind.Unspecified), "Request have been approved.", "Yemek Gideri" }
+                    { 1, 5631.45m, null, "Pending", "TL", 1, "İş Seyahatleri", null, null, false, new DateTime(2024, 3, 14, 0, 0, 0, 0, DateTimeKind.Unspecified), "Please provide necessary documents." },
+                    { 2, 6592.45m, null, "Approved", "TL", 1, "Personel Harcamaları", null, null, true, new DateTime(2024, 3, 10, 0, 0, 0, 0, DateTimeKind.Unspecified), "Request have been approved." }
                 });
 
             migrationBuilder.InsertData(
@@ -396,8 +379,8 @@ namespace HR_PROJECT.Persistence.Migrations
                 columns: new[] { "Id", "ApprovalStatus", "EmployeeId", "EndDate", "FileName", "IsApproved", "ManagerEmployeeId", "NumberOfDays", "PermissionType", "RequestDate", "StartDate" },
                 values: new object[,]
                 {
-                    { 1, "Onay bekleniyor", 1, new DateTime(2024, 3, 24, 0, 0, 0, 0, DateTimeKind.Unspecified), null, false, null, 10, "Baba izni", new DateTime(2024, 3, 19, 21, 22, 4, 233, DateTimeKind.Local).AddTicks(5250), new DateTime(2024, 3, 14, 0, 0, 0, 0, DateTimeKind.Unspecified) },
-                    { 2, "Onay bekleniyor", 1, new DateTime(2024, 4, 15, 0, 0, 0, 0, DateTimeKind.Unspecified), null, false, null, 30, "Annelik izni", new DateTime(2024, 3, 19, 21, 22, 4, 233, DateTimeKind.Local).AddTicks(6289), new DateTime(2024, 3, 15, 0, 0, 0, 0, DateTimeKind.Unspecified) }
+                    { 1, "Onay bekleniyor", 1, new DateTime(2024, 3, 24, 0, 0, 0, 0, DateTimeKind.Unspecified), null, false, null, 10, "Baba izni", new DateTime(2024, 3, 22, 16, 46, 49, 269, DateTimeKind.Local).AddTicks(3801), new DateTime(2024, 3, 14, 0, 0, 0, 0, DateTimeKind.Unspecified) },
+                    { 2, "Onay bekleniyor", 1, new DateTime(2024, 4, 15, 0, 0, 0, 0, DateTimeKind.Unspecified), null, false, null, 30, "Annelik izni", new DateTime(2024, 3, 22, 16, 46, 49, 269, DateTimeKind.Local).AddTicks(3826), new DateTime(2024, 3, 15, 0, 0, 0, 0, DateTimeKind.Unspecified) }
                 });
 
             migrationBuilder.CreateIndex(
