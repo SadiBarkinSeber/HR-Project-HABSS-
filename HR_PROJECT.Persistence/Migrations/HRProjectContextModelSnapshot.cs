@@ -180,14 +180,14 @@ namespace HR_PROJECT.Persistence.Migrations
                         {
                             Id = "df5a9b38-18e8-48b7-97bf-ad4a9b4afe0e",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "7079e1ef-2439-4314-8a7c-4b752e719975",
+                            ConcurrencyStamp = "4db16667-a1b6-45c4-afef-f263d9142aa1",
                             Email = "sahzod.irgas@bilgeadam.com",
                             EmailConfirmed = false,
                             EmployeeId = 1,
                             LockoutEnabled = false,
                             NormalizedEmail = "SAHZOD.IRGAS@BILGEADAM.COM",
                             NormalizedUserName = "SAHZOD",
-                            PasswordHash = "AQAAAAIAAYagAAAAEEgKjknnFSnP7qebzwktwoWK9hEVIUlqdl3VaFgEplVu4cA2qhpy0lEfkFuSBC1jZg==",
+                            PasswordHash = "AQAAAAIAAYagAAAAEKLsKf462ms9lDekaU3QmPYMDDPb6TH0XslulgZjPhFNh6Zgk3LV97BRf4K/zghb8A==",
                             PhoneNumberConfirmed = false,
                             SecurityStamp = "",
                             TwoFactorEnabled = false,
@@ -197,14 +197,14 @@ namespace HR_PROJECT.Persistence.Migrations
                         {
                             Id = "29eee336-e6a2-40f2-9305-159eed59ed75",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "40c3c4c4-eb7c-48da-8ebc-edca429c3f89",
+                            ConcurrencyStamp = "73a44bdd-c463-41bb-b3ed-4c2b5b62f7c5",
                             Email = "admin@bilgeadam.com",
                             EmailConfirmed = false,
                             LockoutEnabled = false,
                             ManagerId = 3,
                             NormalizedEmail = "ADMIN@BILGEADAM.COM",
                             NormalizedUserName = "ADMIN",
-                            PasswordHash = "AQAAAAIAAYagAAAAEJQW8pxrCw5f9fYwPMDpHxYmggWsl4fWCpsYI5Ui7KRlHNyCCmqtC8XZu5kFcp0/4w==",
+                            PasswordHash = "AQAAAAIAAYagAAAAENkkX5Js+ewQPTc4e6NmOyWl/aVh6wdgOAxwDkReapKIpXZLuKmcTM0D0h/oRyvpXQ==",
                             PhoneNumberConfirmed = false,
                             SecurityStamp = "",
                             TwoFactorEnabled = false,
@@ -539,8 +539,7 @@ namespace HR_PROJECT.Persistence.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int?>("EmployeeId")
-                        .IsRequired()
+                    b.Property<int>("EmployeeId")
                         .HasColumnType("int");
 
                     b.Property<DateTime>("EndDate")
@@ -580,26 +579,26 @@ namespace HR_PROJECT.Persistence.Migrations
                         new
                         {
                             Id = 1,
-                            ApprovalStatus = "Onay bekleniyor",
+                            ApprovalStatus = "Requested",
                             EmployeeId = 1,
-                            EndDate = new DateTime(2024, 3, 24, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            EndDate = new DateTime(2024, 3, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             IsApproved = false,
-                            NumberOfDays = 10,
-                            PermissionType = "Baba izni",
-                            RequestDate = new DateTime(2024, 3, 22, 16, 46, 49, 269, DateTimeKind.Local).AddTicks(3801),
-                            StartDate = new DateTime(2024, 3, 14, 0, 0, 0, 0, DateTimeKind.Unspecified)
+                            NumberOfDays = 3,
+                            PermissionType = "Baba İzni",
+                            RequestDate = new DateTime(2024, 3, 22, 23, 22, 13, 456, DateTimeKind.Local).AddTicks(6347),
+                            StartDate = new DateTime(2024, 3, 22, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             Id = 2,
-                            ApprovalStatus = "Onay bekleniyor",
+                            ApprovalStatus = "Requested",
                             EmployeeId = 1,
-                            EndDate = new DateTime(2024, 4, 15, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            EndDate = new DateTime(2024, 4, 26, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             IsApproved = false,
-                            NumberOfDays = 30,
-                            PermissionType = "Annelik izni",
-                            RequestDate = new DateTime(2024, 3, 22, 16, 46, 49, 269, DateTimeKind.Local).AddTicks(3826),
-                            StartDate = new DateTime(2024, 3, 15, 0, 0, 0, 0, DateTimeKind.Unspecified)
+                            NumberOfDays = 4,
+                            PermissionType = "Anne izni",
+                            RequestDate = new DateTime(2024, 3, 22, 23, 22, 13, 456, DateTimeKind.Local).AddTicks(6379),
+                            StartDate = new DateTime(2024, 3, 22, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         });
                 });
 

@@ -13,13 +13,42 @@ namespace HR_PROJECT.Application.Features.CQRS.Commands.PermissionComands
         {
             RequestDate = DateTime.Now;
         }
+
         public string PermissionType { get; set; }
+
         public DateTime RequestDate { get; }
         public DateTime StartDate { get; set; }
         public DateTime EndDate { get; set; }
-        public int? NumberOfDays { get; set; }
+
+        private static readonly Dictionary<string, int> PermissionDays = new Dictionary<string, int>
+        {
+            { "Baba İzni", 5 },
+            { "Anne İzni", 112 },
+            { "Cenaze İzni", 3 },
+            { "Evlilik İzni", 3 },
+            { "Yıllık İzin", 15 }
+        };
+        private int numberOfDays;
+
+        public int NumberOfDays
+        {
+            get { return numberOfDays; }
+            set 
+            { 
+                int maxDays = PermissionDays[PermissionType];
+                if (value <= maxDays)
+                {
+                    numberOfDays = value;
+                }
+                else
+                {
+                    numberOfDays = maxDays;
+                }
+            }
+        }
+
         public string? FileName { get; set; }
-        public string ApprovalStatus { get; set; } = "Onay bekleniyor";
-        public int? EmployeeId { get; set; }
+        public string ApprovalStatus { get; } = "Requested";
+        public int EmployeeId { get; set; }
     }
 }

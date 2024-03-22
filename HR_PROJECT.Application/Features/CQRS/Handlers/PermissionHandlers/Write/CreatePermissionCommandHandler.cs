@@ -25,11 +25,11 @@ namespace HR_PROJECT.Application.Features.CQRS.Handlers.PermissionHandlers.Write
             {
                 PermissionType = command.PermissionType,
                 StartDate = command.StartDate,
-                EndDate = command.EndDate,
                 NumberOfDays = command.NumberOfDays,
+                EndDate = command.EndDate,
                 FileName = command.FileName,
-                ApprovalStatus = command.ApprovalStatus,
                 EmployeeId = command.EmployeeId,
+                ApprovalStatus = command.ApprovalStatus,
             });
         }
     }
