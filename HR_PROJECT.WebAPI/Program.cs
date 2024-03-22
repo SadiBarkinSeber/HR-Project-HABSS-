@@ -20,6 +20,7 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
 using HR_PROJECT.WebAPI.Services;
+using Microsoft.Extensions.Options;
 #endregion
 
 
@@ -60,14 +61,16 @@ builder.Services.AddAuthentication(options =>
 
 builder.Services.AddScoped<HRProjectContext>();
 
-builder.Services.AddIdentity<ApplicationUser, IdentityRole>().AddEntityFrameworkStores<HRProjectContext>();
+builder.Services.AddIdentity<ApplicationUser, IdentityRole>().AddEntityFrameworkStores<HRProjectContext>().AddDefaultTokenProviders();
 
 builder.Services.ConfigureApplicationCookie(opts => opts.LoginPath = "/Account/Login");
 
 builder.Services.Configure<IdentityOptions>(opt =>
 {
     opt.User.RequireUniqueEmail = true;
+    opt.Tokens.PasswordResetTokenProvider = TokenOptions.DefaultProvider;
 });
+
 
 #region Login Service
 
