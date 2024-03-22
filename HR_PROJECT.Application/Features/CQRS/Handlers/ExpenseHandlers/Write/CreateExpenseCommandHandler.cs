@@ -26,7 +26,7 @@ namespace HR_PROJECT.Application.Features.CQRS.Handlers.ExpenseHandlers.Write
                 Amount = command.Amount,
                 ApprovalStatus = command.ApprovalStatus,
                 RequestDate = command.RequestDate,
-                Response = command.Response,
+                
                 Currency = command.Currency,
                 AmountValue = command.AmountValue,
                 EmployeeId = command.EmployeeId,
