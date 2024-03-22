@@ -33,6 +33,7 @@ namespace HR_PROJECT.Application.Features.CQRS.Handlers.AdvanceHandlers.Read
                 Permission = x.Permission,
                 EmployeeId = x.EmployeeId,
                 Description = x.Description,
+                AmountValue = x.AmountValue
             }).ToList();
         }
     }

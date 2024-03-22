@@ -12,10 +12,12 @@ namespace HR_PROJECT.Application.Features.CQRS.Handlers.AdvanceHandlers.Write
     public class CreateAdvanceCommandHandler
     {
         private readonly IRepository<Advance> _repository;
+        
 
         public CreateAdvanceCommandHandler(IRepository<Advance> repository)
         {
             _repository = repository;
+            
         }
 
         public async Task Handle(CreateAdvanceCommand command)
@@ -24,12 +26,11 @@ namespace HR_PROJECT.Application.Features.CQRS.Handlers.AdvanceHandlers.Write
             {
                 AdvanceType = command.AdvanceType,
                 Amount = command.Amount,
-                ApprovalStatus = command.ApprovalStatus,
-                RequestDate = command.RequestDate,
                 Currency = command.Currency,
-                
                 EmployeeId = command.EmployeeId,
                 Description = command.Description,
+                ApprovalStatus = command.ApprovalStatus,
+                AmountValue = command.AmountValue
             });
         }
     }

@@ -26,7 +26,7 @@ namespace HR_PROJECT.Application.Features.CQRS.Handlers.ExpenseHandlers.Read
             {
                 Id = x.Id,
                 EmployeeId = x.EmployeeId,
-                Type = x.Type,
+                ExpenseType = x.ExpenseType,
                 Amount = x.Amount,
                 ApprovalStatus = x.ApprovalStatus,
                 RequestDate = x.RequestDate,

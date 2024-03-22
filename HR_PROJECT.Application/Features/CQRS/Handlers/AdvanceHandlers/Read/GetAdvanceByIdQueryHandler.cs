@@ -19,10 +19,10 @@ namespace HR_PROJECT.Application.Features.CQRS.Handlers.AdvanceHandlers.Read
             _repository = repository;
         }
 
-        public async Task<GetAdvanceByIdQueryResult> Handle(GetAdvanceByIdQuery query)
+        public async Task<GetAdvanceQueryResult> Handle(GetAdvanceByIdQuery query)
         {
             var values = await _repository.GetByIdAsync(query.Id);
-            return new GetAdvanceByIdQueryResult
+            return new GetAdvanceQueryResult
             {
                 Id = values.Id,
                 AdvanceType = values.AdvanceType,
@@ -34,6 +34,7 @@ namespace HR_PROJECT.Application.Features.CQRS.Handlers.AdvanceHandlers.Read
                 Permission = values.Permission,
                 EmployeeId = values.EmployeeId,
                 Description = values.Description,
+                AmountValue = values.AmountValue
             };
 
         }

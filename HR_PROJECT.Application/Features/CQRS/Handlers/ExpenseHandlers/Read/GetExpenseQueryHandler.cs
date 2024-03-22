@@ -24,7 +24,7 @@ namespace HR_PROJECT.Application.Features.CQRS.Handlers.ExpenseHandlers.Read
             return values.Select(x => new GetExpenseQueryResult
             {
                 Id = x.Id,
-                Type = x.Type,
+                ExpenseType = x.ExpenseType,
                 Amount = x.Amount,
                 ApprovalStatus = x.ApprovalStatus,
                 RequestDate = x.RequestDate,
@@ -33,6 +33,7 @@ namespace HR_PROJECT.Application.Features.CQRS.Handlers.ExpenseHandlers.Read
                 Permission = x.Permission,
                 EmployeeId = x.EmployeeId,
                 FileName = x.FileName,
+                AmountValue = x.AmountValue,
             }).ToList();
         }
     }

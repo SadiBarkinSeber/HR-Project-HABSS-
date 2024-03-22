@@ -12,12 +12,7 @@ namespace HR_PROJECT.Persistence.Context
 {
     public class HRProjectContext : IdentityDbContext<ApplicationUser>
     {
-
-        
-
-
         public DbSet<Employee> Employees { get; set; }
-        public DbSet<Manager> Manager { get; set; }
         public DbSet<Expense> Expenses { get; set; }
         public DbSet<Permission> Permissions { get; set; }
         public DbSet<Advance> Advances { get; set; }
@@ -25,7 +20,7 @@ namespace HR_PROJECT.Persistence.Context
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("Server=tcp:hrprojectsahzod.database.windows.net,1433;Initial Catalog=HRProjectDB7;Persist Security Info=False;User ID=sahzod;Password=Anyela123;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;", builder =>
+            optionsBuilder.UseSqlServer("Server=tcp:hrprojectsahzod.database.windows.net,1433;Initial Catalog=HRProjectDB8;Persist Security Info=False;User ID=sahzod;Password=Anyela123;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;", builder =>
             {
                 builder.EnableRetryOnFailure(5, TimeSpan.FromSeconds(10), null);
             });
@@ -36,17 +31,11 @@ namespace HR_PROJECT.Persistence.Context
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
 
-            #region Configurations
-            modelBuilder.ApplyConfiguration(new ApplicationUserConfiguration());
-            modelBuilder.ApplyConfiguration(new RoleConfiguration());
             modelBuilder.ApplyConfiguration(new EmployeeConfiguration());
-            modelBuilder.ApplyConfiguration(new ManagerConfiguration());
-            modelBuilder.ApplyConfiguration(new IdentityuserRoleConfiguration());
+            modelBuilder.ApplyConfiguration(new ApplicationUserConfiguration());
             modelBuilder.ApplyConfiguration(new ExpenseConfiguration());
             modelBuilder.ApplyConfiguration(new PermissionConfiguration());
             modelBuilder.ApplyConfiguration(new AdvanceConfiguration());
-            
-            #endregion
 
             base.OnModelCreating(modelBuilder);
         }

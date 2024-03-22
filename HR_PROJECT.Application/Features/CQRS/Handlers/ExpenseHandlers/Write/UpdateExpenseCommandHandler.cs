@@ -21,7 +21,7 @@ namespace HR_PROJECT.Application.Features.CQRS.Handlers.ExpenseHandlers.Write
         {
             var values = await _repository.GetByIdAsync(command.Id);
 
-            values.Type = command.Type;
+            values.ExpenseType = command.ExpenseType;
             values.Amount = command.Amount;
             values.ApprovalStatus = command.ApprovalStatus;
             values.RequestDate = command.RequestDate;

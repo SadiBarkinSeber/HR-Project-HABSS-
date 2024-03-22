@@ -22,6 +22,12 @@ namespace HR_PROJECT.Application.Features.CQRS.Handlers.EmployeeHandlers.Read
         public async Task<GetEmployeeByIdQueryResult> Handle(GetEmployeeByIdQuery query)
         {
             var values = await _repository.GetByIdAsync(query.Id);
+
+            if (values == null) 
+            {
+                throw new Exception("Employee does not exists.");
+            }
+
             return new GetEmployeeByIdQueryResult
             {
                 Id = values.EmployeeId,

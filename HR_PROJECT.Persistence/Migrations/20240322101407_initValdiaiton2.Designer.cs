@@ -4,6 +4,7 @@ using HR_PROJECT.Persistence.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace HR_PROJECT.Persistence.Migrations
 {
     [DbContext(typeof(HRProjectContext))]
-    partial class HRProjectContextModelSnapshot : ModelSnapshot
+    [Migration("20240322101407_initValdiaiton2")]
+    partial class initValdiaiton2
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -37,7 +40,7 @@ namespace HR_PROJECT.Persistence.Migrations
                     b.Property<decimal>("Amount")
                         .HasColumnType("decimal(18,2)");
 
-                    b.Property<decimal?>("AmountValue")
+                    b.Property<decimal>("AmountValue")
                         .HasColumnType("decimal(18,2)");
 
                     b.Property<string>("ApprovalStatus")
@@ -77,6 +80,7 @@ namespace HR_PROJECT.Persistence.Migrations
                             Id = 1,
                             AdvanceType = "Bireysel",
                             Amount = 5631.45m,
+                            AmountValue = 0m,
                             ApprovalStatus = "Pending",
                             Currency = "TL",
                             Description = "Araba alıcam",
@@ -90,6 +94,7 @@ namespace HR_PROJECT.Persistence.Migrations
                             Id = 2,
                             AdvanceType = "Kurumsal",
                             Amount = 6592.45m,
+                            AmountValue = 0m,
                             ApprovalStatus = "Approved",
                             Currency = "TL",
                             Description = "Motor alıcam",
@@ -172,14 +177,14 @@ namespace HR_PROJECT.Persistence.Migrations
                         {
                             Id = "df5a9b38-18e8-48b7-97bf-ad4a9b4afe0e",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "c156b322-c98f-406c-ae33-eaabe7d503cf",
+                            ConcurrencyStamp = "e5d49df9-8cf5-4c55-bccb-fdaba1e29710",
                             Email = "sahzod.irgas@bilgeadam.com",
                             EmailConfirmed = false,
                             EmployeeId = 1,
                             LockoutEnabled = false,
                             NormalizedEmail = "SAHZOD.IRGAS@BILGEADAM.COM",
                             NormalizedUserName = "SAHZOD",
-                            PasswordHash = "AQAAAAIAAYagAAAAEACTMG/tmclZ557f6okQYsKmBVBc3oA0cwc/h0r9gvfCkJEdBRaZKN9VrYdJW6MimQ==",
+                            PasswordHash = "AQAAAAIAAYagAAAAEFfie+O59zM9F90XfknCahEuNCZzt5koykWUKSj3IW8smJF6zfCmxbQE4Ncu3DKEzA==",
                             PhoneNumberConfirmed = false,
                             SecurityStamp = "",
                             TwoFactorEnabled = false,
@@ -327,9 +332,6 @@ namespace HR_PROJECT.Persistence.Migrations
                     b.Property<decimal>("Amount")
                         .HasColumnType("decimal(18,2)");
 
-                    b.Property<decimal?>("AmountValue")
-                        .HasColumnType("decimal(18,2)");
-
                     b.Property<string>("ApprovalStatus")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -341,10 +343,6 @@ namespace HR_PROJECT.Persistence.Migrations
                     b.Property<int>("EmployeeId")
                         .HasColumnType("int");
 
-                    b.Property<string>("ExpenseType")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<string>("FileName")
                         .HasColumnType("nvarchar(max)");
 
@@ -355,6 +353,10 @@ namespace HR_PROJECT.Persistence.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Response")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Type")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
@@ -372,10 +374,10 @@ namespace HR_PROJECT.Persistence.Migrations
                             ApprovalStatus = "Pending",
                             Currency = "TL",
                             EmployeeId = 1,
-                            ExpenseType = "İş Seyahatleri",
                             Permission = false,
                             RequestDate = new DateTime(2024, 3, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Response = "Please provide necessary documents."
+                            Response = "Please provide necessary documents.",
+                            Type = "İş Seyahati"
                         },
                         new
                         {
@@ -384,10 +386,10 @@ namespace HR_PROJECT.Persistence.Migrations
                             ApprovalStatus = "Approved",
                             Currency = "TL",
                             EmployeeId = 1,
-                            ExpenseType = "Personel Harcamaları",
                             Permission = true,
                             RequestDate = new DateTime(2024, 3, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Response = "Request have been approved."
+                            Response = "Request have been approved.",
+                            Type = "Yemek Gideri"
                         });
                 });
 
@@ -445,7 +447,7 @@ namespace HR_PROJECT.Persistence.Migrations
                             IsApproved = false,
                             NumberOfDays = 10,
                             PermissionType = "Baba izni",
-                            RequestDate = new DateTime(2024, 3, 22, 16, 12, 13, 191, DateTimeKind.Local).AddTicks(8302),
+                            RequestDate = new DateTime(2024, 3, 22, 13, 14, 6, 971, DateTimeKind.Local).AddTicks(1174),
                             StartDate = new DateTime(2024, 3, 14, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
@@ -457,7 +459,7 @@ namespace HR_PROJECT.Persistence.Migrations
                             IsApproved = false,
                             NumberOfDays = 30,
                             PermissionType = "Annelik izni",
-                            RequestDate = new DateTime(2024, 3, 22, 16, 12, 13, 191, DateTimeKind.Local).AddTicks(8316),
+                            RequestDate = new DateTime(2024, 3, 22, 13, 14, 6, 971, DateTimeKind.Local).AddTicks(1192),
                             StartDate = new DateTime(2024, 3, 15, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         });
                 });

@@ -11,9 +11,12 @@ namespace HR_PROJECT.Persistence.Configurations
 {
     public class AdvanceConfiguration : IEntityTypeConfiguration<Advance>
     {
+        
         public void Configure(EntityTypeBuilder<Advance> builder)
         {
             builder.Property(e => e.Amount)
+                .HasColumnType("decimal(18,2)");
+            builder.Property(e => e.AmountValue)
                 .HasColumnType("decimal(18,2)");
             builder.HasKey(p => p.Id);
 
@@ -33,7 +36,7 @@ namespace HR_PROJECT.Persistence.Configurations
 
             builder.Property(p => p.Description) 
                 .IsRequired()
-                .HasMaxLength(200);
+                .HasMaxLength(500);
 
             #region Seed Data
 

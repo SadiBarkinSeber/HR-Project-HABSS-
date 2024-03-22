@@ -4,6 +4,7 @@ using HR_PROJECT.Persistence.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace HR_PROJECT.Persistence.Migrations
 {
     [DbContext(typeof(HRProjectContext))]
-    partial class HRProjectContextModelSnapshot : ModelSnapshot
+    [Migration("20240322124302_initExpenseValidation")]
+    partial class initExpenseValidation
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -172,14 +175,14 @@ namespace HR_PROJECT.Persistence.Migrations
                         {
                             Id = "df5a9b38-18e8-48b7-97bf-ad4a9b4afe0e",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "c156b322-c98f-406c-ae33-eaabe7d503cf",
+                            ConcurrencyStamp = "680b5fd1-50a0-4ad3-a566-dd2397db2284",
                             Email = "sahzod.irgas@bilgeadam.com",
                             EmailConfirmed = false,
                             EmployeeId = 1,
                             LockoutEnabled = false,
                             NormalizedEmail = "SAHZOD.IRGAS@BILGEADAM.COM",
                             NormalizedUserName = "SAHZOD",
-                            PasswordHash = "AQAAAAIAAYagAAAAEACTMG/tmclZ557f6okQYsKmBVBc3oA0cwc/h0r9gvfCkJEdBRaZKN9VrYdJW6MimQ==",
+                            PasswordHash = "AQAAAAIAAYagAAAAELbNyIFTR+/8HKlJZjqzUDQwCY6ukgSFjikpcc8oo+NzsKljTbJSRe4iGYhYFgmN1w==",
                             PhoneNumberConfirmed = false,
                             SecurityStamp = "",
                             TwoFactorEnabled = false,
@@ -445,7 +448,7 @@ namespace HR_PROJECT.Persistence.Migrations
                             IsApproved = false,
                             NumberOfDays = 10,
                             PermissionType = "Baba izni",
-                            RequestDate = new DateTime(2024, 3, 22, 16, 12, 13, 191, DateTimeKind.Local).AddTicks(8302),
+                            RequestDate = new DateTime(2024, 3, 22, 15, 43, 2, 82, DateTimeKind.Local).AddTicks(8851),
                             StartDate = new DateTime(2024, 3, 14, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
@@ -457,7 +460,7 @@ namespace HR_PROJECT.Persistence.Migrations
                             IsApproved = false,
                             NumberOfDays = 30,
                             PermissionType = "Annelik izni",
-                            RequestDate = new DateTime(2024, 3, 22, 16, 12, 13, 191, DateTimeKind.Local).AddTicks(8316),
+                            RequestDate = new DateTime(2024, 3, 22, 15, 43, 2, 82, DateTimeKind.Local).AddTicks(8868),
                             StartDate = new DateTime(2024, 3, 15, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         });
                 });
