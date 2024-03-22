@@ -22,13 +22,13 @@ namespace HR_PROJECT.Application.Features.CQRS.Handlers.ExpenseHandlers.Write
         {
             await _repository.CreateAsync(new Expense
             {
-                Type = command.Type,
+                ExpenseType = command.ExpenseType,
                 Amount = command.Amount,
                 ApprovalStatus = command.ApprovalStatus,
                 RequestDate = command.RequestDate,
                 Response = command.Response,
                 Currency = command.Currency,
-                
+                AmountValue = command.AmountValue,
                 EmployeeId = command.EmployeeId,
                 FileName = command.FileName
             });

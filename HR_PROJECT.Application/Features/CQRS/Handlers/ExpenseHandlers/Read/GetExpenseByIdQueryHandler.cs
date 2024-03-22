@@ -22,10 +22,16 @@ namespace HR_PROJECT.Application.Features.CQRS.Handlers.ExpenseHandlers.Read
         public async Task<GetExpenseByIdQueryResult> Handle(GetExpenseByIdQuery query)
         {
             var values = await _repository.GetByIdAsync(query.Id);
+
+            if (values == null)
+            {
+                throw new Exception("Expense not found.");
+            }
+
             return new GetExpenseByIdQueryResult
             {
                 Id = values.Id,
-                Type = values.Type,
+                ExpenseType = values.ExpenseType,
                 Amount = values.Amount,
                 ApprovalStatus = values.ApprovalStatus,
                 RequestDate = values.RequestDate,
@@ -33,7 +39,8 @@ namespace HR_PROJECT.Application.Features.CQRS.Handlers.ExpenseHandlers.Read
                 Currency = values.Currency,
                 Permission = values.Permission,
                 EmployeeId = values.EmployeeId,
-                FileName = values.FileName,
+                FileName = values.FileName
+                
             };
             
         }

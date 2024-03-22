@@ -13,14 +13,28 @@ namespace HR_PROJECT.Application.Features.CQRS.Commands.ExpenseCommands
             RequestDate = DateTime.Now;
             
         }
-        public string Type { get; set; }
+        public string ExpenseType { get; set; }
         public decimal Amount { get; set; }
-        public string ApprovalStatus { get; set; }
+        public string ApprovalStatus { get; } = "Requested";
         public DateTime RequestDate { get; }
         public string Response { get; set; }
         public string Currency { get; set; }
         
         public int EmployeeId { get; set; }
         public string? FileName { get; set; }
+
+        private static readonly Dictionary<string, decimal> ExchangeRates = new Dictionary<string, decimal>
+        {
+            { "USD", 32 },
+            { "EUR", 34 },
+            { "TL", 1 }
+        };
+        public decimal? AmountValue 
+        {
+            get
+            {      
+                 return Amount * ExchangeRates[Currency];
+            } 
+        }
     }
 }

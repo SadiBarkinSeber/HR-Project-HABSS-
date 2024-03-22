@@ -18,5 +18,6 @@ namespace HR_PROJECT.Application.Features.CQRS.Results.AdvanceResults
         public bool Permission { get; set; }
         public int EmployeeId { get; set; }
         public string Description { get; set; }
+        public decimal? AmountValue { get; set; }
     }
 }

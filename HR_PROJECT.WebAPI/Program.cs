@@ -88,6 +88,7 @@ builder.Services.AddScoped<GetAdvanceByEmployeeIdQueryHandler>();
 
 builder.Services.AddScoped<CheckEmployeeWage>();
 
+
 #endregion
 
 builder.Services.AddControllers(); 

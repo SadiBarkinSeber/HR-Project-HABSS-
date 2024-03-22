@@ -15,6 +15,8 @@ namespace HR_PROJECT.Persistence.Configurations
         {
             builder.Property(e => e.Amount)
                 .HasColumnType("decimal(18,2)");
+            builder.Property(e => e.AmountValue)
+                .HasColumnType("decimal(18,2)");
 
             #region Seed Data
 
@@ -23,7 +25,7 @@ namespace HR_PROJECT.Persistence.Configurations
                 new Expense
                 {
                     Id = 1,
-                    Type = "İş Seyahati",
+                    ExpenseType = "İş Seyahatleri",
                     Amount = 5631.45m,
                     ApprovalStatus = "Pending",
                     RequestDate = new DateTime(2024, 3, 14),
@@ -36,7 +38,7 @@ namespace HR_PROJECT.Persistence.Configurations
                 new Expense
                 {
                     Id = 2,
-                    Type = "Yemek Gideri",
+                    ExpenseType = "Personel Harcamaları",
                     Amount = 6592.45m,
                     ApprovalStatus = "Approved",
                     RequestDate = new DateTime(2024, 3, 10),

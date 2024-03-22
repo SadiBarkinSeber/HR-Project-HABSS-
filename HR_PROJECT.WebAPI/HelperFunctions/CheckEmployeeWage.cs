@@ -17,7 +17,7 @@ namespace HR_PROJECT.WebAPI.HelperFunctions
 
         
 
-        public async Task<bool> Helper(GetEmployeeByIdQuery query, decimal requestedAmount)
+        public async Task<bool> Helper(GetEmployeeByIdQuery query, decimal? requestedAmount)
         {
             GetEmployeeByIdQueryResult result = await _getEmployeeById.Handle(query);
 

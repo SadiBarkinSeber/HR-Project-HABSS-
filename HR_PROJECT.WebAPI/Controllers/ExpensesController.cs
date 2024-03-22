@@ -1,8 +1,12 @@
 ﻿using HR_PROJECT.Application.Features.CQRS.Commands.ExpenseCommands;
+using HR_PROJECT.Application.Features.CQRS.Handlers.EmployeeHandlers.Read;
 using HR_PROJECT.Application.Features.CQRS.Handlers.EmployeeHandlers.Write;
 using HR_PROJECT.Application.Features.CQRS.Handlers.ExpenseHandlers.Read;
 using HR_PROJECT.Application.Features.CQRS.Handlers.ExpenseHandlers.Write;
+using HR_PROJECT.Application.Features.CQRS.Queries.EmployeeQueries;
 using HR_PROJECT.Application.Features.CQRS.Queries.ExpenseQueries;
+using HR_PROJECT.Application.Features.CQRS.Results.EmployeeResults;
+using HR_PROJECT.WebAPI.HelperFunctions;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -19,12 +23,14 @@ namespace HR_PROJECT.WebAPI.Controllers
         private readonly GetExpenseQueryHandler _getExpenseQueryHandler;
         private readonly UpdateExpenseCommandHandler _updateExpenseCommandhandler;
         private readonly RemoveExpenseCommandHandler _removeExpenseCommandHandler;
-        private readonly GetExpenseByEmployeeIdQueryHandler _getExpensesByEmployee; 
+        private readonly GetExpenseByEmployeeIdQueryHandler _getExpensesByEmployee;
+        private readonly GetEmployeeByIdQueryHandler _getEmployeeByIdQueryHandler;
+        
         #endregion
 
         #region Constructor
 
-        public ExpensesController(CreateExpenseCommandHandler createExpenseCommandHandler, GetExpenseByIdQueryHandler getExpenseByIdQueryHandler, GetExpenseQueryHandler getExpenseQueryHandler, UpdateExpenseCommandHandler updateExpenseCommandHandler, RemoveExpenseCommandHandler removeExpenseCommandHandler, GetExpenseByEmployeeIdQueryHandler getExpensesByEmployee)
+        public ExpensesController(CreateExpenseCommandHandler createExpenseCommandHandler, GetExpenseByIdQueryHandler getExpenseByIdQueryHandler, GetExpenseQueryHandler getExpenseQueryHandler, UpdateExpenseCommandHandler updateExpenseCommandHandler, RemoveExpenseCommandHandler removeExpenseCommandHandler, GetExpenseByEmployeeIdQueryHandler getExpensesByEmployee, GetEmployeeByIdQueryHandler getEmployeeByIdQueryHandler)
         {
             _createExpenseCommandhandler = createExpenseCommandHandler;
             _getExpenseByIdQueryHandler = getExpenseByIdQueryHandler;
@@ -32,6 +38,7 @@ namespace HR_PROJECT.WebAPI.Controllers
             _updateExpenseCommandhandler = updateExpenseCommandHandler;
             _removeExpenseCommandHandler = removeExpenseCommandHandler;
             _getExpensesByEmployee = getExpensesByEmployee;
+            _getEmployeeByIdQueryHandler = getEmployeeByIdQueryHandler;
         }
 
         #endregion
@@ -49,8 +56,16 @@ namespace HR_PROJECT.WebAPI.Controllers
         [HttpGet("{id}")]
         public async Task<IActionResult> GetExpenseById(int id)
         {
-            var value = await _getExpenseByIdQueryHandler.Handle(new GetExpenseByIdQuery(id));
-            return Ok(value);
+            try
+            {
+                var value = await _getExpenseByIdQueryHandler.Handle(new GetExpenseByIdQuery(id));
+                return Ok(value);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+            
         }
 
         [HttpGet("{employeeId}/byEmployee")]
@@ -75,8 +90,17 @@ namespace HR_PROJECT.WebAPI.Controllers
         [HttpPost]
         public async Task<IActionResult> CreateExpense(CreateExpenseCommand command)
         {
-            await _createExpenseCommandhandler.Handle(command);
-            return Ok("Harcama bilgisi eklendi.");
+            try
+            {
+                await _getEmployeeByIdQueryHandler.Handle(new GetEmployeeByIdQuery(command.EmployeeId));
+                await _createExpenseCommandhandler.Handle(command);
+                return Ok("Harcama bilgisi eklendi.");
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+            
         }
 
         [HttpDelete]
