@@ -43,20 +43,22 @@ namespace HR_PROJECT.Persistence.Configurations
             new Permission
             {
                 Id = 1,
-                PermissionType = "Baba izni",
-                StartDate = new DateTime(2024, 3, 14),
-                EndDate = new DateTime(2024, 3, 24),
-                NumberOfDays = 10,
-                EmployeeId = 1
+                PermissionType = "Baba İzni",
+                StartDate = new DateTime(2024, 3, 22),
+                EndDate = new DateTime(2024, 3, 25),
+                NumberOfDays = 3,
+                EmployeeId = 1,
+                ApprovalStatus = "Requested"
             },
             new Permission
             {
                    Id = 2,
-                   PermissionType = "Annelik izni",
-                   StartDate = new DateTime(2024, 3, 15),
-                   EndDate = new DateTime(2024, 4, 15),
-                   NumberOfDays = 30,
-                   EmployeeId = 1
+                   PermissionType = "Anne İzni",
+                   StartDate = new DateTime(2024, 3, 22),
+                   EndDate = new DateTime(2024, 4, 26),
+                   NumberOfDays = 4,
+                   EmployeeId = 1,
+                   ApprovalStatus = "Requested"
             }
             );
 

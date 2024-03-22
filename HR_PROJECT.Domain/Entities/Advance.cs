@@ -13,9 +13,8 @@ namespace HR_PROJECT.Domain.Entities
         
 
         public Advance()
-        {         
-                Permission = false;
-                
+        {
+            Permission = false;
         }
 
         public int Id { get; set; }

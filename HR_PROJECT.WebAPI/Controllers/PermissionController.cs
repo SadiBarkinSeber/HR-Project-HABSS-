@@ -27,18 +27,20 @@ namespace HR_PROJECT.WebAPI.Controllers
         private readonly RemovePermissionCommandHandler _removePermissionCommandHandler;
         private readonly UpdatePermissionCommandHandler _updatePermissionCommandHandler;
         private readonly GetPermissionQueryHandler _getPermissionQueryHandler;
+        private readonly GetEmployeeByIdQueryHandler _getEmployeeByIdQueryHandler;
         #endregion
 
 
         #region Constructor
 
-       public PermissionController(CreatePermissionCommandHandler createPermissionCommandHandler, GetPermissionsByEmployeeIDHandler getPermissionsByEmployeeIDHandler, RemovePermissionCommandHandler removePermissionCommandHandler, UpdatePermissionCommandHandler updatePermissionCommandHandler, GetPermissionQueryHandler getPermissionQueryHandler  )
+       public PermissionController(CreatePermissionCommandHandler createPermissionCommandHandler, GetPermissionsByEmployeeIDHandler getPermissionsByEmployeeIDHandler, RemovePermissionCommandHandler removePermissionCommandHandler, UpdatePermissionCommandHandler updatePermissionCommandHandler, GetPermissionQueryHandler getPermissionQueryHandler, GetEmployeeByIdQueryHandler getEmployeeByIdQueryHandler)
         {
             _createPermissionCommandHandler = createPermissionCommandHandler;
             _getPermissionsByEmployeeIDHandler = getPermissionsByEmployeeIDHandler;
             _removePermissionCommandHandler = removePermissionCommandHandler;
             _updatePermissionCommandHandler = updatePermissionCommandHandler; 
             _getPermissionQueryHandler = getPermissionQueryHandler;
+            _getEmployeeByIdQueryHandler = getEmployeeByIdQueryHandler;
         }
         #endregion
 
@@ -69,8 +71,18 @@ namespace HR_PROJECT.WebAPI.Controllers
         [HttpPost]
         public async Task<IActionResult> CreatePermission(CreatePermissionCommand command)
         {
-            await _createPermissionCommandHandler.Handle(command);
-            return Ok("Izin talebi basarili bir sekilde gonderildi.");
+            try
+            {
+                await _getEmployeeByIdQueryHandler.Handle(new GetEmployeeByIdQuery(command.EmployeeId));
+                await _createPermissionCommandHandler.Handle(command);
+                
+                return Ok("Izin talebi basarili bir sekilde gonderildi.");
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+            
         }
 
         //[Authorize(Roles = "manager")]
