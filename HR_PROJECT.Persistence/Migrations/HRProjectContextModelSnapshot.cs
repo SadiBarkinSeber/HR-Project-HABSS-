@@ -172,14 +172,14 @@ namespace HR_PROJECT.Persistence.Migrations
                         {
                             Id = "df5a9b38-18e8-48b7-97bf-ad4a9b4afe0e",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "c156b322-c98f-406c-ae33-eaabe7d503cf",
+                            ConcurrencyStamp = "dfa68ec2-82d1-456e-856d-496ffebf1ace",
                             Email = "sahzod.irgas@bilgeadam.com",
                             EmailConfirmed = false,
                             EmployeeId = 1,
                             LockoutEnabled = false,
                             NormalizedEmail = "SAHZOD.IRGAS@BILGEADAM.COM",
                             NormalizedUserName = "SAHZOD",
-                            PasswordHash = "AQAAAAIAAYagAAAAEACTMG/tmclZ557f6okQYsKmBVBc3oA0cwc/h0r9gvfCkJEdBRaZKN9VrYdJW6MimQ==",
+                            PasswordHash = "AQAAAAIAAYagAAAAELdceVUL2sEPSWxt9DLDJeyJdYCxTNI2OWC9Wk21/Jy3h/aTOVPAL52adNbRTdUSBA==",
                             PhoneNumberConfirmed = false,
                             SecurityStamp = "",
                             TwoFactorEnabled = false,
@@ -355,7 +355,6 @@ namespace HR_PROJECT.Persistence.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Response")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
@@ -445,7 +444,7 @@ namespace HR_PROJECT.Persistence.Migrations
                             IsApproved = false,
                             NumberOfDays = 10,
                             PermissionType = "Baba izni",
-                            RequestDate = new DateTime(2024, 3, 22, 16, 12, 13, 191, DateTimeKind.Local).AddTicks(8302),
+                            RequestDate = new DateTime(2024, 3, 22, 16, 26, 59, 767, DateTimeKind.Local).AddTicks(3222),
                             StartDate = new DateTime(2024, 3, 14, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
@@ -457,7 +456,7 @@ namespace HR_PROJECT.Persistence.Migrations
                             IsApproved = false,
                             NumberOfDays = 30,
                             PermissionType = "Annelik izni",
-                            RequestDate = new DateTime(2024, 3, 22, 16, 12, 13, 191, DateTimeKind.Local).AddTicks(8316),
+                            RequestDate = new DateTime(2024, 3, 22, 16, 26, 59, 767, DateTimeKind.Local).AddTicks(3244),
                             StartDate = new DateTime(2024, 3, 15, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         });
                 });

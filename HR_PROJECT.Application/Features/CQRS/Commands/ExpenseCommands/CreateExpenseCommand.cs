@@ -17,7 +17,7 @@ namespace HR_PROJECT.Application.Features.CQRS.Commands.ExpenseCommands
         public decimal Amount { get; set; }
         public string ApprovalStatus { get; } = "Requested";
         public DateTime RequestDate { get; }
-        public string Response { get; set; }
+        
         public string Currency { get; set; }
         
         public int EmployeeId { get; set; }

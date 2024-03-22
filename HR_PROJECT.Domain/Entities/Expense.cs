@@ -37,7 +37,7 @@ namespace HR_PROJECT.Domain.Entities
         public decimal Amount { get; set; }
         public string ApprovalStatus { get; set; }
         public DateTime RequestDate { get; set; }
-        public string Response { get; set; }
+        public string? Response { get; set; }
         private string currency;
 
         public string Currency
