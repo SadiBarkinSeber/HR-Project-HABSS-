@@ -28,12 +28,13 @@ namespace HR_PROJECT.WebAPI.Controllers
         private readonly UpdatePermissionCommandHandler _updatePermissionCommandHandler;
         private readonly GetPermissionQueryHandler _getPermissionQueryHandler;
         private readonly GetEmployeeByIdQueryHandler _getEmployeeByIdQueryHandler;
+        private readonly UpdatepermissionForEmployeeCommandHandler _updatePermissionForEmployeeCommandHandler;
         #endregion
 
 
         #region Constructor
 
-       public PermissionController(CreatePermissionCommandHandler createPermissionCommandHandler, GetPermissionsByEmployeeIDHandler getPermissionsByEmployeeIDHandler, RemovePermissionCommandHandler removePermissionCommandHandler, UpdatePermissionCommandHandler updatePermissionCommandHandler, GetPermissionQueryHandler getPermissionQueryHandler, GetEmployeeByIdQueryHandler getEmployeeByIdQueryHandler)
+       public PermissionController(CreatePermissionCommandHandler createPermissionCommandHandler, GetPermissionsByEmployeeIDHandler getPermissionsByEmployeeIDHandler, RemovePermissionCommandHandler removePermissionCommandHandler, UpdatePermissionCommandHandler updatePermissionCommandHandler, GetPermissionQueryHandler getPermissionQueryHandler, GetEmployeeByIdQueryHandler getEmployeeByIdQueryHandler, UpdatepermissionForEmployeeCommandHandler updatepermissionForEmployeeCommandHandler)
         {
             _createPermissionCommandHandler = createPermissionCommandHandler;
             _getPermissionsByEmployeeIDHandler = getPermissionsByEmployeeIDHandler;
@@ -41,6 +42,7 @@ namespace HR_PROJECT.WebAPI.Controllers
             _updatePermissionCommandHandler = updatePermissionCommandHandler; 
             _getPermissionQueryHandler = getPermissionQueryHandler;
             _getEmployeeByIdQueryHandler = getEmployeeByIdQueryHandler;
+            _updatePermissionForEmployeeCommandHandler = updatepermissionForEmployeeCommandHandler;
         }
         #endregion
 
@@ -97,8 +99,30 @@ namespace HR_PROJECT.WebAPI.Controllers
         [HttpPut]
         public async Task<IActionResult> UpdatePermission(UpdatePermissionCommand command)
         {
-            await _updatePermissionCommandHandler.Handle(command);
-            return Ok("Izin talebi basarili bir sekilde güncellendi.");
+            try
+            {
+                await _updatePermissionCommandHandler.Handle(command);
+                return Ok("Izin talebi basarili bir sekilde güncellendi.");
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+            
+        }
+
+        [HttpPut("employee")]
+        public async Task<IActionResult> UpdatePermissionForEmplyoee(UpdatePermissionForEmployeeCommand command)
+        {
+            try
+            {
+                await _updatePermissionForEmployeeCommandHandler.Handle(command);
+                return Ok("İzin talebi güncellendi.");
+            }
+            catch (Exception ex) 
+            {
+                return BadRequest(ex.Message);
+            }
         }
 
         #endregion

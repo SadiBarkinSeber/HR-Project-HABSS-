@@ -12,6 +12,7 @@ namespace HR_PROJECT.Domain.Entities
         public Expense()
         {
             Permission = false;
+            IsCancelled = false;
         }
 
         public int Id { get; set; }
@@ -62,5 +63,6 @@ namespace HR_PROJECT.Domain.Entities
         public Employee Employee { get; set; }
         public string? FileName { get; set; }
         public decimal? AmountValue { get; set; }
+        public bool IsCancelled { get; set; }
     }
 }
