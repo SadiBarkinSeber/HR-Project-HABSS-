@@ -3,16 +3,8 @@
   "WorkspaceRootPath": "C:\\Users\\Shohzod\\source\\repos\\HR-PROJECT-BACKEND3\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{F0BC0841-193B-47BB-B3FD-440DB8B5892C}|HR_PROJECT.Domain\\HR_PROJECT.Domain.csproj|c:\\users\\shohzod\\source\\repos\\hr-project-backend3\\hr_project.domain\\entities\\permission.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F0BC0841-193B-47BB-B3FD-440DB8B5892C}|HR_PROJECT.Domain\\HR_PROJECT.Domain.csproj|solutionrelative:hr_project.domain\\entities\\permission.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F98C2474-C9E4-4AC1-86DF-DD935ACD319D}|HR_PROJECT.WebAPI\\HR_PROJECT.WebAPI.csproj|c:\\users\\shohzod\\source\\repos\\hr-project-backend3\\hr_project.webapi\\controllers\\permissioncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F98C2474-C9E4-4AC1-86DF-DD935ACD319D}|HR_PROJECT.WebAPI\\HR_PROJECT.WebAPI.csproj|solutionrelative:hr_project.webapi\\controllers\\permissioncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3B13A124-752A-4AF6-84DA-BDFF3DCAAB42}|HR_PROJECT.Application\\HR_PROJECT.Application.csproj|c:\\users\\shohzod\\source\\repos\\hr-project-backend3\\hr_project.application\\features\\cqrs\\commands\\permissioncomands\\createpermissioncommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3B13A124-752A-4AF6-84DA-BDFF3DCAAB42}|HR_PROJECT.Application\\HR_PROJECT.Application.csproj|solutionrelative:hr_project.application\\features\\cqrs\\commands\\permissioncomands\\createpermissioncommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{8761977A-42D5-4803-9F60-0B774D5AE1BE}|HR_PROJECT.Persistence\\HR_PROJECT.Persistence.csproj|c:\\users\\shohzod\\source\\repos\\hr-project-backend3\\hr_project.persistence\\configurations\\permissionconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8761977A-42D5-4803-9F60-0B774D5AE1BE}|HR_PROJECT.Persistence\\HR_PROJECT.Persistence.csproj|solutionrelative:hr_project.persistence\\configurations\\permissionconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,7 +14,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Bookmark",
@@ -30,41 +22,15 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "PermissionController.cs",
-              "DocumentMoniker": "C:\\Users\\Shohzod\\source\\repos\\HR-PROJECT-BACKEND3\\HR_PROJECT.WebAPI\\Controllers\\PermissionController.cs",
-              "RelativeDocumentMoniker": "HR_PROJECT.WebAPI\\Controllers\\PermissionController.cs",
-              "ToolTip": "C:\\Users\\Shohzod\\source\\repos\\HR-PROJECT-BACKEND3\\HR_PROJECT.WebAPI\\Controllers\\PermissionController.cs*",
-              "RelativeToolTip": "HR_PROJECT.WebAPI\\Controllers\\PermissionController.cs*",
-              "ViewState": "AQIAADkAAAAAAAAAAADwv04AAAAaAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-22T20:48:16.422Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "CreatePermissionCommand.cs",
-              "DocumentMoniker": "C:\\Users\\Shohzod\\source\\repos\\HR-PROJECT-BACKEND3\\HR_PROJECT.Application\\Features\\CQRS\\Commands\\PermissionComands\\CreatePermissionCommand.cs",
-              "RelativeDocumentMoniker": "HR_PROJECT.Application\\Features\\CQRS\\Commands\\PermissionComands\\CreatePermissionCommand.cs",
-              "ToolTip": "C:\\Users\\Shohzod\\source\\repos\\HR-PROJECT-BACKEND3\\HR_PROJECT.Application\\Features\\CQRS\\Commands\\PermissionComands\\CreatePermissionCommand.cs",
-              "RelativeToolTip": "HR_PROJECT.Application\\Features\\CQRS\\Commands\\PermissionComands\\CreatePermissionCommand.cs",
-              "ViewState": "AQIAAAwAAAAAAAAAAAAYwBQAAAAtAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-22T20:25:56.658Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Permission.cs",
-              "DocumentMoniker": "C:\\Users\\Shohzod\\source\\repos\\HR-PROJECT-BACKEND3\\HR_PROJECT.Domain\\Entities\\Permission.cs",
-              "RelativeDocumentMoniker": "HR_PROJECT.Domain\\Entities\\Permission.cs",
-              "ToolTip": "C:\\Users\\Shohzod\\source\\repos\\HR-PROJECT-BACKEND3\\HR_PROJECT.Domain\\Entities\\Permission.cs",
-              "RelativeToolTip": "HR_PROJECT.Domain\\Entities\\Permission.cs",
-              "ViewState": "AQIAADEAAAAAAAAAAAAcwEUAAAAkAAAA",
+              "Title": "PermissionConfiguration.cs",
+              "DocumentMoniker": "C:\\Users\\Shohzod\\source\\repos\\HR-PROJECT-BACKEND3\\HR_PROJECT.Persistence\\Configurations\\PermissionConfiguration.cs",
+              "RelativeDocumentMoniker": "HR_PROJECT.Persistence\\Configurations\\PermissionConfiguration.cs",
+              "ToolTip": "C:\\Users\\Shohzod\\source\\repos\\HR-PROJECT-BACKEND3\\HR_PROJECT.Persistence\\Configurations\\PermissionConfiguration.cs*",
+              "RelativeToolTip": "HR_PROJECT.Persistence\\Configurations\\PermissionConfiguration.cs*",
+              "ViewState": "AQIAACAAAAAAAAAAAAAgwC0AAAAuAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-22T20:09:42.411Z",
+              "WhenOpened": "2024-03-23T16:34:08.934Z",
               "EditorCaption": ""
             }
           ]
