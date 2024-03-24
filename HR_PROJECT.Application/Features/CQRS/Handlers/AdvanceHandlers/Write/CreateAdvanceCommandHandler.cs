@@ -30,7 +30,8 @@ namespace HR_PROJECT.Application.Features.CQRS.Handlers.AdvanceHandlers.Write
                 EmployeeId = command.EmployeeId,
                 Description = command.Description,
                 ApprovalStatus = command.ApprovalStatus,
-                AmountValue = command.AmountValue
+                AmountValue = command.AmountValue,
+                RequestDate = command.RequestDate,
             });
         }
     }

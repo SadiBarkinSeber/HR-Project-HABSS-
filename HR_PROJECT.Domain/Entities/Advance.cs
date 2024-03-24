@@ -42,7 +42,7 @@ namespace HR_PROJECT.Domain.Entities
         }
         public decimal Amount { get; set; }
         public decimal? AmountValue { get; set; }
-        public DateTime RequestDate { get; }
+        public DateTime RequestDate { get; set; }
         public int EmployeeId { get; set; }
         private string currency;
 
