@@ -15,6 +15,7 @@ namespace HR_PROJECT.Domain.Entities
         public Advance()
         {
             Permission = false;
+            IsCanceled = false;
         }
 
         public int Id { get; set; }
@@ -77,6 +78,7 @@ namespace HR_PROJECT.Domain.Entities
                 }
             }
         }
+        public bool IsCanceled { get; set; }
 
     }
 }

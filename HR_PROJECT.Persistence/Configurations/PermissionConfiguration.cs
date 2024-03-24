@@ -38,29 +38,29 @@ namespace HR_PROJECT.Persistence.Configurations
 
             #region Seed Data
 
-            builder.HasData(
+            //builder.HasData(
                 
-            new Permission
-            {
-                Id = 1,
-                PermissionType = "Baba İzni",
-                StartDate = new DateTime(2024, 3, 22),
-                EndDate = new DateTime(2024, 3, 25),
-                NumberOfDays = 3,
-                EmployeeId = 1,
-                ApprovalStatus = "Requested"
-            },
-            new Permission
-            {
-                   Id = 2,
-                   PermissionType = "Anne İzni",
-                   StartDate = new DateTime(2024, 3, 22),
-                   EndDate = new DateTime(2024, 4, 26),
-                   NumberOfDays = 4,
-                   EmployeeId = 1,
-                   ApprovalStatus = "Requested"
-            }
-            );
+            //new Permission
+            //{
+            //    Id = 1,
+            //    PermissionType = "Baba İzni",
+            //    StartDate = new DateTime(2024, 3, 22),
+            //    EndDate = new DateTime(2024, 3, 25),
+            //    NumberOfDays = 3,
+            //    EmployeeId = 1,
+            //    ApprovalStatus = "Requested"
+            //},
+            //new Permission
+            //{
+            //       Id = 2,
+            //       PermissionType = "Anne İzni",
+            //       StartDate = new DateTime(2024, 3, 22),
+            //       EndDate = new DateTime(2024, 4, 26),
+            //       NumberOfDays = 4,
+            //       EmployeeId = 1,
+            //       ApprovalStatus = "Requested"
+            //}
+            //);
 
             #endregion
         }

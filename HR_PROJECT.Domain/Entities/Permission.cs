@@ -11,6 +11,7 @@ namespace HR_PROJECT.Domain.Entities
         public Permission()
         {
             IsApproved = false;
+            IsCancelled = false;
         }
 
         public int Id { get; set; }
@@ -82,5 +83,6 @@ namespace HR_PROJECT.Domain.Entities
         public int EmployeeId { get; set; }
         public Employee Employee { get; set; }
         public bool IsApproved { get; set; }
+        public bool IsCancelled { get; set; }
     }
 }

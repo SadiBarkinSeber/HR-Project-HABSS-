@@ -25,12 +25,12 @@ namespace HR_PROJECT.WebAPI.Controllers
         private readonly RemoveExpenseCommandHandler _removeExpenseCommandHandler;
         private readonly GetExpenseByEmployeeIdQueryHandler _getExpensesByEmployee;
         private readonly GetEmployeeByIdQueryHandler _getEmployeeByIdQueryHandler;
-        
+        private UpdateExpenseForEmployeeCommandHandler _updateExpenseForEmployee;
         #endregion
 
         #region Constructor
 
-        public ExpensesController(CreateExpenseCommandHandler createExpenseCommandHandler, GetExpenseByIdQueryHandler getExpenseByIdQueryHandler, GetExpenseQueryHandler getExpenseQueryHandler, UpdateExpenseCommandHandler updateExpenseCommandHandler, RemoveExpenseCommandHandler removeExpenseCommandHandler, GetExpenseByEmployeeIdQueryHandler getExpensesByEmployee, GetEmployeeByIdQueryHandler getEmployeeByIdQueryHandler)
+        public ExpensesController(CreateExpenseCommandHandler createExpenseCommandHandler, GetExpenseByIdQueryHandler getExpenseByIdQueryHandler, GetExpenseQueryHandler getExpenseQueryHandler, UpdateExpenseCommandHandler updateExpenseCommandHandler, RemoveExpenseCommandHandler removeExpenseCommandHandler, GetExpenseByEmployeeIdQueryHandler getExpensesByEmployee, GetEmployeeByIdQueryHandler getEmployeeByIdQueryHandler, UpdateExpenseForEmployeeCommandHandler updateExpenseForEmployee)
         {
             _createExpenseCommandhandler = createExpenseCommandHandler;
             _getExpenseByIdQueryHandler = getExpenseByIdQueryHandler;
@@ -39,6 +39,7 @@ namespace HR_PROJECT.WebAPI.Controllers
             _removeExpenseCommandHandler = removeExpenseCommandHandler;
             _getExpensesByEmployee = getExpensesByEmployee;
             _getEmployeeByIdQueryHandler = getEmployeeByIdQueryHandler;
+            _updateExpenseForEmployee = updateExpenseForEmployee;
         }
 
         #endregion
@@ -113,8 +114,29 @@ namespace HR_PROJECT.WebAPI.Controllers
         [HttpPut]
         public async Task<IActionResult> UpdateExpense(UpdateExpenseCommand command)
         {
-            await _updateExpenseCommandhandler.Handle(command);
-            return Ok("Harcama bilgisi güncellendi.");
+            try
+            {
+                await _updateExpenseCommandhandler.Handle(command);
+                return Ok("Harcama bilgisi güncellendi.");
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }  
+        }
+
+        [HttpPut("employee")]
+        public async Task<IActionResult> UpdateExpenseForEmployee(UpdateExpenseForEmployeeCommand command)
+        {
+            try
+            {
+                await _updateExpenseForEmployee.Handle(command);
+                return Ok("Harcama bilgisi güncellendi.");
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
         }
 
         #endregion
