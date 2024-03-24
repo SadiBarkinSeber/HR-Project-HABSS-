@@ -9,9 +9,9 @@ namespace HR_PROJECT.Application.Features.CQRS.Commands.EmployeeCommands
     public class CreateEmployeeCommand
     {
         public string FirstName { get; set; }
-        public string SecondName { get; set; }
+        public string? SecondName { get; set; }
         public string FirstSurname { get; set; }
-        public string SecondSurname { get; set; }
+        public string? SecondSurname { get; set; }
         public DateTime DateOfBirth { get; set; }
         public string BirthPlace { get; set; }
         public string Tc { get; set; }
@@ -26,6 +26,6 @@ namespace HR_PROJECT.Application.Features.CQRS.Commands.EmployeeCommands
         public string ImagePath { get; set; }
         public string PhoneNumber { get; set; }
         public string Address { get; set; }
-        public string UserId { get; set; }
+        public string? UserId { get; set; }
     }
 }

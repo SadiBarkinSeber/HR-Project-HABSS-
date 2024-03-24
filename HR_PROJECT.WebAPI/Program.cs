@@ -152,7 +152,7 @@ builder.Services.AddScoped<RemoveManagerCommandHandler>();
 #region Dependency Injection of Helper Functions
 
 builder.Services.AddScoped<CheckEmployeeWage>();
-
+builder.Services.AddScoped<CreateRandomPasswordHelper>();
 
 #endregion
 
