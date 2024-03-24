@@ -112,6 +112,7 @@ builder.Services.AddScoped<RemovePermissionCommandHandler>();
 builder.Services.AddScoped<UpdatePermissionCommandHandler>();
 builder.Services.AddScoped<GetPermissionQueryHandler>();
 builder.Services.AddScoped<UpdatepermissionForEmployeeCommandHandler>();
+builder.Services.AddScoped<UpdatePermissionForManagerCommandHandler>();
 #endregion
 
 #region Dependency Injection of Expense Handlers
@@ -123,6 +124,7 @@ builder.Services.AddScoped<UpdateExpenseCommandHandler>();
 builder.Services.AddScoped<RemoveExpenseCommandHandler>();
 builder.Services.AddScoped<GetExpenseByEmployeeIdQueryHandler>();
 builder.Services.AddScoped<UpdateExpenseForEmployeeCommandHandler>();
+builder.Services.AddScoped<UpdateExpenseForManagerCommandHandler>();
 #endregion
 
 #region Dependency Injection of Advance Handlers
@@ -134,6 +136,7 @@ builder.Services.AddScoped<UpdateAdvanceCommandHandler>();
 builder.Services.AddScoped<RemoveAdvanceCommandHandler>();
 builder.Services.AddScoped<GetAdvanceByEmployeeIdQueryHandler>();
 builder.Services.AddScoped<UpdateAdvanceForEmployeeCommandHandler>();
+builder.Services.AddScoped<UpdateAdvanceForManagerHandler>();
 #endregion
 
 #region Dependency Injection of Manager Handlers

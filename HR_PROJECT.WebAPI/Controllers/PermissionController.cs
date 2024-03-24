@@ -29,12 +29,13 @@ namespace HR_PROJECT.WebAPI.Controllers
         private readonly GetPermissionQueryHandler _getPermissionQueryHandler;
         private readonly GetEmployeeByIdQueryHandler _getEmployeeByIdQueryHandler;
         private readonly UpdatepermissionForEmployeeCommandHandler _updatePermissionForEmployeeCommandHandler;
+        private readonly UpdatePermissionForManagerCommandHandler _updatePermissionForManagerCommandHandler;
         #endregion
 
 
         #region Constructor
 
-       public PermissionController(CreatePermissionCommandHandler createPermissionCommandHandler, GetPermissionsByEmployeeIDHandler getPermissionsByEmployeeIDHandler, RemovePermissionCommandHandler removePermissionCommandHandler, UpdatePermissionCommandHandler updatePermissionCommandHandler, GetPermissionQueryHandler getPermissionQueryHandler, GetEmployeeByIdQueryHandler getEmployeeByIdQueryHandler, UpdatepermissionForEmployeeCommandHandler updatepermissionForEmployeeCommandHandler)
+       public PermissionController(CreatePermissionCommandHandler createPermissionCommandHandler, GetPermissionsByEmployeeIDHandler getPermissionsByEmployeeIDHandler, RemovePermissionCommandHandler removePermissionCommandHandler, UpdatePermissionCommandHandler updatePermissionCommandHandler, GetPermissionQueryHandler getPermissionQueryHandler, GetEmployeeByIdQueryHandler getEmployeeByIdQueryHandler, UpdatepermissionForEmployeeCommandHandler updatepermissionForEmployeeCommandHandler, UpdatePermissionForManagerCommandHandler updatePermissionForManagerCommandHandler)
         {
             _createPermissionCommandHandler = createPermissionCommandHandler;
             _getPermissionsByEmployeeIDHandler = getPermissionsByEmployeeIDHandler;
@@ -43,6 +44,7 @@ namespace HR_PROJECT.WebAPI.Controllers
             _getPermissionQueryHandler = getPermissionQueryHandler;
             _getEmployeeByIdQueryHandler = getEmployeeByIdQueryHandler;
             _updatePermissionForEmployeeCommandHandler = updatepermissionForEmployeeCommandHandler;
+            _updatePermissionForManagerCommandHandler = updatePermissionForManagerCommandHandler;
         }
         #endregion
 
@@ -120,6 +122,20 @@ namespace HR_PROJECT.WebAPI.Controllers
                 return Ok("İzin talebi güncellendi.");
             }
             catch (Exception ex) 
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+
+        [HttpPut("manager")]
+        public async Task<IActionResult> UpdatePermissionForManager(UpdatePermissionForManagerCommand command)
+        {
+            try
+            {
+                await _updatePermissionForManagerCommandHandler.Handle(command);
+                return Ok("İzin bilgisi güncellendi.");
+            }
+            catch (Exception ex)
             {
                 return BadRequest(ex.Message);
             }
