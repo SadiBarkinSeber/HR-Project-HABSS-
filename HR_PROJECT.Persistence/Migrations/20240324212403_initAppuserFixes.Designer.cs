@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace HR_PROJECT.Persistence.Migrations
 {
     [DbContext(typeof(HRProjectContext))]
-    [Migration("20240323171013_initpermissionPut")]
-    partial class initpermissionPut
+    [Migration("20240324212403_initAppuserFixes")]
+    partial class initAppuserFixes
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -135,6 +135,12 @@ namespace HR_PROJECT.Persistence.Migrations
                     b.Property<int?>("EmployeeId")
                         .HasColumnType("int");
 
+                    b.Property<string>("FirstName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("LastName")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<bool>("LockoutEnabled")
                         .HasColumnType("bit");
 
@@ -188,14 +194,14 @@ namespace HR_PROJECT.Persistence.Migrations
                         {
                             Id = "df5a9b38-18e8-48b7-97bf-ad4a9b4afe0e",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "d12340ae-4860-494b-a1ac-71f0bda73193",
+                            ConcurrencyStamp = "89a82d47-4cfa-47d8-be64-7c36dd585b3b",
                             Email = "sahzod.irgas@bilgeadam.com",
                             EmailConfirmed = false,
                             EmployeeId = 1,
                             LockoutEnabled = false,
                             NormalizedEmail = "SAHZOD.IRGAS@BILGEADAM.COM",
                             NormalizedUserName = "SAHZOD",
-                            PasswordHash = "AQAAAAIAAYagAAAAECrovKEJlAiLXU/0Yv+667yzjx2mGIYCmJegAYg/HBGRGQRG8NZVK/SCBp02Y2ifww==",
+                            PasswordHash = "AQAAAAIAAYagAAAAECT01OqsHm/uA+DsgS5cEN7r9ToV3wU8xMYJ1OgNDy/tfamtf20RTdiukytGaJfifg==",
                             PhoneNumberConfirmed = false,
                             SecurityStamp = "",
                             TwoFactorEnabled = false,
@@ -205,14 +211,14 @@ namespace HR_PROJECT.Persistence.Migrations
                         {
                             Id = "29eee336-e6a2-40f2-9305-159eed59ed75",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "497ccaaa-149d-4965-8e85-d8334aeefb46",
+                            ConcurrencyStamp = "0d2cd2e1-116d-4c29-abd7-8d0a25a2c9c5",
                             Email = "admin@bilgeadam.com",
                             EmailConfirmed = false,
                             LockoutEnabled = false,
                             ManagerId = 3,
                             NormalizedEmail = "ADMIN@BILGEADAM.COM",
                             NormalizedUserName = "ADMIN",
-                            PasswordHash = "AQAAAAIAAYagAAAAECc8fNuJyG7lQaUO3UDNBT7Fh3k0PN+yBSmPoeH8PhVc17y2jZPRJsd7wN+ffbEWLQ==",
+                            PasswordHash = "AQAAAAIAAYagAAAAEOtAVzY2DX0LONp2v6GpLtMg1RkEhGquwjArSrLuFDc0IPJNXXCtDS8kHW5U6VarTQ==",
                             PhoneNumberConfirmed = false,
                             SecurityStamp = "",
                             TwoFactorEnabled = false,
@@ -318,7 +324,7 @@ namespace HR_PROJECT.Persistence.Migrations
                             FirstSurname = "Doe",
                             ImagePath = "/Images/john_doe.jpg",
                             IsActive = true,
-                            PhoneNumber = "5417896325",
+                            PhoneNumber = "+905417896325",
                             Position = "Director",
                             StartDate = new DateTime(2017, 3, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Tc = "19586478952",
@@ -339,7 +345,7 @@ namespace HR_PROJECT.Persistence.Migrations
                             FirstSurname = "Doe",
                             ImagePath = "/Images/jane_doe.jpg",
                             IsActive = false,
-                            PhoneNumber = "5085234563",
+                            PhoneNumber = "+905085234563",
                             Position = "Lead Architect",
                             SecondName = "Margaret",
                             SecondSurname = "Thatcher",
@@ -515,7 +521,7 @@ namespace HR_PROJECT.Persistence.Migrations
                         .IsUnique()
                         .HasFilter("[UserId] IS NOT NULL");
 
-                    b.ToTable("Manager");
+                    b.ToTable("Managers");
 
                     b.HasData(
                         new
@@ -531,7 +537,7 @@ namespace HR_PROJECT.Persistence.Migrations
                             FirstSurname = "Da Vinci",
                             ImagePath = "file.jpg",
                             IsActive = true,
-                            PhoneNumber = "5075217896",
+                            PhoneNumber = "+905075217896",
                             Position = "IT Manager",
                             StartDate = new DateTime(2015, 12, 26, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Tc = "54696378921",

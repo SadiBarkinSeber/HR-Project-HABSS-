@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace HR_PROJECT.Persistence.Migrations
 {
     [DbContext(typeof(HRProjectContext))]
-    [Migration("20240322201316_init")]
-    partial class init
+    [Migration("20240324220802_initAppuserFixes2")]
+    partial class initAppuserFixes2
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -59,6 +59,9 @@ namespace HR_PROJECT.Persistence.Migrations
                     b.Property<int>("EmployeeId")
                         .HasColumnType("int");
 
+                    b.Property<bool>("IsCanceled")
+                        .HasColumnType("bit");
+
                     b.Property<int?>("ManagerEmployeeId")
                         .HasColumnType("int");
 
@@ -89,6 +92,7 @@ namespace HR_PROJECT.Persistence.Migrations
                             Currency = "TL",
                             Description = "Araba alıcam",
                             EmployeeId = 1,
+                            IsCanceled = false,
                             Permission = false,
                             RequestDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Response = "Please provide necessary documents."
@@ -102,6 +106,7 @@ namespace HR_PROJECT.Persistence.Migrations
                             Currency = "TL",
                             Description = "Motor alıcam",
                             EmployeeId = 1,
+                            IsCanceled = false,
                             Permission = true,
                             RequestDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Response = "Request have been approved."
@@ -129,6 +134,12 @@ namespace HR_PROJECT.Persistence.Migrations
 
                     b.Property<int?>("EmployeeId")
                         .HasColumnType("int");
+
+                    b.Property<string>("FirstName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("LastName")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<bool>("LockoutEnabled")
                         .HasColumnType("bit");
@@ -183,14 +194,14 @@ namespace HR_PROJECT.Persistence.Migrations
                         {
                             Id = "df5a9b38-18e8-48b7-97bf-ad4a9b4afe0e",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "b64b6a29-72fb-47bc-967d-500fd8202a2d",
+                            ConcurrencyStamp = "6c93afad-3c13-45aa-b3e8-d0d93007e834",
                             Email = "sahzod.irgas@bilgeadam.com",
                             EmailConfirmed = false,
                             EmployeeId = 1,
                             LockoutEnabled = false,
                             NormalizedEmail = "SAHZOD.IRGAS@BILGEADAM.COM",
                             NormalizedUserName = "SAHZOD",
-                            PasswordHash = "AQAAAAIAAYagAAAAEFp+7/GgKVeDbOulaLUlRGB+RO1GKDQwB0u9f3F86/17MZiJ2qK7PGj0TFWbm3KJnQ==",
+                            PasswordHash = "AQAAAAIAAYagAAAAEJWIk5FNu/3e9fPRPPSDYe3bN8pYQR9cKGEFJ70a1PVGxYhOXRHOcZkDFksmxVINbg==",
                             PhoneNumberConfirmed = false,
                             SecurityStamp = "",
                             TwoFactorEnabled = false,
@@ -200,14 +211,14 @@ namespace HR_PROJECT.Persistence.Migrations
                         {
                             Id = "29eee336-e6a2-40f2-9305-159eed59ed75",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "d996e46f-7fbb-4002-978f-06e0bfa7ac44",
+                            ConcurrencyStamp = "275056ac-714b-4597-83bf-aecfd7044a70",
                             Email = "admin@bilgeadam.com",
                             EmailConfirmed = false,
                             LockoutEnabled = false,
                             ManagerId = 3,
                             NormalizedEmail = "ADMIN@BILGEADAM.COM",
                             NormalizedUserName = "ADMIN",
-                            PasswordHash = "AQAAAAIAAYagAAAAENRgedmO17My++DUGmZDKtX/iu0Yfe4b4veANOykg8MLHGSsSOF6lw9flrNZXopwCw==",
+                            PasswordHash = "AQAAAAIAAYagAAAAEGzi2/9XB++4GvmslYJ/56q35CMdzaYq0lEzKpbw+eBvnw4plpyVA1XCLIDJerBSFg==",
                             PhoneNumberConfirmed = false,
                             SecurityStamp = "",
                             TwoFactorEnabled = false,
@@ -313,7 +324,7 @@ namespace HR_PROJECT.Persistence.Migrations
                             FirstSurname = "Doe",
                             ImagePath = "/Images/john_doe.jpg",
                             IsActive = true,
-                            PhoneNumber = "5417896325",
+                            PhoneNumber = "+905417896325",
                             Position = "Director",
                             StartDate = new DateTime(2017, 3, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Tc = "19586478952",
@@ -334,7 +345,7 @@ namespace HR_PROJECT.Persistence.Migrations
                             FirstSurname = "Doe",
                             ImagePath = "/Images/jane_doe.jpg",
                             IsActive = false,
-                            PhoneNumber = "5085234563",
+                            PhoneNumber = "+905085234563",
                             Position = "Lead Architect",
                             SecondName = "Margaret",
                             SecondSurname = "Thatcher",
@@ -376,6 +387,9 @@ namespace HR_PROJECT.Persistence.Migrations
                     b.Property<string>("FileName")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<bool>("IsCancelled")
+                        .HasColumnType("bit");
+
                     b.Property<int?>("ManagerEmployeeId")
                         .HasColumnType("int");
 
@@ -405,6 +419,7 @@ namespace HR_PROJECT.Persistence.Migrations
                             Currency = "TL",
                             EmployeeId = 1,
                             ExpenseType = "İş Seyahatleri",
+                            IsCancelled = false,
                             Permission = false,
                             RequestDate = new DateTime(2024, 3, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Response = "Please provide necessary documents."
@@ -417,6 +432,7 @@ namespace HR_PROJECT.Persistence.Migrations
                             Currency = "TL",
                             EmployeeId = 1,
                             ExpenseType = "Personel Harcamaları",
+                            IsCancelled = false,
                             Permission = true,
                             RequestDate = new DateTime(2024, 3, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Response = "Request have been approved."
@@ -505,7 +521,7 @@ namespace HR_PROJECT.Persistence.Migrations
                         .IsUnique()
                         .HasFilter("[UserId] IS NOT NULL");
 
-                    b.ToTable("Manager");
+                    b.ToTable("Managers");
 
                     b.HasData(
                         new
@@ -521,7 +537,7 @@ namespace HR_PROJECT.Persistence.Migrations
                             FirstSurname = "Da Vinci",
                             ImagePath = "file.jpg",
                             IsActive = true,
-                            PhoneNumber = "5075217896",
+                            PhoneNumber = "+905075217896",
                             Position = "IT Manager",
                             StartDate = new DateTime(2015, 12, 26, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Tc = "54696378921",
@@ -554,6 +570,9 @@ namespace HR_PROJECT.Persistence.Migrations
                     b.Property<bool>("IsApproved")
                         .HasColumnType("bit");
 
+                    b.Property<bool>("IsCancelled")
+                        .HasColumnType("bit");
+
                     b.Property<int?>("ManagerEmployeeId")
                         .HasColumnType("int");
 
@@ -577,32 +596,6 @@ namespace HR_PROJECT.Persistence.Migrations
                     b.HasIndex("ManagerEmployeeId");
 
                     b.ToTable("Permissions");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            ApprovalStatus = "Requested",
-                            EmployeeId = 1,
-                            EndDate = new DateTime(2024, 3, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            IsApproved = false,
-                            NumberOfDays = 3,
-                            PermissionType = "Baba izni",
-                            RequestDate = new DateTime(2024, 3, 22, 23, 13, 16, 430, DateTimeKind.Local).AddTicks(9112),
-                            StartDate = new DateTime(2024, 3, 22, 0, 0, 0, 0, DateTimeKind.Unspecified)
-                        },
-                        new
-                        {
-                            Id = 2,
-                            ApprovalStatus = "Requested",
-                            EmployeeId = 1,
-                            EndDate = new DateTime(2024, 4, 26, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            IsApproved = false,
-                            NumberOfDays = 4,
-                            PermissionType = "Anne izni",
-                            RequestDate = new DateTime(2024, 3, 22, 23, 13, 16, 430, DateTimeKind.Local).AddTicks(9134),
-                            StartDate = new DateTime(2024, 3, 22, 0, 0, 0, 0, DateTimeKind.Unspecified)
-                        });
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
@@ -630,6 +623,20 @@ namespace HR_PROJECT.Persistence.Migrations
                         .HasFilter("[NormalizedName] IS NOT NULL");
 
                     b.ToTable("AspNetRoles", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            Id = "f6040633-db1b-4a48-be54-9f214e77ac9d",
+                            Name = "employee",
+                            NormalizedName = "EMPLOYEE"
+                        },
+                        new
+                        {
+                            Id = "f7deff55-ad53-4946-bce3-1208ff6c52e7",
+                            Name = "manager",
+                            NormalizedName = "MANAGER"
+                        });
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -717,6 +724,23 @@ namespace HR_PROJECT.Persistence.Migrations
                     b.HasIndex("RoleId");
 
                     b.ToTable("AspNetUserRoles", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            UserId = "29eee336-e6a2-40f2-9305-159eed59ed75",
+                            RoleId = "f7deff55-ad53-4946-bce3-1208ff6c52e7"
+                        },
+                        new
+                        {
+                            UserId = "df5a9b38-18e8-48b7-97bf-ad4a9b4afe0e",
+                            RoleId = "f6040633-db1b-4a48-be54-9f214e77ac9d"
+                        },
+                        new
+                        {
+                            UserId = "29eee336-e6a2-40f2-9305-159eed59ed75",
+                            RoleId = "f6040633-db1b-4a48-be54-9f214e77ac9d"
+                        });
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<string>", b =>

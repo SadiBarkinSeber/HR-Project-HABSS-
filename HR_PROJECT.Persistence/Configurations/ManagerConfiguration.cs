@@ -36,7 +36,7 @@ namespace HR_PROJECT.Persistence.Configurations
                     Email = "leonardo.davinci@bilgeadam.com",
                     Wage = 156245,
                     ImagePath = "file.jpg",
-                    PhoneNumber = "5075217896",
+                    PhoneNumber = "+905075217896",
                     Address = "Yıldız Mah. Barbaros Bulvarı Beşiktaş/İstanbul",
                     UserId = "29eee336-e6a2-40f2-9305-159eed59ed75"
                 }
