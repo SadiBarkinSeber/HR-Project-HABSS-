@@ -21,6 +21,8 @@ using Microsoft.IdentityModel.Tokens;
 using System.Text;
 using HR_PROJECT.WebAPI.Services;
 using Microsoft.Extensions.Options;
+using HR_PROJECT.Application.Features.CQRS.Handlers.ManagerHandlers.Read;
+using HR_PROJECT.Application.Features.CQRS.Handlers.ManagerHandlers.Write;
 #endregion
 
 
@@ -132,12 +134,25 @@ builder.Services.AddScoped<RemoveAdvanceCommandHandler>();
 builder.Services.AddScoped<GetAdvanceByEmployeeIdQueryHandler>();
 #endregion
 
+#region Dependency Injection of Manager Handlers
+
+builder.Services.AddScoped<GetManagerByIdQueryHandler>();
+builder.Services.AddScoped<GetManagerQueryHandler>();
+builder.Services.AddScoped<CreateManagerCommandHandler>();
+builder.Services.AddScoped<UpdateManagerCommandHandler>();
+builder.Services.AddScoped<RemoveManagerCommandHandler>();
+
+#endregion
+
 #region Dependency Injection of Helper Functions
 
 builder.Services.AddScoped<CheckEmployeeWage>();
 
 
 #endregion
+
+
+
 
 builder.Services.AddControllers(); 
 
