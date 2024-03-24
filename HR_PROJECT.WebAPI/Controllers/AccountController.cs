@@ -54,7 +54,12 @@ namespace HR_PROJECT.WebAPI.Controllers
             }
         }
 
-        [AllowAnonymous]
+
+        [HttpPost]
+
+        
+
+        
         [HttpPost("resetpassword")]
         public async Task<IActionResult> ResetPassword(string email)
         {
