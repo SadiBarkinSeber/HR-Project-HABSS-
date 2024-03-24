@@ -16,6 +16,8 @@ namespace HR_PROJECT.Persistence.Context
         public DbSet<Expense> Expenses { get; set; }
         public DbSet<Permission> Permissions { get; set; }
         public DbSet<Advance> Advances { get; set; }
+        public DbSet<Manager> Managers { get; set; }
+
 
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
