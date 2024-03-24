@@ -13,5 +13,7 @@ namespace HR_PROJECT.Domain.Entities
         public Employee? Employee { get; set; }
         public int? ManagerId { get; set; }
         public Manager? Manager { get; set; }
+        public string? FirstName { get; set; }
+        public string? LastName { get; set; }
     }
 }

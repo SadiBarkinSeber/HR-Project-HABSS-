@@ -38,7 +38,7 @@ namespace HR_PROJECT.Persistence.Configurations
                     Email = "john.doe@bilgeadam.com",
                     Wage = 95489,
                     ImagePath = "/Images/john_doe.jpg",
-                    PhoneNumber = "5417896325",
+                    PhoneNumber = "+905417896325",
                     Address = "19 Mayıs Mah. Halit Paşa Cad. Şişli/İstanbul",
                     UserId = "df5a9b38-18e8-48b7-97bf-ad4a9b4afe0e"
                 },
@@ -61,7 +61,7 @@ namespace HR_PROJECT.Persistence.Configurations
                     Email = "jane.doe@bilgeadam.com",
                     Wage = 63951,
                     ImagePath = "/Images/jane_doe.jpg",
-                    PhoneNumber = "5085234563",
+                    PhoneNumber = "+905085234563",
                     Address = "Ayvansaray Mah. Şemsi Paşa Sokak Fatih/İstanbul"
                 }
 

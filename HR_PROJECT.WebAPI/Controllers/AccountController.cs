@@ -10,6 +10,7 @@ using System.IdentityModel.Tokens.Jwt;
 using System.Text;
 using System.Net;
 using System.Net.Mail;
+using HR_PROJECT.WebAPI.HelperFunctions;
 
 namespace HR_PROJECT.WebAPI.Controllers
 {
@@ -21,16 +22,24 @@ namespace HR_PROJECT.WebAPI.Controllers
         private readonly UserManager<ApplicationUser> _userManager;
         private readonly IAuthService authService;
         private readonly ILogger<AccountController> logger;
+        private readonly RoleManager<IdentityRole> _roleManager;
+        private readonly PasswordHasher<ApplicationUser> _passwordHasher;
+        private readonly CreateRandomPassword _createRandomPassword;
+        
+        
 
-        public AccountController(UserManager<ApplicationUser> userManager, ILogger<AccountController> logger, IAuthService authService)
+        public AccountController(UserManager<ApplicationUser> userManager, ILogger<AccountController> logger, IAuthService authService, RoleManager<IdentityRole> roleManager, PasswordHasher<ApplicationUser> passwordHasher, CreateRandomPassword createRandomPassword)
         {
             _userManager = userManager;
             this.logger = logger;
             this.authService = authService;
+            _createRandomPassword = createRandomPassword;
+            _passwordHasher = passwordHasher;
+            _roleManager = roleManager;
         }
 
         [AllowAnonymous]
-        [HttpPost]
+        [HttpPost("Login")]
         public async Task<IActionResult> Login(LoginApplicationUserDTO dto)
         {
             try
@@ -55,7 +64,74 @@ namespace HR_PROJECT.WebAPI.Controllers
         }
 
 
-        [HttpPost]
+        [HttpPost("create")]
+        public async Task<IActionResult> Create(CreateApplicationUserDTO dto)
+        {
+            try
+            {
+                
+                if (!ModelState.IsValid)
+                {
+                    return BadRequest("Invalid payload");
+                }
+
+                if (ModelState.IsValid)
+                {
+                    ApplicationUser user = new ApplicationUser()
+                    {
+                        UserName = dto.UserName,
+                        Email = dto.Email,
+                        FirstName = dto.Firstname,
+                        LastName = dto.Lastname
+                    };
+
+                    string password = _createRandomPassword.GenerateRandomString(6);
+
+                    IdentityResult result = await _userManager.CreateAsync(user, password);
+
+                    if (result.Succeeded)
+                    {
+                        string roleName = "employee";
+
+                        result = await _userManager.AddToRoleAsync(user, roleName);
+                        if (!result.Succeeded)
+                        {
+                            Errors(result);
+                            return BadRequest("An error has occurred. 100");
+                        }
+
+                        var response = new
+                        {
+                            Message = "Kullanıcı oluşturuldu.",
+                            Password = password,
+                            Email = user.Email
+                        };
+
+                        return Ok(response);
+                    }
+
+                    else
+                    {
+                        foreach (IdentityError item in result.Errors)
+                        {
+                            ModelState.AddModelError("Create User", $"{item.Code} - {item.Description}");
+                        }
+
+                        var response = ModelState;
+
+                        return BadRequest(response);
+                    }
+                }
+                else
+                {
+                    return BadRequest("An error has occurred. 124");
+                }
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);  
+            }
+        }
 
         
 
@@ -93,6 +169,18 @@ namespace HR_PROJECT.WebAPI.Controllers
 
             return Ok("Doğrulama kodu başarılı bir şekilde gönderildi.");
         }
+
+
+        private void Errors(IdentityResult result)
+        {
+            foreach (IdentityError item in result.Errors)
+            {
+                ModelState.AddModelError("UpdateUser", $"{item.Code} - {item.Description}");
+            }
+        }
+
+
+        
 
     }
 }

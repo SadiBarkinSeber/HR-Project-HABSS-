@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace HR_PROJECT.Persistence.Migrations
 {
     /// <inheritdoc />
-    public partial class init : Migration
+    public partial class initAppUserCreate : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -34,6 +34,8 @@ namespace HR_PROJECT.Persistence.Migrations
                     Id = table.Column<string>(type: "nvarchar(450)", nullable: false),
                     EmployeeId = table.Column<int>(type: "int", nullable: true),
                     ManagerId = table.Column<int>(type: "int", nullable: true),
+                    FirstName = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    LastName = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     UserName = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
                     NormalizedUserName = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
                     Email = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
@@ -197,7 +199,7 @@ namespace HR_PROJECT.Persistence.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Manager",
+                name: "Managers",
                 columns: table => new
                 {
                     EmployeeId = table.Column<int>(type: "int", nullable: false)
@@ -224,9 +226,9 @@ namespace HR_PROJECT.Persistence.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Manager", x => x.EmployeeId);
+                    table.PrimaryKey("PK_Managers", x => x.EmployeeId);
                     table.ForeignKey(
-                        name: "FK_Manager_AspNetUsers_UserId",
+                        name: "FK_Managers_AspNetUsers_UserId",
                         column: x => x.UserId,
                         principalTable: "AspNetUsers",
                         principalColumn: "Id");
@@ -248,6 +250,7 @@ namespace HR_PROJECT.Persistence.Migrations
                     EmployeeId = table.Column<int>(type: "int", nullable: false),
                     Currency = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Description = table.Column<string>(type: "nvarchar(500)", maxLength: 500, nullable: false),
+                    IsCanceled = table.Column<bool>(type: "bit", nullable: false),
                     ManagerEmployeeId = table.Column<int>(type: "int", nullable: true)
                 },
                 constraints: table =>
@@ -260,9 +263,9 @@ namespace HR_PROJECT.Persistence.Migrations
                         principalColumn: "EmployeeId",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_Advances_Manager_ManagerEmployeeId",
+                        name: "FK_Advances_Managers_ManagerEmployeeId",
                         column: x => x.ManagerEmployeeId,
-                        principalTable: "Manager",
+                        principalTable: "Managers",
                         principalColumn: "EmployeeId");
                 });
 
@@ -282,6 +285,7 @@ namespace HR_PROJECT.Persistence.Migrations
                     EmployeeId = table.Column<int>(type: "int", nullable: false),
                     FileName = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     AmountValue = table.Column<decimal>(type: "decimal(18,2)", nullable: true),
+                    IsCancelled = table.Column<bool>(type: "bit", nullable: false),
                     ManagerEmployeeId = table.Column<int>(type: "int", nullable: true)
                 },
                 constraints: table =>
@@ -294,9 +298,9 @@ namespace HR_PROJECT.Persistence.Migrations
                         principalColumn: "EmployeeId",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_Expenses_Manager_ManagerEmployeeId",
+                        name: "FK_Expenses_Managers_ManagerEmployeeId",
                         column: x => x.ManagerEmployeeId,
-                        principalTable: "Manager",
+                        principalTable: "Managers",
                         principalColumn: "EmployeeId");
                 });
 
@@ -315,6 +319,7 @@ namespace HR_PROJECT.Persistence.Migrations
                     ApprovalStatus = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     EmployeeId = table.Column<int>(type: "int", nullable: false),
                     IsApproved = table.Column<bool>(type: "bit", nullable: false),
+                    IsCancelled = table.Column<bool>(type: "bit", nullable: false),
                     ManagerEmployeeId = table.Column<int>(type: "int", nullable: true)
                 },
                 constraints: table =>
@@ -327,19 +332,19 @@ namespace HR_PROJECT.Persistence.Migrations
                         principalColumn: "EmployeeId",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_Permissions_Manager_ManagerEmployeeId",
+                        name: "FK_Permissions_Managers_ManagerEmployeeId",
                         column: x => x.ManagerEmployeeId,
-                        principalTable: "Manager",
+                        principalTable: "Managers",
                         principalColumn: "EmployeeId");
                 });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
-                columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "EmployeeId", "LockoutEnabled", "LockoutEnd", "ManagerId", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
+                columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "EmployeeId", "FirstName", "LastName", "LockoutEnabled", "LockoutEnd", "ManagerId", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
                 values: new object[,]
                 {
-                    { "29eee336-e6a2-40f2-9305-159eed59ed75", 0, "d996e46f-7fbb-4002-978f-06e0bfa7ac44", "admin@bilgeadam.com", false, null, false, null, 3, "ADMIN@BILGEADAM.COM", "ADMIN", "AQAAAAIAAYagAAAAENRgedmO17My++DUGmZDKtX/iu0Yfe4b4veANOykg8MLHGSsSOF6lw9flrNZXopwCw==", null, false, "", false, "admin" },
-                    { "df5a9b38-18e8-48b7-97bf-ad4a9b4afe0e", 0, "b64b6a29-72fb-47bc-967d-500fd8202a2d", "sahzod.irgas@bilgeadam.com", false, 1, false, null, null, "SAHZOD.IRGAS@BILGEADAM.COM", "SAHZOD", "AQAAAAIAAYagAAAAEFp+7/GgKVeDbOulaLUlRGB+RO1GKDQwB0u9f3F86/17MZiJ2qK7PGj0TFWbm3KJnQ==", null, false, "", false, "sahzod" }
+                    { "29eee336-e6a2-40f2-9305-159eed59ed75", 0, "0db39160-8d70-4296-a7c8-26cc7ff5291e", "admin@bilgeadam.com", false, null, null, null, false, null, 3, "ADMIN@BILGEADAM.COM", "ADMIN", "AQAAAAIAAYagAAAAEMj4ZEyX8K3lLmgkWIVhh7a00bCW+DzOped9Fb+ZzA7Mq1fC9rQkE6BhfHGlGBuHOA==", null, false, "", false, "admin" },
+                    { "df5a9b38-18e8-48b7-97bf-ad4a9b4afe0e", 0, "f4abe79d-b4f3-404b-ae29-59c78398ea2b", "sahzod.irgas@bilgeadam.com", false, 1, null, null, false, null, null, "SAHZOD.IRGAS@BILGEADAM.COM", "SAHZOD", "AQAAAAIAAYagAAAAELwKJA34Kj3gdcZaiO7enMACXanUOb+xtp96wBOdze802JGKir0VuJPdCTALdLTrHg==", null, false, "", false, "sahzod" }
                 });
 
             migrationBuilder.InsertData(
@@ -352,35 +357,26 @@ namespace HR_PROJECT.Persistence.Migrations
                 });
 
             migrationBuilder.InsertData(
-                table: "Manager",
+                table: "Managers",
                 columns: new[] { "EmployeeId", "Address", "BirthPlace", "Company", "DateOfBirth", "Department", "Email", "EndDate", "FirstName", "FirstSurname", "ImagePath", "IsActive", "PhoneNumber", "Position", "SecondName", "SecondSurname", "StartDate", "Tc", "UserId", "Wage" },
                 values: new object[] { 3, "Yıldız Mah. Barbaros Bulvarı Beşiktaş/İstanbul", "Florence/Italy", "Amazon Inc.", new DateTime(1990, 8, 15, 0, 0, 0, 0, DateTimeKind.Unspecified), "Technology and Strategy", "leonardo.davinci@bilgeadam.com", null, "Leonardo", "Da Vinci", "file.jpg", true, "5075217896", "IT Manager", null, null, new DateTime(2015, 12, 26, 0, 0, 0, 0, DateTimeKind.Unspecified), "54696378921", "29eee336-e6a2-40f2-9305-159eed59ed75", 156245m });
 
             migrationBuilder.InsertData(
                 table: "Advances",
-                columns: new[] { "Id", "AdvanceType", "Amount", "AmountValue", "ApprovalStatus", "Currency", "Description", "EmployeeId", "ManagerEmployeeId", "Permission", "RequestDate", "Response" },
+                columns: new[] { "Id", "AdvanceType", "Amount", "AmountValue", "ApprovalStatus", "Currency", "Description", "EmployeeId", "IsCanceled", "ManagerEmployeeId", "Permission", "RequestDate", "Response" },
                 values: new object[,]
                 {
-                    { 1, "Bireysel", 5631.45m, null, "Pending", "TL", "Araba alıcam", 1, null, false, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "Please provide necessary documents." },
-                    { 2, "Kurumsal", 6592.45m, null, "Approved", "TL", "Motor alıcam", 1, null, true, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "Request have been approved." }
+                    { 1, "Bireysel", 5631.45m, null, "Pending", "TL", "Araba alıcam", 1, false, null, false, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "Please provide necessary documents." },
+                    { 2, "Kurumsal", 6592.45m, null, "Approved", "TL", "Motor alıcam", 1, false, null, true, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "Request have been approved." }
                 });
 
             migrationBuilder.InsertData(
                 table: "Expenses",
-                columns: new[] { "Id", "Amount", "AmountValue", "ApprovalStatus", "Currency", "EmployeeId", "ExpenseType", "FileName", "ManagerEmployeeId", "Permission", "RequestDate", "Response" },
+                columns: new[] { "Id", "Amount", "AmountValue", "ApprovalStatus", "Currency", "EmployeeId", "ExpenseType", "FileName", "IsCancelled", "ManagerEmployeeId", "Permission", "RequestDate", "Response" },
                 values: new object[,]
                 {
-                    { 1, 5631.45m, null, "Pending", "TL", 1, "İş Seyahatleri", null, null, false, new DateTime(2024, 3, 14, 0, 0, 0, 0, DateTimeKind.Unspecified), "Please provide necessary documents." },
-                    { 2, 6592.45m, null, "Approved", "TL", 1, "Personel Harcamaları", null, null, true, new DateTime(2024, 3, 10, 0, 0, 0, 0, DateTimeKind.Unspecified), "Request have been approved." }
-                });
-
-            migrationBuilder.InsertData(
-                table: "Permissions",
-                columns: new[] { "Id", "ApprovalStatus", "EmployeeId", "EndDate", "FileName", "IsApproved", "ManagerEmployeeId", "NumberOfDays", "PermissionType", "RequestDate", "StartDate" },
-                values: new object[,]
-                {
-                    { 1, "Requested", 1, new DateTime(2024, 3, 25, 0, 0, 0, 0, DateTimeKind.Unspecified), null, false, null, 3, "Baba izni", new DateTime(2024, 3, 22, 23, 13, 16, 430, DateTimeKind.Local).AddTicks(9112), new DateTime(2024, 3, 22, 0, 0, 0, 0, DateTimeKind.Unspecified) },
-                    { 2, "Requested", 1, new DateTime(2024, 4, 26, 0, 0, 0, 0, DateTimeKind.Unspecified), null, false, null, 4, "Anne izni", new DateTime(2024, 3, 22, 23, 13, 16, 430, DateTimeKind.Local).AddTicks(9134), new DateTime(2024, 3, 22, 0, 0, 0, 0, DateTimeKind.Unspecified) }
+                    { 1, 5631.45m, null, "Pending", "TL", 1, "İş Seyahatleri", null, false, null, false, new DateTime(2024, 3, 14, 0, 0, 0, 0, DateTimeKind.Unspecified), "Please provide necessary documents." },
+                    { 2, 6592.45m, null, "Approved", "TL", 1, "Personel Harcamaları", null, false, null, true, new DateTime(2024, 3, 10, 0, 0, 0, 0, DateTimeKind.Unspecified), "Request have been approved." }
                 });
 
             migrationBuilder.CreateIndex(
@@ -450,8 +446,8 @@ namespace HR_PROJECT.Persistence.Migrations
                 column: "ManagerEmployeeId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Manager_UserId",
-                table: "Manager",
+                name: "IX_Managers_UserId",
+                table: "Managers",
                 column: "UserId",
                 unique: true,
                 filter: "[UserId] IS NOT NULL");
@@ -501,7 +497,7 @@ namespace HR_PROJECT.Persistence.Migrations
                 name: "Employees");
 
             migrationBuilder.DropTable(
-                name: "Manager");
+                name: "Managers");
 
             migrationBuilder.DropTable(
                 name: "AspNetUsers");

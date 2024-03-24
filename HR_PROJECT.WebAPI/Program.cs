@@ -72,7 +72,12 @@ builder.Services.Configure<IdentityOptions>(opt =>
     opt.User.RequireUniqueEmail = true;
     opt.Tokens.PasswordResetTokenProvider = TokenOptions.DefaultProvider;
 });
-
+builder.Services.AddTransient<PasswordHasher<ApplicationUser>>();
+builder.Services.Configure<IdentityOptions>(options =>
+{
+    options.User.RequireUniqueEmail = true;
+    options.Tokens.PasswordResetTokenProvider = TokenOptions.DefaultProvider;
+});
 
 #region Login Service
 
@@ -152,7 +157,7 @@ builder.Services.AddScoped<RemoveManagerCommandHandler>();
 #region Dependency Injection of Helper Functions
 
 builder.Services.AddScoped<CheckEmployeeWage>();
-builder.Services.AddScoped<CreateRandomPasswordHelper>();
+builder.Services.AddScoped<CreateRandomPassword>();
 
 #endregion
 
