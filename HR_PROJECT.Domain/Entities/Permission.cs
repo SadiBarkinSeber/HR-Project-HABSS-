@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Numerics;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -61,10 +62,24 @@ namespace HR_PROJECT.Domain.Entities
             get { return endDate; }
             set 
             {
-                if ((value.Date - StartDate.Date).TotalDays > NumberOfDays)
+
+                var currentDate = StartDate.Date;
+                int countWeekDays = 0;
+
+                while (currentDate <= value.Date)
                 {
-                    
-                    throw new Exception("End date exceeds the number of days.");
+                    if (currentDate.DayOfWeek != DayOfWeek.Saturday && currentDate.DayOfWeek != DayOfWeek.Sunday)
+                    {
+                        countWeekDays++;
+                    }
+                    currentDate = currentDate.AddDays(1);
+                }
+
+                countWeekDays -= 1;
+
+                if (countWeekDays > NumberOfDays)
+                {
+                    throw new Exception($"End date exceeds the number of weekdays. {countWeekDays}");
                 }
                 else
                 {
