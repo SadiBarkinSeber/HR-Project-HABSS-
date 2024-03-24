@@ -26,6 +26,7 @@ namespace HR_PROJECT.WebAPI.Controllers
         private readonly GetAdvanceByEmployeeIdQueryHandler _getAdvanceByEmployeeIdQueryHandler;
         private readonly GetEmployeeByIdQueryHandler _getEmployeeByIdQueryHandler;
         private readonly UpdateAdvanceForEmployeeCommandHandler _updateAdvanceForEmployeeCommandHandler;
+        private readonly UpdateAdvanceForManagerHandler _updateAdvanceForManagerCommandHandler;
         #endregion
 
         #region Helper Functions
@@ -34,7 +35,7 @@ namespace HR_PROJECT.WebAPI.Controllers
 
         #region Constructor
 
-        public AdvancesController(CreateAdvanceCommandHandler createAdvanceCommandHandler, GetAdvanceByIdQueryHandler getAdvanceByIdQueryHandler, GetAdvanceQueryHandler getAdvanceQueryHandler, UpdateAdvanceCommandHandler updateAdvanceCommandHandler, RemoveAdvanceCommandHandler removeAdvanceCommandHandler, CheckEmployeeWage checkEmployeeWage, GetAdvanceByEmployeeIdQueryHandler getAdvanceByEmployeeIdQueryHandler, GetEmployeeByIdQueryHandler getEmployeeByIdQueryHandler, UpdateAdvanceForEmployeeCommandHandler updateAdvanceForEmployeeCommandHandler)
+        public AdvancesController(CreateAdvanceCommandHandler createAdvanceCommandHandler, GetAdvanceByIdQueryHandler getAdvanceByIdQueryHandler, GetAdvanceQueryHandler getAdvanceQueryHandler, UpdateAdvanceCommandHandler updateAdvanceCommandHandler, RemoveAdvanceCommandHandler removeAdvanceCommandHandler, CheckEmployeeWage checkEmployeeWage, GetAdvanceByEmployeeIdQueryHandler getAdvanceByEmployeeIdQueryHandler, GetEmployeeByIdQueryHandler getEmployeeByIdQueryHandler, UpdateAdvanceForEmployeeCommandHandler updateAdvanceForEmployeeCommandHandler, UpdateAdvanceForManagerHandler updateAdvanceForManagerCommandHandler)
         {
             _createAdvanceCommandhandler = createAdvanceCommandHandler;
             _getAdvanceByIdQueryHandler = getAdvanceByIdQueryHandler;
@@ -45,6 +46,7 @@ namespace HR_PROJECT.WebAPI.Controllers
             _checkEmployeeWage = checkEmployeeWage;
             _getEmployeeByIdQueryHandler = getEmployeeByIdQueryHandler;
             _updateAdvanceForEmployeeCommandHandler = updateAdvanceForEmployeeCommandHandler;
+            _updateAdvanceForManagerCommandHandler = updateAdvanceForManagerCommandHandler;
         }
 
         #endregion
@@ -132,6 +134,20 @@ namespace HR_PROJECT.WebAPI.Controllers
             try
             {
                 await _updateAdvanceForEmployeeCommandHandler.Handle(command);
+                return Ok("Avans bilgisi güncellendi.");
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+
+        [HttpPut("manager")]
+        public async Task<IActionResult> UpdateAdvanceForManager(UpdateAdvanceForManagerCommand command)
+        {
+            try
+            {
+                await _updateAdvanceForManagerCommandHandler.Handle(command);
                 return Ok("Avans bilgisi güncellendi.");
             }
             catch (Exception ex)

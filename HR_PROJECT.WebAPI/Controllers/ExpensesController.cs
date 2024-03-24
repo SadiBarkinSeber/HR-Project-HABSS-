@@ -25,12 +25,13 @@ namespace HR_PROJECT.WebAPI.Controllers
         private readonly RemoveExpenseCommandHandler _removeExpenseCommandHandler;
         private readonly GetExpenseByEmployeeIdQueryHandler _getExpensesByEmployee;
         private readonly GetEmployeeByIdQueryHandler _getEmployeeByIdQueryHandler;
-        private UpdateExpenseForEmployeeCommandHandler _updateExpenseForEmployee;
+        private readonly UpdateExpenseForEmployeeCommandHandler _updateExpenseForEmployee;
+        private readonly UpdateExpenseForManagerCommandHandler _updateExpenseForManager;
         #endregion
 
         #region Constructor
 
-        public ExpensesController(CreateExpenseCommandHandler createExpenseCommandHandler, GetExpenseByIdQueryHandler getExpenseByIdQueryHandler, GetExpenseQueryHandler getExpenseQueryHandler, UpdateExpenseCommandHandler updateExpenseCommandHandler, RemoveExpenseCommandHandler removeExpenseCommandHandler, GetExpenseByEmployeeIdQueryHandler getExpensesByEmployee, GetEmployeeByIdQueryHandler getEmployeeByIdQueryHandler, UpdateExpenseForEmployeeCommandHandler updateExpenseForEmployee)
+        public ExpensesController(CreateExpenseCommandHandler createExpenseCommandHandler, GetExpenseByIdQueryHandler getExpenseByIdQueryHandler, GetExpenseQueryHandler getExpenseQueryHandler, UpdateExpenseCommandHandler updateExpenseCommandHandler, RemoveExpenseCommandHandler removeExpenseCommandHandler, GetExpenseByEmployeeIdQueryHandler getExpensesByEmployee, GetEmployeeByIdQueryHandler getEmployeeByIdQueryHandler, UpdateExpenseForEmployeeCommandHandler updateExpenseForEmployee, UpdateExpenseForManagerCommandHandler updateExpenseForManager)
         {
             _createExpenseCommandhandler = createExpenseCommandHandler;
             _getExpenseByIdQueryHandler = getExpenseByIdQueryHandler;
@@ -40,6 +41,7 @@ namespace HR_PROJECT.WebAPI.Controllers
             _getExpensesByEmployee = getExpensesByEmployee;
             _getEmployeeByIdQueryHandler = getEmployeeByIdQueryHandler;
             _updateExpenseForEmployee = updateExpenseForEmployee;
+            _updateExpenseForManager = updateExpenseForManager;
         }
 
         #endregion
@@ -131,6 +133,20 @@ namespace HR_PROJECT.WebAPI.Controllers
             try
             {
                 await _updateExpenseForEmployee.Handle(command);
+                return Ok("Harcama bilgisi güncellendi.");
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+
+        [HttpPut("manager")]
+        public async Task<IActionResult> UpdateExpenseForManager(UpdateExpenseForManagerCommand command)
+        {
+            try
+            {
+                await _updateExpenseForManager.Handle(command);
                 return Ok("Harcama bilgisi güncellendi.");
             }
             catch (Exception ex)
