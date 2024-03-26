@@ -11,16 +11,16 @@ namespace HR_PROJECT.Application.Features.CQRS.Handlers.AdvanceHandlers.Read
 {
     public class GetAdvanceQueryHandler
     {
-        private readonly IRepository<Advance> _repository;
+        private readonly IAdvanceRepository _advanceRepository;
 
-        public GetAdvanceQueryHandler(IRepository<Advance> repository)
+        public GetAdvanceQueryHandler(IAdvanceRepository repository)
         {
-            _repository = repository;
+            _advanceRepository = repository;
         }
 
         public async Task<List<GetAdvanceQueryResult>> Handle()
         {
-            var values = await _repository.GetAllAsync();
+            var values = await _advanceRepository.GetAdvancesWithEmployees();
             return values.Select(x => new GetAdvanceQueryResult
             {
                 Id = x.Id,
@@ -33,7 +33,11 @@ namespace HR_PROJECT.Application.Features.CQRS.Handlers.AdvanceHandlers.Read
                 Permission = x.Permission,
                 EmployeeId = x.EmployeeId,
                 Description = x.Description,
-                AmountValue = x.AmountValue
+                AmountValue = x.AmountValue,
+                EmployeeFirstName = x.Employee.FirstName,
+                EmployeeSecondName = x.Employee.SecondName,
+                EmployeeLastName = x.Employee.FirstSurname,
+                EmployeeSecondLastName = x.Employee.SecondSurname
             }).ToList();
         }
     }

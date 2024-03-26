@@ -10,5 +10,6 @@ namespace HR_PROJECT.Application.Interfaces
     public interface IAdvanceRepository
     {
         Task<List<Advance>> GetAllAdvancesByEmployeeID(int id);
+        Task<List<Advance>> GetAdvancesWithEmployees();
     }
 }

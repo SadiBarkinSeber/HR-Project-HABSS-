@@ -26,5 +26,13 @@ namespace HR_PROJECT.Persistence.Repositories
 
             return permissions;
         }
+
+        public async Task<List<Permission>> GetPermissionsWithEmployees()
+        {
+            var permissionsWithEmployees = await _context.Permissions.Include(x => x.Employee)
+              .ToListAsync();
+
+            return permissionsWithEmployees;
+        }
     }
 }

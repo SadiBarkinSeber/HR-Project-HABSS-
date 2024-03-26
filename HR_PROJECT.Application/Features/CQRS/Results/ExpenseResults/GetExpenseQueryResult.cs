@@ -1,4 +1,5 @@
-﻿using System;
+﻿using HR_PROJECT.Domain.Entities;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -16,6 +17,10 @@ namespace HR_PROJECT.Application.Features.CQRS.Results.ExpenseResults
         public string Response { get; set; }
         public string Currency { get; set; }
         public bool Permission { get; set; }
+        public string EmployeeFirstName { get; set; }
+        public string EmployeeSecondName { get; set; }
+        public string EmployeeLastName { get; set; }
+        public string EmployeeSecondLastName { get; set; }
         public int EmployeeId { get; set; }
         public string? FileName { get; set; }
         public decimal? AmountValue { get; set; }
