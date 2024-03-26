@@ -26,5 +26,12 @@ namespace HR_PROJECT.Persistence.Repositories
 
             return advances;
         }
+        public async Task<List<Advance>> GetAdvancesWithEmployees()
+        {
+            var advancesWithEmployees = await _context.Advances.Include(x => x.Employee)
+               .ToListAsync();
+
+            return advancesWithEmployees;
+        }
     }
 }

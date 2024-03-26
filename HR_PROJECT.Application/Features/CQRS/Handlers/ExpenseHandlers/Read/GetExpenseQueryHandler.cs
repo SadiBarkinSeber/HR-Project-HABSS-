@@ -11,16 +11,16 @@ namespace HR_PROJECT.Application.Features.CQRS.Handlers.ExpenseHandlers.Read
 {
     public class GetExpenseQueryHandler
     {
-        private readonly IRepository<Expense> _repository;
+        private readonly IExpenseRepository _expenseRepository;
 
-        public GetExpenseQueryHandler(IRepository<Expense> repository)
+        public GetExpenseQueryHandler(IExpenseRepository repository)
         {
-            _repository = repository;
+            _expenseRepository = repository;
         }
 
         public async Task<List<GetExpenseQueryResult>> Handle()
         {
-            var values = await _repository.GetAllAsync();
+            var values = await _expenseRepository.GetExpensesWithEmployees();
             return values.Select(x => new GetExpenseQueryResult
             {
                 Id = x.Id,
@@ -34,6 +34,10 @@ namespace HR_PROJECT.Application.Features.CQRS.Handlers.ExpenseHandlers.Read
                 EmployeeId = x.EmployeeId,
                 FileName = x.FileName,
                 AmountValue = x.AmountValue,
+                EmployeeFirstName= x.Employee.FirstName,
+                EmployeeSecondName = x.Employee.SecondName,
+                EmployeeLastName = x.Employee.FirstSurname,
+                EmployeeSecondLastName=x.Employee.SecondSurname
             }).ToList();
         }
     }

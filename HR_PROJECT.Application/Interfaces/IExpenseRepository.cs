@@ -10,5 +10,7 @@ namespace HR_PROJECT.Application.Interfaces
     public interface IExpenseRepository
     {
         Task<List<Expense>> GetExpensesByEmployeeId(int id);
+
+        Task<List<Expense>> GetExpensesWithEmployees();
     }
 }

@@ -29,5 +29,13 @@ namespace HR_PROJECT.Persistence.Repositories
 
             return expenses;
         }
+
+        public async Task<List<Expense>> GetExpensesWithEmployees()
+        {
+            var expensesWithEmployees = await _context.Expenses.Include(x=>x.Employee)
+               .ToListAsync();
+
+            return expensesWithEmployees;
+        }
     }
 }

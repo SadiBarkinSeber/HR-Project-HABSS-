@@ -10,5 +10,7 @@ namespace HR_PROJECT.Application.Interfaces
     public interface IPermissionRepository : IRepository<Permission>
     {
         Task<List<Permission>> GetAllPermissionsByEmployeeID(int id);
+        Task<List<Permission>> GetPermissionsWithEmployees();
+
     }
 }
