@@ -133,9 +133,9 @@ namespace HR_PROJECT.WebAPI.Controllers
             }
         }
 
-        
 
-        
+
+
         [HttpPost("resetpassword")]
         public async Task<IActionResult> ResetPassword(string email)
         {
@@ -145,15 +145,17 @@ namespace HR_PROJECT.WebAPI.Controllers
                 return NotFound("Bu e-posta adresi ile ilişkili bir hesap bulunamadı.");
             }
 
-            var token = await _userManager.GeneratePasswordResetTokenAsync(user);
+            // Doğrulama kodu oluşturma
+            var verificationCode = GenerateVerificationCode();
 
-            var resetPasswordLink = $"https://comforting-marzipan-f52585.netlify.app/resetpassword?email={email}&token={WebUtility.UrlEncode(token)}";
+            var resetPasswordLink = $"https://comforting-marzipan-f52585.netlify.app";
 
+            // E-posta içeriğinde doğrulama kodunu kullanıcıya gösterme
             var mailMessage = new MailMessage
             {
                 From = new MailAddress("habss.hr@gmail.com"),
                 Subject = "Şifre Sıfırlama",
-                Body = $"Şifrenizi sıfırlamak için bu bağlantıyı kullanın: {resetPasswordLink}",
+                Body = $"Şifrenizi sıfırlamak için aşağıdaki bağlantıyı kullanarak tek kullanımlık şifrenizle giriş yapabilirsiniz :<br/><br/> <a href='{resetPasswordLink}'>{resetPasswordLink}</a> <br/><br/> Tek Kullanımlık Şifreniz: {verificationCode}",
                 IsBodyHtml = true,
             };
             mailMessage.To.Add("azizogluharun@gmail.com");
@@ -169,6 +171,16 @@ namespace HR_PROJECT.WebAPI.Controllers
 
             return Ok("Doğrulama kodu başarılı bir şekilde gönderildi.");
         }
+
+        // Rastgele doğrulama kodu oluşturma fonksiyonu
+        private string GenerateVerificationCode()
+        {
+            const string chars = "0123456789";
+            var random = new Random();
+            return new string(Enumerable.Repeat(chars, 6)
+              .Select(s => s[random.Next(s.Length)]).ToArray());
+        }
+
 
 
         private void Errors(IdentityResult result)
