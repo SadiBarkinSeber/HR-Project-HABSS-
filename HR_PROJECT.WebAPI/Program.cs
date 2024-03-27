@@ -23,6 +23,7 @@ using HR_PROJECT.WebAPI.Services;
 using Microsoft.Extensions.Options;
 using HR_PROJECT.Application.Features.CQRS.Handlers.ManagerHandlers.Read;
 using HR_PROJECT.Application.Features.CQRS.Handlers.ManagerHandlers.Write;
+using HR_PROJECT.Application.Features.CQRS.Handlers.ApplicationuserHandlers.Write;
 #endregion
 
 
@@ -90,6 +91,7 @@ builder.Services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
 builder.Services.AddScoped(typeof(IPermissionRepository), typeof(PermissionRepositoty));
 builder.Services.AddScoped(typeof(IAdvanceRepository), typeof(AdvanceRepository));
 builder.Services.AddScoped(typeof(IExpenseRepository), typeof(ExpenseRepository));
+builder.Services.AddScoped(typeof(IAplicationUserRepository), typeof(ApplicationUserRepository));
 #endregion
 
 #region Dependency Injection of Blob Connection
@@ -158,6 +160,11 @@ builder.Services.AddScoped<RemoveManagerCommandHandler>();
 
 builder.Services.AddScoped<CheckEmployeeWage>();
 builder.Services.AddScoped<CreateRandomPassword>();
+
+#endregion
+#region Dependency Injection of Applicaiton User Handlers
+
+builder.Services.AddScoped<UpdateApplicationuserCommandHandler>();
 
 #endregion
 

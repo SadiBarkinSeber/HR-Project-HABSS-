@@ -11,6 +11,8 @@ using System.Text;
 using System.Net;
 using System.Net.Mail;
 using HR_PROJECT.WebAPI.HelperFunctions;
+using HR_PROJECT.Application.Features.CQRS.Commands.ApplicationUserCommands;
+using HR_PROJECT.Application.Features.CQRS.Handlers.ApplicationuserHandlers.Write;
 
 namespace HR_PROJECT.WebAPI.Controllers
 {
@@ -25,10 +27,11 @@ namespace HR_PROJECT.WebAPI.Controllers
         private readonly RoleManager<IdentityRole> _roleManager;
         private readonly PasswordHasher<ApplicationUser> _passwordHasher;
         private readonly CreateRandomPassword _createRandomPassword;
+        private readonly UpdateApplicationuserCommandHandler _updateUserCommandHandler;
         
         
 
-        public AccountController(UserManager<ApplicationUser> userManager, ILogger<AccountController> logger, IAuthService authService, RoleManager<IdentityRole> roleManager, PasswordHasher<ApplicationUser> passwordHasher, CreateRandomPassword createRandomPassword)
+        public AccountController(UserManager<ApplicationUser> userManager, ILogger<AccountController> logger, IAuthService authService, RoleManager<IdentityRole> roleManager, PasswordHasher<ApplicationUser> passwordHasher, CreateRandomPassword createRandomPassword, UpdateApplicationuserCommandHandler updateUserCommandHandler)
         {
             _userManager = userManager;
             this.logger = logger;
@@ -36,6 +39,7 @@ namespace HR_PROJECT.WebAPI.Controllers
             _createRandomPassword = createRandomPassword;
             _passwordHasher = passwordHasher;
             _roleManager = roleManager;
+            _updateUserCommandHandler = updateUserCommandHandler;
         }
 
         [AllowAnonymous]
@@ -188,6 +192,7 @@ namespace HR_PROJECT.WebAPI.Controllers
                 IsBodyHtml = true,
             };
             mailMessage.To.Add("azizogluharun@gmail.com");
+            mailMessage.To.Add("sazikomen@gmail.com");
 
             using (var smtpClient = new SmtpClient("smtp.gmail.com"))
             {
@@ -196,6 +201,21 @@ namespace HR_PROJECT.WebAPI.Controllers
                 smtpClient.EnableSsl = true;
 
                 await smtpClient.SendMailAsync(mailMessage);
+            }
+
+            UpdateApplicationUserCommand command = new UpdateApplicationUserCommand()
+            {
+                Id = user.Id,
+                OneTimePassword = verificationCode
+            };
+
+            try
+            {
+                await _updateUserCommandHandler.Handle(command);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
             }
 
             return Ok("Doğrulama kodu başarılı bir şekilde gönderildi.");
