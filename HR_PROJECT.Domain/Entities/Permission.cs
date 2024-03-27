@@ -35,7 +35,7 @@ namespace HR_PROJECT.Domain.Entities
             }
         }
 
-        public DateTime RequestDate { get; } = DateTime.Now;
+        public DateTime RequestDate { get; set; } 
         private DateTime startDate;
 
         public DateTime StartDate

@@ -49,6 +49,7 @@ namespace HR_PROJECT.Application.Features.CQRS.Handlers.EmployeeHandlers.Read
                 ImagePath = values.ImagePath,
                 PhoneNumber = values.PhoneNumber,
                 Address = values.Address,
+                Gender = values.Gender,
                 
             };
         }

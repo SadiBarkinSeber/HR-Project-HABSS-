@@ -38,7 +38,8 @@ namespace HR_PROJECT.Persistence.Configurations
                     ImagePath = "file.jpg",
                     PhoneNumber = "+905075217896",
                     Address = "Yıldız Mah. Barbaros Bulvarı Beşiktaş/İstanbul",
-                    UserId = "29eee336-e6a2-40f2-9305-159eed59ed75"
+                    UserId = "29eee336-e6a2-40f2-9305-159eed59ed75",
+                    Gender = "Male"
                 }
 
                 ); 

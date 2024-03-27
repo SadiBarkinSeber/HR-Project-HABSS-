@@ -10,6 +10,24 @@ namespace HR_PROJECT.Application.Features.CQRS.Commands.PermissionComands
     {
         public int Id { get; set; }
         public bool IsApproved { get; set; }
-        public string ApprovalStatus { get; } = "Approved";
+        private string approvalStatus;
+
+        public string ApprovalStatus
+        {
+            get 
+            {
+                if (IsApproved == true)
+                {
+                    approvalStatus = "Approved";
+                }
+                else
+                {
+                    approvalStatus = "Rejected";
+                }
+                return approvalStatus; 
+            }
+            
+        }
+
     }
 }

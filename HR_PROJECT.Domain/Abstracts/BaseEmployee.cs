@@ -30,6 +30,20 @@ namespace HR_PROJECT.Domain.Abstracts
         public string ImagePath { get; set; }
         public string PhoneNumber { get; set; }
         public string Address { get; set; }
+        private string gender;
+
+        public string Gender
+        {
+            get { return gender; }
+            set 
+            {
+                if (value == "Male" || value == "Female")
+                    gender = value;
+                else
+                    throw new Exception("Invalid gender value entered.");
+                
+            }
+        }
 
         public ICollection<Expense> Expenses { get; set; }
 

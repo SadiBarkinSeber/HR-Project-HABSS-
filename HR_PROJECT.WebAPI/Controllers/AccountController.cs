@@ -63,6 +63,35 @@ namespace HR_PROJECT.WebAPI.Controllers
             }
         }
 
+        [HttpPut]
+        public async Task<IActionResult> ChangePasswordForReset(ChangePasswordForResetDTO dto)
+        {
+            try
+            {
+                if (!ModelState.IsValid)
+                {
+                    return BadRequest("Invalid payload.");
+                }
+
+                if (dto.Password != dto.RepeatPassword)
+                {
+                    return BadRequest("Passwords don't match.");
+                }
+
+                var (status, message) = await authService.ResetPassword(dto);
+
+                if ( status == 0)
+                {
+                    return BadRequest(message);
+                }
+                return Ok(message);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+
 
         [HttpPost("create")]
         public async Task<IActionResult> Create(CreateApplicationUserDTO dto)

@@ -28,5 +28,6 @@ namespace HR_PROJECT.Application.Features.CQRS.Results.EmployeeResults
         public string PhoneNumber { get; set; }
         public string Address { get; set; }
         public string UserId { get; set; }
+        public string Gender { get; set; }
     }
 }

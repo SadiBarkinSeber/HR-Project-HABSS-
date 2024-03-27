@@ -12,26 +12,33 @@ namespace HR_PROJECT.Application.Features.CQRS.Handlers.ExpenseHandlers.Write
     public class CreateExpenseCommandHandler
     {
         private readonly IRepository<Expense> _repository;
-
-        public CreateExpenseCommandHandler(IRepository<Expense> repository)
+        private readonly IRepository<Employee> _employeeRepository;
+        
+        public CreateExpenseCommandHandler(IRepository<Expense> repository, IRepository<Employee> employeeRepository)
         {
             _repository = repository;
+            _employeeRepository = employeeRepository;
         }
 
         public async Task Handle(CreateExpenseCommand command)
         {
+
+            
+            
             await _repository.CreateAsync(new Expense
-            {
-                ExpenseType = command.ExpenseType,
-                Amount = command.Amount,
-                ApprovalStatus = command.ApprovalStatus,
-                RequestDate = command.RequestDate,
-                
-                Currency = command.Currency,
-                AmountValue = command.AmountValue,
-                EmployeeId = command.EmployeeId,
-                FileName = command.FileName
-            });
+                {
+                    ExpenseType = command.ExpenseType,
+                    Amount = command.Amount,
+                    ApprovalStatus = command.ApprovalStatus,
+                    RequestDate = command.RequestDate,
+
+                    Currency = command.Currency,
+                    AmountValue = command.AmountValue,
+                    EmployeeId = command.EmployeeId,
+                    FileName = command.FileName
+                });
+            
+            
         }
     }
 }

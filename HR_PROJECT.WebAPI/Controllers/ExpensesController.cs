@@ -96,7 +96,11 @@ namespace HR_PROJECT.WebAPI.Controllers
             try
             {
                 await _getEmployeeByIdQueryHandler.Handle(new GetEmployeeByIdQuery(command.EmployeeId));
+
+                
                 await _createExpenseCommandhandler.Handle(command);
+                
+               
                 return Ok("Harcama bilgisi eklendi.");
             }
             catch (Exception ex)

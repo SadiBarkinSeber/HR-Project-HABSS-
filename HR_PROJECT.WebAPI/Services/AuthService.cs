@@ -23,10 +23,15 @@ namespace HR_PROJECT.WebAPI.Services
 
         public async Task<(int, string)> Login(LoginApplicationUserDTO dto)
         {
-            var user = await _userManager.FindByNameAsync(dto.UserName);
+            var user = await _userManager.FindByEmailAsync(dto.Email);
             if (user == null)
             {
                 return (0, "Invalid username");
+            }
+
+            if (dto.OneTimeCode == user.OneTimePassword)
+            {
+                return (2, "Password change.");
             }
 
             if (!await _userManager.CheckPasswordAsync(user, dto.Password))
@@ -49,6 +54,28 @@ namespace HR_PROJECT.WebAPI.Services
             string token = GenerateToken(authClaims);
 
             return (1, token);
+        }
+
+        public async Task<(int, string)> ResetPassword(ChangePasswordForResetDTO dto)
+        {
+            var user = await _userManager.FindByEmailAsync(dto.Email);
+            if (user == null)
+            {
+                return (0, "User not found.");
+            }
+
+            var token = await _userManager.GeneratePasswordResetTokenAsync(user);
+
+            var result = await _userManager.ResetPasswordAsync(user, token, dto.Password);
+
+            if (result.Succeeded)
+            {
+                return (1, "Password reset successfully.");
+            }
+            else
+            {
+                return (0, string.Join(", ", result.Errors.Select(error => error.Description)));
+            }
         }
 
         private string GenerateToken (IEnumerable<Claim> claims)
