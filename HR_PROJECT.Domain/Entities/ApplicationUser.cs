@@ -15,5 +15,6 @@ namespace HR_PROJECT.Domain.Entities
         public Manager? Manager { get; set; }
         public string? FirstName { get; set; }
         public string? LastName { get; set; }
+        public string? OneTimePassword { get; set; }
     }
 }

@@ -77,7 +77,18 @@ namespace HR_PROJECT.WebAPI.Controllers
         {
             try
             {
-                await _getEmployeeByIdQueryHandler.Handle(new GetEmployeeByIdQuery(command.EmployeeId));
+                var result = await _getEmployeeByIdQueryHandler.Handle(new GetEmployeeByIdQuery(command.EmployeeId));
+
+                if (result.Gender == "Male" && command.PermissionType == "Anne İzni")
+                {
+                    throw new Exception("Erkekler anne izni kullanamaz.");
+                }
+
+                if (result.Gender == "Female" && command.PermissionType == "Baba İzni")
+                {
+                    throw new Exception("Kadınlar baba izni kullanamaz.");
+                }
+
                 await _createPermissionCommandHandler.Handle(command);
                 
                 return Ok("Izin talebi basarili bir sekilde gonderildi.");

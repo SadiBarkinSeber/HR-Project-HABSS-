@@ -4,6 +4,7 @@ using HR_PROJECT.Persistence.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace HR_PROJECT.Persistence.Migrations
 {
     [DbContext(typeof(HRProjectContext))]
-    partial class HRProjectContextModelSnapshot : ModelSnapshot
+    [Migration("20240327132612_initFixes2")]
+    partial class initFixes2
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -155,9 +158,6 @@ namespace HR_PROJECT.Persistence.Migrations
                         .HasMaxLength(256)
                         .HasColumnType("nvarchar(256)");
 
-                    b.Property<string>("OneTimePassword")
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<string>("PasswordHash")
                         .HasColumnType("nvarchar(max)");
 
@@ -194,15 +194,14 @@ namespace HR_PROJECT.Persistence.Migrations
                         {
                             Id = "df5a9b38-18e8-48b7-97bf-ad4a9b4afe0e",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "03862bc2-43e9-459a-a681-225bfc48e581",
+                            ConcurrencyStamp = "3cc28758-8ebd-4010-9cd3-c623f385b7e6",
                             Email = "sahzod.irgas@bilgeadam.com",
                             EmailConfirmed = false,
                             EmployeeId = 1,
                             LockoutEnabled = false,
                             NormalizedEmail = "SAHZOD.IRGAS@BILGEADAM.COM",
                             NormalizedUserName = "SAHZOD",
-                            OneTimePassword = "123456",
-                            PasswordHash = "AQAAAAIAAYagAAAAEA+tCP8h3wKZdezIHglXMiJsBnjKlDL2Nwre5oBPOBwm602Rt5ysUXo7vFcyzeyjHg==",
+                            PasswordHash = "AQAAAAIAAYagAAAAEADot/v46PgtBtLml4Rdg4PavYhrvJYvfdR7xnEQTkS86ccbK4YwI2JqBhQ3HiYSsQ==",
                             PhoneNumberConfirmed = false,
                             SecurityStamp = "",
                             TwoFactorEnabled = false,
@@ -212,14 +211,14 @@ namespace HR_PROJECT.Persistence.Migrations
                         {
                             Id = "29eee336-e6a2-40f2-9305-159eed59ed75",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "c05084f4-d5d5-4e10-afd1-043b045d570e",
+                            ConcurrencyStamp = "e309f3c9-4ac9-463d-b3db-e0d861042b74",
                             Email = "admin@bilgeadam.com",
                             EmailConfirmed = false,
                             LockoutEnabled = false,
                             ManagerId = 3,
                             NormalizedEmail = "ADMIN@BILGEADAM.COM",
                             NormalizedUserName = "ADMIN",
-                            PasswordHash = "AQAAAAIAAYagAAAAEBzkiF9diq6OI7uxUBlzIILG3tCrS4h+eh1nGgw9Z+hWYQ56LW+nNjGGWUVANkEggQ==",
+                            PasswordHash = "AQAAAAIAAYagAAAAEExuSbCOasp1ldbvXaBkUzlndNin9BJWv01MWPO60vpa8wkkZUjAc1y1DKKBdGdRtQ==",
                             PhoneNumberConfirmed = false,
                             SecurityStamp = "",
                             TwoFactorEnabled = false,

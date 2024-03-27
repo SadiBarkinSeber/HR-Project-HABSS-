@@ -817,11 +817,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Shohzod\\Source\\Repos\\HR-PROJECT-BACKEND5\\HR_PROJECT.Domain\\HR_PROJECT.Domain.csproj",
+      "projectUniqueName": "C:\\Users\\Shohzod\\Source\\Repos\\HR-PROJECT-BACKEND6\\HR_PROJECT.Domain\\HR_PROJECT.Domain.csproj",
       "projectName": "HR_PROJECT.Domain",
-      "projectPath": "C:\\Users\\Shohzod\\Source\\Repos\\HR-PROJECT-BACKEND5\\HR_PROJECT.Domain\\HR_PROJECT.Domain.csproj",
+      "projectPath": "C:\\Users\\Shohzod\\Source\\Repos\\HR-PROJECT-BACKEND6\\HR_PROJECT.Domain\\HR_PROJECT.Domain.csproj",
       "packagesPath": "C:\\Users\\Shohzod\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Shohzod\\Source\\Repos\\HR-PROJECT-BACKEND5\\HR_PROJECT.Domain\\obj\\",
+      "outputPath": "C:\\Users\\Shohzod\\Source\\Repos\\HR-PROJECT-BACKEND6\\HR_PROJECT.Domain\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

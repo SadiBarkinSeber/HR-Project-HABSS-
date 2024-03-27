@@ -43,6 +43,7 @@ namespace HR_PROJECT.Application.Features.CQRS.Handlers.EmployeeHandlers.Read
                 PhoneNumber = x.PhoneNumber,
                 Address = x.Address,
                 UserId = x.UserId,
+                Gender = x.Gender,
 
             }).ToList();
         }

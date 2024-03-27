@@ -41,7 +41,8 @@ namespace HR_PROJECT.Persistence.Configurations
                 NormalizedEmail = "SAHZOD.IRGAS@BILGEADAM.COM",
                 PasswordHash = hasher.HashPassword(null, "Anyela123."),
                 SecurityStamp = string.Empty,   
-                EmployeeId = 1
+                EmployeeId = 1,
+                OneTimePassword = "123456"
             },
              new ApplicationUser
              {

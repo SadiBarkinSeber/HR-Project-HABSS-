@@ -30,6 +30,7 @@ namespace HR_PROJECT.Application.Features.CQRS.Handlers.PermissionHandlers.Write
                 FileName = command.FileName,
                 EmployeeId = command.EmployeeId,
                 ApprovalStatus = command.ApprovalStatus,
+                RequestDate = command.RequestDate
             });
         }
     }
