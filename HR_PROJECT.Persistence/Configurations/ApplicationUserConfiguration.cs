@@ -25,9 +25,15 @@ namespace HR_PROJECT.Persistence.Configurations
             .HasForeignKey<Manager>(e => e.UserId)
             .IsRequired(false);
 
+            builder.HasOne(e => e.SiteManager)
+                .WithOne(e => e.User)
+                .HasForeignKey<SiteManager>(e => e.UserId)
+                .IsRequired(false);
+
             #region Seed Data
             const string userId = "df5a9b38-18e8-48b7-97bf-ad4a9b4afe0e";
             const string appManagerId = "29eee336-e6a2-40f2-9305-159eed59ed75";
+            const string siteManagerId = "ff05bc01-696c-4968-8e4f-cc707cceafad";
 
             var hasher = new PasswordHasher<ApplicationUser>();
 
@@ -37,7 +43,7 @@ namespace HR_PROJECT.Persistence.Configurations
                 Id = userId,
                 UserName = "sahzod",
                 NormalizedUserName = "SAHZOD",
-                Email = "sahzod.irgas@bilgeadam.com",
+                Email = "sahzod.irgas@bilgeadamboost.com",
                 NormalizedEmail = "SAHZOD.IRGAS@BILGEADAM.COM",
                 PasswordHash = hasher.HashPassword(null, "Anyela123."),
                 SecurityStamp = string.Empty,   
@@ -49,11 +55,23 @@ namespace HR_PROJECT.Persistence.Configurations
                  Id = appManagerId,
                  UserName = "admin",
                  NormalizedUserName = "ADMIN",
-                 Email = "admin@bilgeadam.com",
+                 Email = "admin@bilgeadamboost.com",
                  NormalizedEmail = "ADMIN@BILGEADAM.COM",
                  PasswordHash = hasher.HashPassword(null, "Eylul123."),
                  SecurityStamp = string.Empty,
                  ManagerId = 3
+             },
+
+             new ApplicationUser
+             {
+                 Id = siteManagerId,
+                 UserName = "moderator",
+                 NormalizedUserName = "MODERATOR",
+                 Email = "moderator@bilgeadamboost.com",
+                 NormalizedEmail = "MODERATOR@BİLGEADAMBOOST.COM",
+                 PasswordHash = hasher.HashPassword(null, "Anyela123."),
+                 SecurityStamp = string.Empty,
+                 SiteManagerId = 15
              }
             );
             #endregion

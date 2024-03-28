@@ -13,6 +13,8 @@ namespace HR_PROJECT.Domain.Entities
         public Employee? Employee { get; set; }
         public int? ManagerId { get; set; }
         public Manager? Manager { get; set; }
+        public int? SiteManagerId { get; set; }
+        public SiteManager? SiteManager { get; set; }
         public string? FirstName { get; set; }
         public string? LastName { get; set; }
         public string? OneTimePassword { get; set; }
