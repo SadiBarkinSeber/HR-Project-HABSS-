@@ -24,6 +24,10 @@ using Microsoft.Extensions.Options;
 using HR_PROJECT.Application.Features.CQRS.Handlers.ManagerHandlers.Read;
 using HR_PROJECT.Application.Features.CQRS.Handlers.ManagerHandlers.Write;
 using HR_PROJECT.Application.Features.CQRS.Handlers.ApplicationuserHandlers.Write;
+using HR_PROJECT.Application.Features.CQRS.Handlers.SiteManagerHandlers.Read;
+using HR_PROJECT.Application.Features.CQRS.Handlers.SiteManagerHandlers.Write;
+using HR_PROJECT.Application.Features.CQRS.Handlers.CompanyHandlers.Read;
+using HR_PROJECT.Application.Features.CQRS.Handlers.CompanyHandlers.Write;
 #endregion
 
 
@@ -146,6 +150,14 @@ builder.Services.AddScoped<UpdateAdvanceForEmployeeCommandHandler>();
 builder.Services.AddScoped<UpdateAdvanceForManagerHandler>();
 #endregion
 
+#region Dependency Injection of Company Handlers
+
+builder.Services.AddScoped<GetCompanyByIdQueryHandler>();
+builder.Services.AddScoped<GetCompanyQueryHandler>();
+builder.Services.AddScoped<CreateCompanyCommandHandler>();
+
+#endregion
+
 #region Dependency Injection of Manager Handlers
 
 builder.Services.AddScoped<GetManagerByIdQueryHandler>();
@@ -153,6 +165,13 @@ builder.Services.AddScoped<GetManagerQueryHandler>();
 builder.Services.AddScoped<CreateManagerCommandHandler>();
 builder.Services.AddScoped<UpdateManagerCommandHandler>();
 builder.Services.AddScoped<RemoveManagerCommandHandler>();
+
+#endregion
+
+#region Dependency Injection of Site Manager Handlers
+
+builder.Services.AddScoped<GetSiteManagerByIdQueryHandler>();
+builder.Services.AddScoped<UpdateSiteManagerCommandHandler>();
 
 #endregion
 

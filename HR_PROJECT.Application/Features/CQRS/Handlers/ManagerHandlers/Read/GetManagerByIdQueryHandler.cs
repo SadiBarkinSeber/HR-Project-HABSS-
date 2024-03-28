@@ -25,6 +25,7 @@ namespace HR_PROJECT.Application.Features.CQRS.Handlers.ManagerHandlers.Read
         {
             var values = await _repository.GetByIdAsync(query.Id);
 
+
             if (values == null)
             {
                 throw new Exception("Manager does not exists.");

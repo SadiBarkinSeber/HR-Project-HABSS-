@@ -33,7 +33,7 @@ namespace HR_PROJECT.Persistence.Configurations
                     Position = "IT Manager",
                     Department = "Technology and Strategy",
                     Company = "Amazon Inc.",
-                    Email = "leonardo.davinci@bilgeadam.com",
+                    Email = "leonardo.davinci@bilgeadamboost.com",
                     Wage = 156245,
                     ImagePath = "file.jpg",
                     PhoneNumber = "+905075217896",
