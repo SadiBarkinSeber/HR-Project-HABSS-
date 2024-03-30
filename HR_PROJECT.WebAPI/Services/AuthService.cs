@@ -51,10 +51,22 @@ namespace HR_PROJECT.WebAPI.Services
                 authClaims.Add(new Claim(ClaimTypes.Role, userRole));
             }
 
+
+            if(user.EmployeeId != null)
+                authClaims.Add(new Claim(ClaimTypes.NameIdentifier, user.EmployeeId.ToString()));
+            if (user.ManagerId != null)
+                authClaims.Add(new Claim(ClaimTypes.NameIdentifier, user.ManagerId.ToString()));
+            if (user.SiteManagerId != null)
+                authClaims.Add(new Claim(ClaimTypes.NameIdentifier, user.SiteManagerId.ToString()));
+
+
+
+
             string token = GenerateToken(authClaims);
 
             return (1, token);
         }
+
 
         public async Task<(int, string)> ResetPassword(ChangePasswordForResetDTO dto)
         {
@@ -78,23 +90,25 @@ namespace HR_PROJECT.WebAPI.Services
             }
         }
 
-        private string GenerateToken (IEnumerable<Claim> claims)
+        private string GenerateToken(IEnumerable<Claim> claims)
         {
-            var authSigningKet = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["Jwt:Key"]));
+            var authSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["Jwt:Key"]));
 
             var tokenDescriptor = new SecurityTokenDescriptor
             {
                 Issuer = _configuration["Jwt:Issuer"],
                 Audience = _configuration["Jwt:Audience"],
                 Expires = DateTime.UtcNow.AddHours(3),
-                SigningCredentials = new SigningCredentials(authSigningKet,SecurityAlgorithms.HmacSha256),
+                SigningCredentials = new SigningCredentials(authSigningKey, SecurityAlgorithms.HmacSha256),
                 Subject = new ClaimsIdentity(claims)
             };
+
 
             var tokenHandler = new JwtSecurityTokenHandler();
             var token = tokenHandler.CreateToken(tokenDescriptor);
 
             return tokenHandler.WriteToken(token);
         }
+
     }
 }
