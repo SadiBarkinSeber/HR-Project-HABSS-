@@ -4,5 +4,7 @@
     {
         public const string Manager = "manager";
         public const string Employee = "Employee";
+        public const string SiteManager = "siteManager";
+
     }
 }
