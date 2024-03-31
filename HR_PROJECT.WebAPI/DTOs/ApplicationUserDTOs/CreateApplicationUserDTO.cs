@@ -13,6 +13,7 @@ namespace HR_PROJECT.WebAPI.DTOs.ApplicationUserDTOs
         public string Firstname { get; set; }
         public string Lastname { get; set; }
         public string? Role { get; set; }
+        public int Id { get; set; }
         private string email;
 
         public string Email

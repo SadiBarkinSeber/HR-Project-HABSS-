@@ -1,4 +1,6 @@
-﻿using HR_PROJECT.Application.Features.CQRS.Commands.EmployeeCommands;
+﻿using HR_PROJECT.Application.Features.CQRS.Commands.ApplicationUserCommands;
+using HR_PROJECT.Application.Features.CQRS.Commands.EmployeeCommands;
+using HR_PROJECT.Application.Features.CQRS.Handlers.ApplicationuserHandlers.Write;
 using HR_PROJECT.Application.Features.CQRS.Handlers.EmployeeHandlers.Read;
 using HR_PROJECT.Application.Features.CQRS.Handlers.EmployeeHandlers.Write;
 using HR_PROJECT.Application.Features.CQRS.Queries.EmployeeQueries;
@@ -21,6 +23,7 @@ namespace HR_PROJECT.WebAPI.Controllers
         private readonly GetEmployeeQueryHandler _getEmployeeQueryHandler;
         private readonly UpdateEmployeeCommandHandler _updateEmployeeCommandHandler;
         private readonly RemoveEmployeeCommandHandler _removeEmployeeCommandHandler;
+        private readonly UpdateApplicationUserPositionIdCommandHandler _updateApplicationuser;
 
 
         #endregion
@@ -32,7 +35,7 @@ namespace HR_PROJECT.WebAPI.Controllers
         #endregion
 
         #region Constructor
-        public EmployeesController(CreateEmployeeCommandHandler employeeCommandHandler, GetEmployeeByIdQueryHandler employeeByIdQueryHandler, GetEmployeeQueryHandler employeeQueryHandler, UpdateEmployeeCommandHandler updateEmployeeCommandHandler, RemoveEmployeeCommandHandler removeEmployeeCommandHandler, IAuthService authService)
+        public EmployeesController(CreateEmployeeCommandHandler employeeCommandHandler, GetEmployeeByIdQueryHandler employeeByIdQueryHandler, GetEmployeeQueryHandler employeeQueryHandler, UpdateEmployeeCommandHandler updateEmployeeCommandHandler, RemoveEmployeeCommandHandler removeEmployeeCommandHandler, IAuthService authService, UpdateApplicationUserPositionIdCommandHandler updateApplicationUser)
         {
             _createEmployeeCommandHandler = employeeCommandHandler;
             _getEmployeeByIdQueryHandler = employeeByIdQueryHandler;
@@ -41,6 +44,7 @@ namespace HR_PROJECT.WebAPI.Controllers
             _removeEmployeeCommandHandler = removeEmployeeCommandHandler;
 
             _authService = authService;
+            _updateApplicationuser = updateApplicationUser;
         }
         #endregion
 
@@ -89,9 +93,18 @@ namespace HR_PROJECT.WebAPI.Controllers
 
                 command.UserId = response.Id;
                 
-                await _createEmployeeCommandHandler.Handle(command);
+                int employeeId = await _createEmployeeCommandHandler.Handle(command);
 
-                
+                UpdateApplicationUserPositionIdCommand userCommand = new UpdateApplicationUserPositionIdCommand()
+                {
+                    Id = response.Id,
+                    PositionId = employeeId,
+                    RoleName = dto.Role
+                };
+
+                await _updateApplicationuser.Handle(userCommand);
+
+                response.PositionId = employeeId;
 
                 return Ok(response);
             }

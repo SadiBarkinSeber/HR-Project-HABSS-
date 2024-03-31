@@ -23,12 +23,12 @@ namespace HR_PROJECT.Application.Features.CQRS.Handlers.ManagerHandlers.Write
         }
 
 
-        public async Task Handle(CreateManagerCommand command)
+        public async Task<int> Handle(CreateManagerCommand command)
         {
 
             var user = await _userManager.FindByIdAsync(command.UserId);
 
-            await _repository.CreateAsync(new Manager
+            Manager manager = new Manager()
             {
                 FirstName = command.FirstName,
                 SecondName = command.SecondName,
@@ -50,7 +50,12 @@ namespace HR_PROJECT.Application.Features.CQRS.Handlers.ManagerHandlers.Write
                 Address = command.Address,
                 UserId = command.UserId,
                 Gender = command.Gender
-            });
+            };
+
+            await _repository.CreateAsync(manager);
+
+            int id = manager.EmployeeId;
+            return id;
         }
     }
 }

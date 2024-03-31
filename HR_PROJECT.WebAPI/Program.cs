@@ -28,6 +28,8 @@ using HR_PROJECT.Application.Features.CQRS.Handlers.SiteManagerHandlers.Read;
 using HR_PROJECT.Application.Features.CQRS.Handlers.SiteManagerHandlers.Write;
 using HR_PROJECT.Application.Features.CQRS.Handlers.CompanyHandlers.Read;
 using HR_PROJECT.Application.Features.CQRS.Handlers.CompanyHandlers.Write;
+using HR_PROJECT.Application.Features.CQRS.Commands.ApplicationUserCommands;
+using HR_PROJECT.Application.Features.CQRS.Handlers.ApplicationuserHandlers.Write;
 #endregion
 
 
@@ -181,9 +183,10 @@ builder.Services.AddScoped<CheckEmployeeWage>();
 builder.Services.AddScoped<CreateRandomPassword>();
 
 #endregion
-#region Dependency Injection of Applicaiton User Handlers
+#region Dependency Injection of Application User Handlers
 
 builder.Services.AddScoped<UpdateApplicationuserCommandHandler>();
+builder.Services.AddScoped<UpdateApplicationUserPositionIdCommandHandler>();
 
 #endregion
 
