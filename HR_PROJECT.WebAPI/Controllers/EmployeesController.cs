@@ -74,7 +74,8 @@ namespace HR_PROJECT.WebAPI.Controllers
             {
                 Firstname = command.FirstName,
                 Lastname = command.FirstSurname,
-                UserName = command.FirstName.ToLower()
+                UserName = command.FirstName.ToLower(),
+                Role = "employee"
             };
 
             try

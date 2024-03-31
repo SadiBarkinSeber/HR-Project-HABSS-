@@ -132,7 +132,7 @@ namespace HR_PROJECT.WebAPI.Services
 
                 if (result.Succeeded)
                 {
-                    string roleName = "employee";
+                    string roleName = dto.Role;
 
                     result = await _userManager.AddToRoleAsync(user, roleName);
                     if (!result.Succeeded)
