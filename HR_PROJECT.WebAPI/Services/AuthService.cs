@@ -3,11 +3,13 @@ using HR_PROJECT.Application.Features.CQRS.Handlers.AdvanceHandlers.Write;
 using HR_PROJECT.Application.Features.CQRS.Handlers.ApplicationuserHandlers.Write;
 using HR_PROJECT.Domain.Entities;
 using HR_PROJECT.WebAPI.DTOs.ApplicationUserDTOs;
+using HR_PROJECT.WebAPI.HelperFunctions;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
+using System.Web.Mvc;
 
 namespace HR_PROJECT.WebAPI.Services
 {
@@ -17,13 +19,15 @@ namespace HR_PROJECT.WebAPI.Services
         private readonly RoleManager<IdentityRole> _roleManager;
         private readonly IConfiguration _configuration;
         private readonly UpdateApplicationuserCommandHandler _handler;
+        private readonly CreateRandomPassword _createRandomPassword;
 
-        public AuthService(UserManager<ApplicationUser> userManager, RoleManager<IdentityRole> roleManager, IConfiguration configuration, UpdateApplicationuserCommandHandler handler)
+        public AuthService(UserManager<ApplicationUser> userManager, RoleManager<IdentityRole> roleManager, IConfiguration configuration, UpdateApplicationuserCommandHandler handler, CreateRandomPassword createRandomPassword)
         {
             _configuration = configuration;
             _userManager = userManager;
             _roleManager = roleManager;
             _handler = handler;
+            _createRandomPassword = createRandomPassword;
         }
 
         public async Task<(int, string)> Login(LoginApplicationUserDTO dto)
@@ -103,6 +107,58 @@ namespace HR_PROJECT.WebAPI.Services
             }
         }
 
+        public async Task<(int, CreateUserResponseDTO)> CreateUser(CreateApplicationUserDTO dto)
+        {
+            CreateUserResponseDTO response = new CreateUserResponseDTO();
+            try
+            {
+                
+                if (dto.UserName == null || dto.Firstname == null || dto.Lastname == null)
+                {
+                    throw new ArgumentException("Invalid model.");
+                }
+
+                ApplicationUser user = new ApplicationUser()
+                {
+                    UserName = dto.UserName,
+                    Email = dto.Email,
+                    FirstName = dto.Firstname,
+                    LastName = dto.Lastname
+                };
+
+                string password = _createRandomPassword.GenerateRandomString(6);
+
+                IdentityResult result = await _userManager.CreateAsync(user, password);
+
+                if (result.Succeeded)
+                {
+                    string roleName = "employee";
+
+                    result = await _userManager.AddToRoleAsync(user, roleName);
+                    if (!result.Succeeded)
+                    {
+                        response.Message = "An error has occurred.";
+                        return (2, response);
+                    }
+
+                    response.Id = user.Id;
+                    response.Email = user.Email;
+                    response.Message = "Success.";
+                    response.Password = password;
+                    return (1, response);
+                }
+
+                response.Message = "Something ain't right.";
+
+                return (3, response);
+            }
+            catch (Exception ex)
+            {
+                response.Message = ex.Message;
+                return (0, response);
+            }
+        }
+
         private string GenerateToken(IEnumerable<Claim> claims)
         {
             var authSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["Jwt:Key"]));
@@ -123,5 +179,6 @@ namespace HR_PROJECT.WebAPI.Services
             return tokenHandler.WriteToken(token);
         }
 
+        
     }
 }

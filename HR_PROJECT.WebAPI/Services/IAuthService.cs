@@ -6,5 +6,6 @@ namespace HR_PROJECT.WebAPI.Services
     {
         Task<(int, string)> Login(LoginApplicationUserDTO dto);
         Task<(int, string)> ResetPassword(ChangePasswordForResetDTO dto);
+        Task<(int, CreateUserResponseDTO)> CreateUser(CreateApplicationUserDTO dto);
     }
 }

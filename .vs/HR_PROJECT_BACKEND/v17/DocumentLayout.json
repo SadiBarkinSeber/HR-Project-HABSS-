@@ -3,20 +3,20 @@
   "WorkspaceRootPath": "C:\\Users\\Shohzod\\source\\repos\\HR-PROJECT-BACKEND6\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{F98C2474-C9E4-4AC1-86DF-DD935ACD319D}|HR_PROJECT.WebAPI\\HR_PROJECT.WebAPI.csproj|c:\\users\\shohzod\\source\\repos\\hr-project-backend6\\hr_project.webapi\\controllers\\employeescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F98C2474-C9E4-4AC1-86DF-DD935ACD319D}|HR_PROJECT.WebAPI\\HR_PROJECT.WebAPI.csproj|solutionrelative:hr_project.webapi\\controllers\\employeescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F98C2474-C9E4-4AC1-86DF-DD935ACD319D}|HR_PROJECT.WebAPI\\HR_PROJECT.WebAPI.csproj|c:\\users\\shohzod\\source\\repos\\hr-project-backend6\\hr_project.webapi\\dtos\\applicationuserdtos\\createuserresponsedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F98C2474-C9E4-4AC1-86DF-DD935ACD319D}|HR_PROJECT.WebAPI\\HR_PROJECT.WebAPI.csproj|solutionrelative:hr_project.webapi\\dtos\\applicationuserdtos\\createuserresponsedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{F98C2474-C9E4-4AC1-86DF-DD935ACD319D}|HR_PROJECT.WebAPI\\HR_PROJECT.WebAPI.csproj|c:\\users\\shohzod\\source\\repos\\hr-project-backend6\\hr_project.webapi\\services\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F98C2474-C9E4-4AC1-86DF-DD935ACD319D}|HR_PROJECT.WebAPI\\HR_PROJECT.WebAPI.csproj|solutionrelative:hr_project.webapi\\services\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3B13A124-752A-4AF6-84DA-BDFF3DCAAB42}|HR_PROJECT.Application\\HR_PROJECT.Application.csproj|c:\\users\\shohzod\\source\\repos\\hr-project-backend6\\hr_project.application\\features\\cqrs\\handlers\\applicationuserhandlers\\write\\updateapplicationusercommandhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3B13A124-752A-4AF6-84DA-BDFF3DCAAB42}|HR_PROJECT.Application\\HR_PROJECT.Application.csproj|solutionrelative:hr_project.application\\features\\cqrs\\handlers\\applicationuserhandlers\\write\\updateapplicationusercommandhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{F98C2474-C9E4-4AC1-86DF-DD935ACD319D}|HR_PROJECT.WebAPI\\HR_PROJECT.WebAPI.csproj|c:\\users\\shohzod\\source\\repos\\hr-project-backend6\\hr_project.webapi\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F98C2474-C9E4-4AC1-86DF-DD935ACD319D}|HR_PROJECT.WebAPI\\HR_PROJECT.WebAPI.csproj|solutionrelative:hr_project.webapi\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3B13A124-752A-4AF6-84DA-BDFF3DCAAB42}|HR_PROJECT.Application\\HR_PROJECT.Application.csproj|c:\\users\\shohzod\\source\\repos\\hr-project-backend6\\hr_project.application\\features\\cqrs\\commands\\applicationusercommands\\updateapplicationusercommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3B13A124-752A-4AF6-84DA-BDFF3DCAAB42}|HR_PROJECT.Application\\HR_PROJECT.Application.csproj|solutionrelative:hr_project.application\\features\\cqrs\\commands\\applicationusercommands\\updateapplicationusercommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -34,54 +34,54 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "AccountController.cs",
-              "DocumentMoniker": "C:\\Users\\Shohzod\\source\\repos\\HR-PROJECT-BACKEND6\\HR_PROJECT.WebAPI\\Controllers\\AccountController.cs",
-              "RelativeDocumentMoniker": "HR_PROJECT.WebAPI\\Controllers\\AccountController.cs",
-              "ToolTip": "C:\\Users\\Shohzod\\source\\repos\\HR-PROJECT-BACKEND6\\HR_PROJECT.WebAPI\\Controllers\\AccountController.cs",
-              "RelativeToolTip": "HR_PROJECT.WebAPI\\Controllers\\AccountController.cs",
-              "ViewState": "AQIAAMcAAAAAAAAAAAAowAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-31T17:11:33.191Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "UpdateApplicationuserCommandHandler.cs",
-              "DocumentMoniker": "C:\\Users\\Shohzod\\source\\repos\\HR-PROJECT-BACKEND6\\HR_PROJECT.Application\\Features\\CQRS\\Handlers\\ApplicationuserHandlers\\Write\\UpdateApplicationuserCommandHandler.cs",
-              "RelativeDocumentMoniker": "HR_PROJECT.Application\\Features\\CQRS\\Handlers\\ApplicationuserHandlers\\Write\\UpdateApplicationuserCommandHandler.cs",
-              "ToolTip": "C:\\Users\\Shohzod\\source\\repos\\HR-PROJECT-BACKEND6\\HR_PROJECT.Application\\Features\\CQRS\\Handlers\\ApplicationuserHandlers\\Write\\UpdateApplicationuserCommandHandler.cs",
-              "RelativeToolTip": "HR_PROJECT.Application\\Features\\CQRS\\Handlers\\ApplicationuserHandlers\\Write\\UpdateApplicationuserCommandHandler.cs",
-              "ViewState": "AQIAAA4AAAAAAAAAAAAAwAAAAAAAAAAA",
+              "Title": "CreateUserResponseDTO.cs",
+              "DocumentMoniker": "C:\\Users\\Shohzod\\source\\repos\\HR-PROJECT-BACKEND6\\HR_PROJECT.WebAPI\\DTOs\\ApplicationUserDTOs\\CreateUserResponseDTO.cs",
+              "RelativeDocumentMoniker": "HR_PROJECT.WebAPI\\DTOs\\ApplicationUserDTOs\\CreateUserResponseDTO.cs",
+              "ToolTip": "C:\\Users\\Shohzod\\source\\repos\\HR-PROJECT-BACKEND6\\HR_PROJECT.WebAPI\\DTOs\\ApplicationUserDTOs\\CreateUserResponseDTO.cs",
+              "RelativeToolTip": "HR_PROJECT.WebAPI\\DTOs\\ApplicationUserDTOs\\CreateUserResponseDTO.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAsAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-31T17:10:42.276Z",
+              "WhenOpened": "2024-03-31T18:03:48.96Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "UpdateApplicationUserCommand.cs",
-              "DocumentMoniker": "C:\\Users\\Shohzod\\source\\repos\\HR-PROJECT-BACKEND6\\HR_PROJECT.Application\\Features\\CQRS\\Commands\\ApplicationUserCommands\\UpdateApplicationUserCommand.cs",
-              "RelativeDocumentMoniker": "HR_PROJECT.Application\\Features\\CQRS\\Commands\\ApplicationUserCommands\\UpdateApplicationUserCommand.cs",
-              "ToolTip": "C:\\Users\\Shohzod\\source\\repos\\HR-PROJECT-BACKEND6\\HR_PROJECT.Application\\Features\\CQRS\\Commands\\ApplicationUserCommands\\UpdateApplicationUserCommand.cs",
-              "RelativeToolTip": "HR_PROJECT.Application\\Features\\CQRS\\Commands\\ApplicationUserCommands\\UpdateApplicationUserCommand.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-31T17:10:20.182Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "AuthService.cs",
               "DocumentMoniker": "C:\\Users\\Shohzod\\source\\repos\\HR-PROJECT-BACKEND6\\HR_PROJECT.WebAPI\\Services\\AuthService.cs",
               "RelativeDocumentMoniker": "HR_PROJECT.WebAPI\\Services\\AuthService.cs",
               "ToolTip": "C:\\Users\\Shohzod\\source\\repos\\HR-PROJECT-BACKEND6\\HR_PROJECT.WebAPI\\Services\\AuthService.cs",
               "RelativeToolTip": "HR_PROJECT.WebAPI\\Services\\AuthService.cs",
-              "ViewState": "AQIAAE8AAAAAAAAAAAAgwGEAAABQAAAA",
+              "ViewState": "AQIAAIYAAAAAAAAAAAAkwJIAAAAxAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-31T17:09:10.486Z",
+              "WhenOpened": "2024-03-31T18:01:54.913Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "AccountController.cs",
+              "DocumentMoniker": "C:\\Users\\Shohzod\\source\\repos\\HR-PROJECT-BACKEND6\\HR_PROJECT.WebAPI\\Controllers\\AccountController.cs",
+              "RelativeDocumentMoniker": "HR_PROJECT.WebAPI\\Controllers\\AccountController.cs",
+              "ToolTip": "C:\\Users\\Shohzod\\source\\repos\\HR-PROJECT-BACKEND6\\HR_PROJECT.WebAPI\\Controllers\\AccountController.cs",
+              "RelativeToolTip": "HR_PROJECT.WebAPI\\Controllers\\AccountController.cs",
+              "ViewState": "AQIAAHwAAAAAAAAAAAAkwAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-31T18:01:25.793Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "EmployeesController.cs",
+              "DocumentMoniker": "C:\\Users\\Shohzod\\source\\repos\\HR-PROJECT-BACKEND6\\HR_PROJECT.WebAPI\\Controllers\\EmployeesController.cs",
+              "RelativeDocumentMoniker": "HR_PROJECT.WebAPI\\Controllers\\EmployeesController.cs",
+              "ToolTip": "C:\\Users\\Shohzod\\source\\repos\\HR-PROJECT-BACKEND6\\HR_PROJECT.WebAPI\\Controllers\\EmployeesController.cs",
+              "RelativeToolTip": "HR_PROJECT.WebAPI\\Controllers\\EmployeesController.cs",
+              "ViewState": "AQIAAE4AAAAAAAAAAAAwwF8AAAANAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-31T17:22:37.295Z",
               "EditorCaption": ""
             }
           ]
