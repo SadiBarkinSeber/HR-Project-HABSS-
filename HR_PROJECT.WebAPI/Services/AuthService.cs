@@ -1,4 +1,7 @@
-﻿using HR_PROJECT.Domain.Entities;
+﻿using HR_PROJECT.Application.Features.CQRS.Commands.ApplicationUserCommands;
+using HR_PROJECT.Application.Features.CQRS.Handlers.AdvanceHandlers.Write;
+using HR_PROJECT.Application.Features.CQRS.Handlers.ApplicationuserHandlers.Write;
+using HR_PROJECT.Domain.Entities;
 using HR_PROJECT.WebAPI.DTOs.ApplicationUserDTOs;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.IdentityModel.Tokens;
@@ -13,12 +16,14 @@ namespace HR_PROJECT.WebAPI.Services
         private readonly UserManager<ApplicationUser> _userManager;
         private readonly RoleManager<IdentityRole> _roleManager;
         private readonly IConfiguration _configuration;
+        private readonly UpdateApplicationuserCommandHandler _handler;
 
-        public AuthService(UserManager<ApplicationUser> userManager, RoleManager<IdentityRole> roleManager, IConfiguration configuration)
+        public AuthService(UserManager<ApplicationUser> userManager, RoleManager<IdentityRole> roleManager, IConfiguration configuration, UpdateApplicationuserCommandHandler handler)
         {
             _configuration = configuration;
             _userManager = userManager;
             _roleManager = roleManager;
+            _handler = handler;
         }
 
         public async Task<(int, string)> Login(LoginApplicationUserDTO dto)
@@ -82,7 +87,15 @@ namespace HR_PROJECT.WebAPI.Services
 
             if (result.Succeeded)
             {
-                return (1, "Password reset successfully.");
+                var changes = new UpdateApplicationUserCommand()
+                {
+                    Id = user.Id,
+                    OneTimePassword = null
+                };
+
+                _handler.Handle(changes);
+
+                return (1, $"Password reset successfully. {user.OneTimePassword}");
             }
             else
             {
