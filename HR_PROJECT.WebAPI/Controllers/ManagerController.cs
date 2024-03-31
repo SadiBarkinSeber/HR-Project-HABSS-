@@ -1,5 +1,7 @@
-﻿using HR_PROJECT.Application.Features.CQRS.Commands.EmployeeCommands;
+﻿using HR_PROJECT.Application.Features.CQRS.Commands.ApplicationUserCommands;
+using HR_PROJECT.Application.Features.CQRS.Commands.EmployeeCommands;
 using HR_PROJECT.Application.Features.CQRS.Commands.ManagerCommands;
+using HR_PROJECT.Application.Features.CQRS.Handlers.ApplicationuserHandlers.Write;
 using HR_PROJECT.Application.Features.CQRS.Handlers.EmployeeHandlers.Read;
 using HR_PROJECT.Application.Features.CQRS.Handlers.EmployeeHandlers.Write;
 using HR_PROJECT.Application.Features.CQRS.Handlers.ManagerHandlers.Read;
@@ -24,12 +26,13 @@ namespace HR_PROJECT.WebAPI.Controllers
         private readonly UpdateManagerCommandHandler _updateManagerCommandHandler;
         private readonly RemoveManagerCommandHandler _removeManagerCommandHandler;
         private readonly IAuthService _authService;
+        private readonly UpdateApplicationUserPositionIdCommandHandler _updateManagerId;
 
 
         #endregion
 
         #region Constructor
-        public ManagerController(CreateManagerCommandHandler managerCommandHandler, GetManagerByIdQueryHandler managerByIdQueryHandler, GetManagerQueryHandler managerQueryHandler, UpdateManagerCommandHandler updateManagerCommandHandler, RemoveManagerCommandHandler removeManagerCommandHandler, IAuthService authService)
+        public ManagerController(CreateManagerCommandHandler managerCommandHandler, GetManagerByIdQueryHandler managerByIdQueryHandler, GetManagerQueryHandler managerQueryHandler, UpdateManagerCommandHandler updateManagerCommandHandler, RemoveManagerCommandHandler removeManagerCommandHandler, IAuthService authService, UpdateApplicationUserPositionIdCommandHandler updateManagerId)
         {
             _createManagerCommandHandler = managerCommandHandler;
             _getManagerByIdQueryHandler = managerByIdQueryHandler;
@@ -37,6 +40,7 @@ namespace HR_PROJECT.WebAPI.Controllers
             _updateManagerCommandHandler = updateManagerCommandHandler;
             _removeManagerCommandHandler = removeManagerCommandHandler;
             _authService = authService;
+            _updateManagerId = updateManagerId;
         }
         #endregion
 
@@ -81,7 +85,17 @@ namespace HR_PROJECT.WebAPI.Controllers
 
                 command.UserId = response.Id;
 
-                await _createManagerCommandHandler.Handle(command);
+                int managerId = await _createManagerCommandHandler.Handle(command);
+
+                UpdateApplicationUserPositionIdCommand userCommand = new UpdateApplicationUserPositionIdCommand()
+                {
+                    Id = response.Id,
+                    PositionId = managerId,
+                    RoleName = "manager"
+                };
+
+                await _updateManagerId.Handle(userCommand);
+                response.PositionId = managerId;
 
                 return Ok(response);
             }

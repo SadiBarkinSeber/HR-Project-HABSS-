@@ -22,10 +22,10 @@ namespace HR_PROJECT.Application.Features.CQRS.Handlers.EmployeeHandlers.Write
         }
 
 
-        public async Task Handle(CreateEmployeeCommand command)
+        public async Task<int> Handle(CreateEmployeeCommand command)
         {
             var user = await _userManager.FindByIdAsync(command.UserId);
-            await _repository.CreateAsync(new Employee
+            Employee employee = new Employee()
             {
                 FirstName = command.FirstName,
                 SecondName = command.SecondName,
@@ -47,7 +47,12 @@ namespace HR_PROJECT.Application.Features.CQRS.Handlers.EmployeeHandlers.Write
                 Address = command.Address,
                 UserId = command.UserId,
                 Gender = command.Gender
-            });
+            };
+            await _repository.CreateAsync(employee);
+
+            int id = employee.EmployeeId;
+
+            return id;
         }
     }
 }

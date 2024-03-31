@@ -1,6 +1,10 @@
 ﻿using HR_PROJECT.Application.Features.CQRS.Commands.ApplicationUserCommands;
 using HR_PROJECT.Application.Features.CQRS.Handlers.AdvanceHandlers.Write;
 using HR_PROJECT.Application.Features.CQRS.Handlers.ApplicationuserHandlers.Write;
+using HR_PROJECT.Application.Features.CQRS.Handlers.EmployeeHandlers.Read;
+using HR_PROJECT.Application.Features.CQRS.Handlers.ManagerHandlers.Read;
+using HR_PROJECT.Application.Features.CQRS.Queries.EmployeeQueries;
+using HR_PROJECT.Application.Features.CQRS.Queries.ManagerQueries;
 using HR_PROJECT.Domain.Entities;
 using HR_PROJECT.WebAPI.DTOs.ApplicationUserDTOs;
 using HR_PROJECT.WebAPI.HelperFunctions;
@@ -20,14 +24,20 @@ namespace HR_PROJECT.WebAPI.Services
         private readonly IConfiguration _configuration;
         private readonly UpdateApplicationuserCommandHandler _handler;
         private readonly CreateRandomPassword _createRandomPassword;
+        private readonly GetEmployeeByIdQueryHandler _getEmployeeById;
+        private readonly GetManagerByIdQueryHandler _getManagerById;
+        private readonly UpdateApplicationUserPositionIdCommandHandler _updateApplicationUserPositionId;
 
-        public AuthService(UserManager<ApplicationUser> userManager, RoleManager<IdentityRole> roleManager, IConfiguration configuration, UpdateApplicationuserCommandHandler handler, CreateRandomPassword createRandomPassword)
+        public AuthService(UserManager<ApplicationUser> userManager, RoleManager<IdentityRole> roleManager, IConfiguration configuration, UpdateApplicationuserCommandHandler handler, CreateRandomPassword createRandomPassword, GetEmployeeByIdQueryHandler getEmployeeByIdQuery, GetManagerByIdQueryHandler getManagerByIdQuery, UpdateApplicationUserPositionIdCommandHandler updateApplicationUserPositionId)
         {
             _configuration = configuration;
             _userManager = userManager;
             _roleManager = roleManager;
             _handler = handler;
             _createRandomPassword = createRandomPassword;
+            _getEmployeeById = getEmployeeByIdQuery;
+            _getManagerById = getManagerByIdQuery;
+            _updateApplicationUserPositionId = updateApplicationUserPositionId;
         }
 
         public async Task<(int, string)> Login(LoginApplicationUserDTO dto)
@@ -118,6 +128,8 @@ namespace HR_PROJECT.WebAPI.Services
                     throw new ArgumentException("Invalid model.");
                 }
 
+                
+
                 ApplicationUser user = new ApplicationUser()
                 {
                     UserName = dto.UserName,
@@ -134,6 +146,7 @@ namespace HR_PROJECT.WebAPI.Services
                 {
                     string roleName = dto.Role;
 
+
                     result = await _userManager.AddToRoleAsync(user, roleName);
                     if (!result.Succeeded)
                     {
@@ -148,7 +161,7 @@ namespace HR_PROJECT.WebAPI.Services
                     return (1, response);
                 }
 
-                response.Message = "Something ain't right.";
+                response.Message = "Something ain't right. Possible duplicate name, surname or email.";
 
                 return (3, response);
             }
