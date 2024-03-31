@@ -25,11 +25,12 @@ namespace HR_PROJECT.Application.Features.CQRS.Commands.ManagerCommands
         public string Position { get; set; }
         public string Department { get; set; }
         public string Company { get; set; }
-        public string Email { get; set; }
+        
         public decimal Wage { get; set; }
         public string? ImagePath { get; set; }
         public string PhoneNumber { get; set; }
         public string Address { get; set; }
         public string? UserId { get; set; }
+        public string Gender { get; set; }
     }
 }

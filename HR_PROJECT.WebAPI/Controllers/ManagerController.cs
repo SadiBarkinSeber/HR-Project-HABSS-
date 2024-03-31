@@ -6,6 +6,8 @@ using HR_PROJECT.Application.Features.CQRS.Handlers.ManagerHandlers.Read;
 using HR_PROJECT.Application.Features.CQRS.Handlers.ManagerHandlers.Write;
 using HR_PROJECT.Application.Features.CQRS.Queries.EmployeeQueries;
 using HR_PROJECT.Application.Features.CQRS.Queries.ManagerQueries;
+using HR_PROJECT.WebAPI.DTOs.ApplicationUserDTOs;
+using HR_PROJECT.WebAPI.Services;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -21,18 +23,20 @@ namespace HR_PROJECT.WebAPI.Controllers
         private readonly GetManagerQueryHandler _getManagerQueryHandler;
         private readonly UpdateManagerCommandHandler _updateManagerCommandHandler;
         private readonly RemoveManagerCommandHandler _removeManagerCommandHandler;
+        private readonly IAuthService _authService;
 
 
         #endregion
 
         #region Constructor
-        public ManagerController(CreateManagerCommandHandler managerCommandHandler, GetManagerByIdQueryHandler managerByIdQueryHandler, GetManagerQueryHandler managerQueryHandler, UpdateManagerCommandHandler updateManagerCommandHandler, RemoveManagerCommandHandler removeManagerCommandHandler)
+        public ManagerController(CreateManagerCommandHandler managerCommandHandler, GetManagerByIdQueryHandler managerByIdQueryHandler, GetManagerQueryHandler managerQueryHandler, UpdateManagerCommandHandler updateManagerCommandHandler, RemoveManagerCommandHandler removeManagerCommandHandler, IAuthService authService)
         {
             _createManagerCommandHandler = managerCommandHandler;
             _getManagerByIdQueryHandler = managerByIdQueryHandler;
             _getManagerQueryHandler = managerQueryHandler;
             _updateManagerCommandHandler = updateManagerCommandHandler;
             _removeManagerCommandHandler = removeManagerCommandHandler;
+            _authService = authService;
         }
         #endregion
 
@@ -59,8 +63,33 @@ namespace HR_PROJECT.WebAPI.Controllers
         [HttpPost]
         public async Task<IActionResult> CreateManager(CreateManagerCommand command)
         {
-            await _createManagerCommandHandler.Handle(command);
-            return Ok("Yonetici bilgileri eklendi.");
+            CreateApplicationUserDTO dto = new CreateApplicationUserDTO()
+            {
+                Firstname = command.FirstName,
+                Lastname = command.FirstSurname,
+                UserName = command.FirstName.ToLower(),
+                Role = "manager"
+            };
+
+            try
+            {
+                var (status, response) = await _authService.CreateUser(dto);
+                if (!(status == 1))
+                {
+                    return BadRequest(response.Message);
+                }
+
+                command.UserId = response.Id;
+
+                await _createManagerCommandHandler.Handle(command);
+
+                return Ok(response);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+            
         }
 
         [HttpDelete]
