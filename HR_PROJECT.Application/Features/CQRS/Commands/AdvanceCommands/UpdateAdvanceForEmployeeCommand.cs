@@ -9,7 +9,7 @@ namespace HR_PROJECT.Application.Features.CQRS.Commands.AdvanceCommands
     public class UpdateAdvanceForEmployeeCommand
     {
         public int Id { get; set; }
-        public bool IsCanceled { get; set; }
-        public string ApprovalStatus { get; } = "Canceled";
+        public bool? IsCanceled { get; set; }
+        public string ApprovalStatus { get; } = "İptal Edildi";
     }
 }

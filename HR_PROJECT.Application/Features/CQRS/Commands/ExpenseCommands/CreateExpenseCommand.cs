@@ -15,7 +15,7 @@ namespace HR_PROJECT.Application.Features.CQRS.Commands.ExpenseCommands
         }
         public string ExpenseType { get; set; }
         public decimal Amount { get; set; }
-        public string ApprovalStatus { get; } = "Requested";
+        public string ApprovalStatus { get; } = "Talep Edildi";
         public DateTime RequestDate { get; }
         
         public string Currency { get; set; }

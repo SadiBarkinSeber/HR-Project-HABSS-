@@ -15,7 +15,7 @@ namespace HR_PROJECT.Application.Features.CQRS.Results.AdvanceResults
         public DateTime RequestDate { get; set; } = DateTime.Now;
         public string Response { get; set; }
         public string Currency { get; set; }
-        public bool Permission { get; set; }
+        public bool? Permission { get; set; }
         public string EmployeeFirstName { get; set; }
         public string EmployeeSecondName { get; set; }
         public string EmployeeLastName { get; set; }

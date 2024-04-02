@@ -20,7 +20,7 @@ namespace HR_PROJECT.Application.Features.CQRS.Commands.AdvanceCommands
 
 
         public string AdvanceType { get; set; }
-        public string ApprovalStatus { get; } = "Requested";
+        public string ApprovalStatus { get; } = "Talep Edildi";
         public decimal Amount { get; set; }
 
         private static readonly Dictionary<string, decimal> ExchangeRates = new Dictionary<string, decimal>

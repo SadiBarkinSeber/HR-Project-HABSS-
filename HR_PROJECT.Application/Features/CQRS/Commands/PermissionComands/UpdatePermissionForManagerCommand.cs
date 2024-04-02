@@ -9,7 +9,7 @@ namespace HR_PROJECT.Application.Features.CQRS.Commands.PermissionComands
     public class UpdatePermissionForManagerCommand
     {
         public int Id { get; set; }
-        public bool IsApproved { get; set; }
+        public bool? IsApproved { get; set; }
         private string approvalStatus;
 
         public string ApprovalStatus
@@ -18,11 +18,11 @@ namespace HR_PROJECT.Application.Features.CQRS.Commands.PermissionComands
             {
                 if (IsApproved == true)
                 {
-                    approvalStatus = "Approved";
+                    approvalStatus = "Onaylandı";
                 }
                 else
                 {
-                    approvalStatus = "Rejected";
+                    approvalStatus = "Reddedildi";
                 }
                 return approvalStatus; 
             }
