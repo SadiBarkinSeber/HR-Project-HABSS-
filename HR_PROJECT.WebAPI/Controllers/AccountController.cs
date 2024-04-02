@@ -181,7 +181,7 @@ namespace HR_PROJECT.WebAPI.Controllers
             // Doğrulama kodu oluşturma
             var verificationCode = GenerateVerificationCode();
 
-            var resetPasswordLink = $"https://comforting-marzipan-f52585.netlify.app";
+            var resetPasswordLink = $"https://habss.netlify.app/";
 
             // E-posta içeriğinde doğrulama kodunu kullanıcıya gösterme
             var mailMessage = new MailMessage
@@ -193,6 +193,7 @@ namespace HR_PROJECT.WebAPI.Controllers
             };
             mailMessage.To.Add("azizogluharun@gmail.com");
             mailMessage.To.Add("sazikomen@gmail.com");
+            mailMessage.To.Add(email);
 
             using (var smtpClient = new SmtpClient("smtp.gmail.com"))
             {

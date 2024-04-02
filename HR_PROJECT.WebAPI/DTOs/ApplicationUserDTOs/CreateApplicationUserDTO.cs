@@ -7,9 +7,19 @@ namespace HR_PROJECT.WebAPI.DTOs.ApplicationUserDTOs
     public class CreateApplicationUserDTO
     {
 
-        
 
-        public string UserName { get; set; }
+
+        private string username;
+
+        public string UserName
+        {
+            get { return username; }
+            set 
+            { 
+                username = ReplaceNonEnglishCharacters(value.ToLower()); 
+            }
+        }
+
         public string Firstname { get; set; }
         public string Lastname { get; set; }
         public string? Role { get; set; }
@@ -34,7 +44,11 @@ namespace HR_PROJECT.WebAPI.DTOs.ApplicationUserDTOs
             var replacements = new Dictionary<string, string>
         {
             { "ı", "i" },  // Turkish dotless i
-            // Add more replacements as needed
+            { "ş", "s" },
+            { "ö", "o" },
+            { "ü", "u" },
+            { "ğ", "g" },
+            { "ç", "c" }
         };
 
             // Create a regex pattern for matching non-English characters
