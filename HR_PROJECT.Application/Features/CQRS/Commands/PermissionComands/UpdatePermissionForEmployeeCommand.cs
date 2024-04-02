@@ -11,7 +11,7 @@ namespace HR_PROJECT.Application.Features.CQRS.Commands.PermissionComands
     public class UpdatePermissionForEmployeeCommand
     {
         public int Id { get; set; }
-        public bool IsCancelled { get; set; }
-        public string ApprovalStatus { get; } = "Cancelled";
+        public bool? IsCancelled { get; set; }
+        public string ApprovalStatus { get; } = "İptal Edildi";
     }
 }

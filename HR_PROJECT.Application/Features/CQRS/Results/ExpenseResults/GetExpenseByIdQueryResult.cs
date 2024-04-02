@@ -16,7 +16,7 @@ namespace HR_PROJECT.Application.Features.CQRS.Results.ExpenseResults
         public DateTime RequestDate { get; set; }
         public string Response { get; set; }
         public string Currency { get; set; }
-        public bool Permission { get; set; }
+        public bool? Permission { get; set; }
         public int EmployeeId { get; set; }
         public string? FileName { get; set; }
         

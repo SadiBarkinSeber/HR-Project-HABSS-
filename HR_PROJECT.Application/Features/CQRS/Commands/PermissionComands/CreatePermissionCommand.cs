@@ -48,7 +48,7 @@ namespace HR_PROJECT.Application.Features.CQRS.Commands.PermissionComands
         }
 
         public string? FileName { get; set; }
-        public string ApprovalStatus { get; } = "Requested";
+        public string ApprovalStatus { get; } = "Talep Edildi";
         public int EmployeeId { get; set; }
     }
 }

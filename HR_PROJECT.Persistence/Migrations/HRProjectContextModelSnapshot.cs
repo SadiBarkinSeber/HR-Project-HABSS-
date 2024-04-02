@@ -56,10 +56,10 @@ namespace HR_PROJECT.Persistence.Migrations
                     b.Property<int>("EmployeeId")
                         .HasColumnType("int");
 
-                    b.Property<bool>("IsApproved")
+                    b.Property<bool?>("IsApproved")
                         .HasColumnType("bit");
 
-                    b.Property<bool>("IsCanceled")
+                    b.Property<bool?>("IsCanceled")
                         .HasColumnType("bit");
 
                     b.Property<int?>("ManagerEmployeeId")
@@ -202,7 +202,7 @@ namespace HR_PROJECT.Persistence.Migrations
                         {
                             Id = "df5a9b38-18e8-48b7-97bf-ad4a9b4afe0e",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "d1e7d4d2-c110-4a1d-9c0f-51a2e0e8603b",
+                            ConcurrencyStamp = "11cd8101-194e-4a46-adef-a29cd4b0dd3e",
                             Email = "sahzod.irgas@bilgeadamboost.com",
                             EmailConfirmed = false,
                             EmployeeId = 1,
@@ -210,7 +210,7 @@ namespace HR_PROJECT.Persistence.Migrations
                             NormalizedEmail = "SAHZOD.IRGAS@BILGEADAM.COM",
                             NormalizedUserName = "SAHZOD",
                             OneTimePassword = "123456",
-                            PasswordHash = "AQAAAAIAAYagAAAAEAuyYEhnFGbvXtK0oHpJfdaC5XZEJxDO9XMoC5/KlORm/q1aAyh4Sr6zI+dz/Z5v1w==",
+                            PasswordHash = "AQAAAAIAAYagAAAAEIhCGQKpBErwUweGSKnn5sFVVNQ0y3iZ5fDceji2rYtwgTT+DRF3ram7S5efa88kHw==",
                             PhoneNumberConfirmed = false,
                             SecurityStamp = "",
                             TwoFactorEnabled = false,
@@ -220,14 +220,14 @@ namespace HR_PROJECT.Persistence.Migrations
                         {
                             Id = "29eee336-e6a2-40f2-9305-159eed59ed75",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "af892d93-ac08-4c50-aa50-0e8ca7e39db0",
+                            ConcurrencyStamp = "ea93c777-d026-45db-b744-1c411603cd1f",
                             Email = "admin@bilgeadamboost.com",
                             EmailConfirmed = false,
                             LockoutEnabled = false,
                             ManagerId = 3,
                             NormalizedEmail = "ADMIN@BILGEADAM.COM",
                             NormalizedUserName = "ADMIN",
-                            PasswordHash = "AQAAAAIAAYagAAAAEI8kvMg6pzfFLnW1rIGqOs1H5U4ZJP44YHYRdFxDbjXt4gbXg1i3Y57e3Xo00j95iw==",
+                            PasswordHash = "AQAAAAIAAYagAAAAEBf96xmRhgnEQtEM5hr/KeaFVc2ZyoZB/lGPD+Wf0yxfCWgMLpC/o49DKQjCA8Wzeg==",
                             PhoneNumberConfirmed = false,
                             SecurityStamp = "",
                             TwoFactorEnabled = false,
@@ -237,13 +237,13 @@ namespace HR_PROJECT.Persistence.Migrations
                         {
                             Id = "ff05bc01-696c-4968-8e4f-cc707cceafad",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "460ee125-aee9-4717-80b6-d0a2d188d72b",
+                            ConcurrencyStamp = "a5bbe97a-3370-4a0e-975e-c1dfb4ab7d6f",
                             Email = "moderator@bilgeadamboost.com",
                             EmailConfirmed = false,
                             LockoutEnabled = false,
                             NormalizedEmail = "MODERATOR@BİLGEADAMBOOST.COM",
                             NormalizedUserName = "MODERATOR",
-                            PasswordHash = "AQAAAAIAAYagAAAAEMpjtDhr7KxOgjCIqEfC0tG4OlpvWBhutZ63A731zpDqPWhOvIk1NYnhY/LFyeTkzg==",
+                            PasswordHash = "AQAAAAIAAYagAAAAECinb83URAJmeJ6ETrCMIvWvuGCDWkWGlyk3yLRcH15Ue06kVMIjbKo14VV/InO38w==",
                             PhoneNumberConfirmed = false,
                             SecurityStamp = "",
                             SiteManagerId = 15,
@@ -483,10 +483,10 @@ namespace HR_PROJECT.Persistence.Migrations
                     b.Property<string>("FileName")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<bool>("IsApproved")
+                    b.Property<bool?>("IsApproved")
                         .HasColumnType("bit");
 
-                    b.Property<bool>("IsCancelled")
+                    b.Property<bool?>("IsCancelled")
                         .HasColumnType("bit");
 
                     b.Property<int?>("ManagerEmployeeId")
@@ -673,10 +673,10 @@ namespace HR_PROJECT.Persistence.Migrations
                     b.Property<string>("FileName")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<bool>("IsApproved")
+                    b.Property<bool?>("IsApproved")
                         .HasColumnType("bit");
 
-                    b.Property<bool>("IsCancelled")
+                    b.Property<bool?>("IsCancelled")
                         .HasColumnType("bit");
 
                     b.Property<int?>("ManagerEmployeeId")

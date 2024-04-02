@@ -22,6 +22,6 @@ namespace HR_PROJECT.Application.Features.CQRS.Results.PermissionResults
         public string EmployeeLastName { get; set; }
         public string EmployeeSecondLastName { get; set; }
         public int? EmployeeId { get; set; }
-        public bool IsApproved { get; set; }
+        public bool? IsApproved { get; set; }
     }
 }
