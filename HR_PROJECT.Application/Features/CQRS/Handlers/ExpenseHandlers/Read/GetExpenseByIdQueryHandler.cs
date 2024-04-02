@@ -37,7 +37,7 @@ namespace HR_PROJECT.Application.Features.CQRS.Handlers.ExpenseHandlers.Read
                 RequestDate = values.RequestDate,
                 Response = values.Response,
                 Currency = values.Currency,
-                Permission = values.Permission,
+                Permission = values.IsApproved,
                 EmployeeId = values.EmployeeId,
                 FileName = values.FileName
                 

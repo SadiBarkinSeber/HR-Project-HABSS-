@@ -11,7 +11,7 @@ namespace HR_PROJECT.Domain.Entities
     {
         public Expense()
         {
-            Permission = false;
+            IsApproved = false;
             IsCancelled = false;
         }
 
@@ -58,7 +58,7 @@ namespace HR_PROJECT.Domain.Entities
             }
         }
 
-        public bool Permission { get; set; }
+        public bool IsApproved { get; set; }
         public int EmployeeId { get; set; }
         public Employee Employee { get; set; }
         public string? FileName { get; set; }

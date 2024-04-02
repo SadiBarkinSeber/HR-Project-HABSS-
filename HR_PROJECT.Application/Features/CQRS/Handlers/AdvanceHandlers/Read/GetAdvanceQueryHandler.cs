@@ -30,7 +30,7 @@ namespace HR_PROJECT.Application.Features.CQRS.Handlers.AdvanceHandlers.Read
                 RequestDate = x.RequestDate,
                 Response = x.Response,
                 Currency = x.Currency,
-                Permission = x.Permission,
+                Permission = x.IsApproved,
                 EmployeeId = x.EmployeeId,
                 Description = x.Description,
                 AmountValue = x.AmountValue,

@@ -56,14 +56,14 @@ namespace HR_PROJECT.Persistence.Migrations
                     b.Property<int>("EmployeeId")
                         .HasColumnType("int");
 
+                    b.Property<bool>("IsApproved")
+                        .HasColumnType("bit");
+
                     b.Property<bool>("IsCanceled")
                         .HasColumnType("bit");
 
                     b.Property<int?>("ManagerEmployeeId")
                         .HasColumnType("int");
-
-                    b.Property<bool>("Permission")
-                        .HasColumnType("bit");
 
                     b.Property<DateTime>("RequestDate")
                         .HasColumnType("datetime2");
@@ -94,8 +94,8 @@ namespace HR_PROJECT.Persistence.Migrations
                             Currency = "TL",
                             Description = "Araba alıcam",
                             EmployeeId = 1,
+                            IsApproved = false,
                             IsCanceled = false,
-                            Permission = false,
                             RequestDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Response = "Please provide necessary documents."
                         },
@@ -108,8 +108,8 @@ namespace HR_PROJECT.Persistence.Migrations
                             Currency = "TL",
                             Description = "Motor alıcam",
                             EmployeeId = 1,
+                            IsApproved = true,
                             IsCanceled = false,
-                            Permission = true,
                             RequestDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Response = "Request have been approved."
                         });
@@ -202,7 +202,7 @@ namespace HR_PROJECT.Persistence.Migrations
                         {
                             Id = "df5a9b38-18e8-48b7-97bf-ad4a9b4afe0e",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "25589b4c-8631-435f-8a7a-1eebff31ee50",
+                            ConcurrencyStamp = "d1e7d4d2-c110-4a1d-9c0f-51a2e0e8603b",
                             Email = "sahzod.irgas@bilgeadamboost.com",
                             EmailConfirmed = false,
                             EmployeeId = 1,
@@ -210,7 +210,7 @@ namespace HR_PROJECT.Persistence.Migrations
                             NormalizedEmail = "SAHZOD.IRGAS@BILGEADAM.COM",
                             NormalizedUserName = "SAHZOD",
                             OneTimePassword = "123456",
-                            PasswordHash = "AQAAAAIAAYagAAAAEDK0wfgKRjNU47s7OisNcnlvgh1B3MHoZv+q16Q2acVtmJ7QO5c2Spd2NZrjkxJcMA==",
+                            PasswordHash = "AQAAAAIAAYagAAAAEAuyYEhnFGbvXtK0oHpJfdaC5XZEJxDO9XMoC5/KlORm/q1aAyh4Sr6zI+dz/Z5v1w==",
                             PhoneNumberConfirmed = false,
                             SecurityStamp = "",
                             TwoFactorEnabled = false,
@@ -220,14 +220,14 @@ namespace HR_PROJECT.Persistence.Migrations
                         {
                             Id = "29eee336-e6a2-40f2-9305-159eed59ed75",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "de320541-8baf-4208-b2cc-610a8b509c19",
+                            ConcurrencyStamp = "af892d93-ac08-4c50-aa50-0e8ca7e39db0",
                             Email = "admin@bilgeadamboost.com",
                             EmailConfirmed = false,
                             LockoutEnabled = false,
                             ManagerId = 3,
                             NormalizedEmail = "ADMIN@BILGEADAM.COM",
                             NormalizedUserName = "ADMIN",
-                            PasswordHash = "AQAAAAIAAYagAAAAEDTbDL+oTF0IXoGyH9ME4GIfsRJjrffaD5SMliIipy2mqwcwDeivlT8gAKHWe1JcMg==",
+                            PasswordHash = "AQAAAAIAAYagAAAAEI8kvMg6pzfFLnW1rIGqOs1H5U4ZJP44YHYRdFxDbjXt4gbXg1i3Y57e3Xo00j95iw==",
                             PhoneNumberConfirmed = false,
                             SecurityStamp = "",
                             TwoFactorEnabled = false,
@@ -237,13 +237,13 @@ namespace HR_PROJECT.Persistence.Migrations
                         {
                             Id = "ff05bc01-696c-4968-8e4f-cc707cceafad",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "72e0ff99-e186-42df-a767-f55240191bc6",
+                            ConcurrencyStamp = "460ee125-aee9-4717-80b6-d0a2d188d72b",
                             Email = "moderator@bilgeadamboost.com",
                             EmailConfirmed = false,
                             LockoutEnabled = false,
                             NormalizedEmail = "MODERATOR@BİLGEADAMBOOST.COM",
                             NormalizedUserName = "MODERATOR",
-                            PasswordHash = "AQAAAAIAAYagAAAAENaUhp78zy+VemBHAciGC52XO43zlrqydbSrWtg6XXPmWzJfoVRNym7Q5GCUrRGQew==",
+                            PasswordHash = "AQAAAAIAAYagAAAAEMpjtDhr7KxOgjCIqEfC0tG4OlpvWBhutZ63A731zpDqPWhOvIk1NYnhY/LFyeTkzg==",
                             PhoneNumberConfirmed = false,
                             SecurityStamp = "",
                             SiteManagerId = 15,
@@ -483,14 +483,14 @@ namespace HR_PROJECT.Persistence.Migrations
                     b.Property<string>("FileName")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<bool>("IsApproved")
+                        .HasColumnType("bit");
+
                     b.Property<bool>("IsCancelled")
                         .HasColumnType("bit");
 
                     b.Property<int?>("ManagerEmployeeId")
                         .HasColumnType("int");
-
-                    b.Property<bool>("Permission")
-                        .HasColumnType("bit");
 
                     b.Property<DateTime>("RequestDate")
                         .HasColumnType("datetime2");
@@ -520,8 +520,8 @@ namespace HR_PROJECT.Persistence.Migrations
                             Currency = "TL",
                             EmployeeId = 1,
                             ExpenseType = "İş Seyahatleri",
+                            IsApproved = false,
                             IsCancelled = false,
-                            Permission = false,
                             RequestDate = new DateTime(2024, 3, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Response = "Please provide necessary documents."
                         },
@@ -533,8 +533,8 @@ namespace HR_PROJECT.Persistence.Migrations
                             Currency = "TL",
                             EmployeeId = 1,
                             ExpenseType = "Personel Harcamaları",
+                            IsApproved = true,
                             IsCancelled = false,
-                            Permission = true,
                             RequestDate = new DateTime(2024, 3, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Response = "Request have been approved."
                         });

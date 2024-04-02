@@ -27,7 +27,7 @@ namespace HR_PROJECT.Application.Features.CQRS.Handlers.ExpenseHandlers.Write
             values.RequestDate = command.RequestDate;
             values.Response = command.Response;
             values.Currency = command.Currency;
-            values.Permission = command.Permission;
+            values.IsApproved = command.Permission;
             values.EmployeeId = command.EmployeeId;
             values.FileName = command.FileName;
 

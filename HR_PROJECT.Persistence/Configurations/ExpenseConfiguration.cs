@@ -31,7 +31,7 @@ namespace HR_PROJECT.Persistence.Configurations
                     RequestDate = new DateTime(2024, 3, 14),
                     Response = "Please provide necessary documents.",
                     Currency = "TL",
-                    Permission = false,
+                    IsApproved = false,
                     EmployeeId = 1
                 },
 
@@ -44,7 +44,7 @@ namespace HR_PROJECT.Persistence.Configurations
                     RequestDate = new DateTime(2024, 3, 10),
                     Response = "Request have been approved.",
                     Currency = "TL",
-                    Permission = true,
+                    IsApproved = true,
                     EmployeeId = 1
                 }
 
