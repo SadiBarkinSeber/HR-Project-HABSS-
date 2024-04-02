@@ -50,7 +50,7 @@ namespace HR_PROJECT.Persistence.Configurations
                     ApprovalStatus = "Pending",
                     Response = "Please provide necessary documents.",
                     Currency = "TL",
-                    Permission = false,
+                    IsApproved = false,
                     EmployeeId = 1,
                     Description = "Araba alıcam"
                 },
@@ -63,7 +63,7 @@ namespace HR_PROJECT.Persistence.Configurations
                     ApprovalStatus = "Approved",
                     Response = "Request have been approved.",
                     Currency = "TL",
-                    Permission = true,
+                    IsApproved = true,
                     EmployeeId = 1,
                     Description = "Motor alıcam"
                 }

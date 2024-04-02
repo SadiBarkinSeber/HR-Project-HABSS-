@@ -21,7 +21,7 @@ namespace HR_PROJECT.Application.Features.CQRS.Handlers.AdvanceHandlers.Write
         {
             var values = await _repository.GetByIdAsync(command.Id);
 
-            values.Permission = command.Permission;
+            values.IsApproved = command.IsApproved;
             values.ApprovalStatus = command.ApprovalStatus;
 
             await _repository.UpdateAsync(values);

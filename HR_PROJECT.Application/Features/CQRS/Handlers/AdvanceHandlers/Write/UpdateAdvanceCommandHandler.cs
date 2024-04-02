@@ -25,7 +25,7 @@ namespace HR_PROJECT.Application.Features.CQRS.Handlers.AdvanceHandlers.Write
             values.Amount = command.Amount;
             values.ApprovalStatus = command.ApprovalStatus;
             values.Currency = command.Currency;
-            values.Permission = command.Permission;
+            values.IsApproved = command.Permission;
             values.EmployeeId = command.EmployeeId;
             values.Description = command.Description;
 

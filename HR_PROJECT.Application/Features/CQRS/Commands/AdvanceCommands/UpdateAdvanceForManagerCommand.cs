@@ -9,14 +9,14 @@ namespace HR_PROJECT.Application.Features.CQRS.Commands.AdvanceCommands
     public class UpdateAdvanceForManagerCommand
     {
         public int Id { get; set; }
-        public bool Permission {  get; set; }
+        public bool IsApproved {  get; set; }
         private string approvalStatus;
 
         public string ApprovalStatus
         {
             get 
             {
-                if (Permission == true)
+                if (IsApproved == true)
                 {
                     approvalStatus = "Approved";
                 }

@@ -14,14 +14,14 @@ namespace HR_PROJECT.Domain.Entities
 
         public Advance()
         {
-            Permission = false;
+            IsApproved = false;
             IsCanceled = false;
         }
 
         public int Id { get; set; }
         public string ApprovalStatus { get; set; }
         public string? Response { get; set; }
-        public bool Permission { get; set; }
+        public bool IsApproved { get; set; }
         public Employee Employee { get; set; }
         private string advanceType;
         public string AdvanceType
