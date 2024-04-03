@@ -67,8 +67,7 @@
               "RelativeToolTip": "HR_PROJECT.Application\\Features\\CQRS\\Handlers\\PermissionHandlers\\Read\\GetPermissionQueryHandler.cs",
               "ViewState": "AQIAABMAAAAAAAAAAAAQwCYAAAArAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-03T18:40:50.169Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-03T18:40:50.169Z"
             },
             {
               "$type": "Document",
@@ -80,8 +79,7 @@
               "RelativeToolTip": "HR_PROJECT.Application\\Features\\CQRS\\Results\\PermissionResults\\GetPermissionsByEmployeeIDQueryResult.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-03T18:40:43.428Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-03T18:40:43.428Z"
             },
             {
               "$type": "Document",
@@ -93,8 +91,7 @@
               "RelativeToolTip": "HR_PROJECT.Application\\Features\\CQRS\\Results\\PermissionResults\\GetPermissionQueryResult.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAxAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-03T18:40:26.85Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-03T18:40:26.85Z"
             },
             {
               "$type": "Document",
@@ -106,8 +103,7 @@
               "RelativeToolTip": "HR_PROJECT.Application\\Features\\CQRS\\Commands\\PermissionComands\\CreatePermissionCommand.cs",
               "ViewState": "AQIAAAYAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-03T18:39:45.344Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-03T18:39:45.344Z"
             },
             {
               "$type": "Document",
@@ -119,8 +115,7 @@
               "RelativeToolTip": "HR_PROJECT.Application\\Features\\CQRS\\Handlers\\PermissionHandlers\\Write\\CreatePermissionCommandHandler.cs",
               "ViewState": "AQIAAA4AAAAAAAAAAAAAwAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-03T18:39:33.601Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-03T18:39:33.601Z"
             },
             {
               "$type": "Document",
@@ -132,8 +127,7 @@
               "RelativeToolTip": "HR_PROJECT.Domain\\Entities\\Permission.cs",
               "ViewState": "AQIAACIAAAAAAAAAAAAgwAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-03T18:39:18.288Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-03T18:39:18.288Z"
             }
           ]
         }
