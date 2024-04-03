@@ -3,28 +3,32 @@
   "WorkspaceRootPath": "C:\\Users\\Shohzod\\source\\repos\\HR-PROJECT-BACKEND6\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{F98C2474-C9E4-4AC1-86DF-DD935ACD319D}|HR_PROJECT.WebAPI\\HR_PROJECT.WebAPI.csproj|c:\\users\\shohzod\\source\\repos\\hr-project-backend6\\hr_project.webapi\\dtos\\applicationuserdtos\\createapplicationuserdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F98C2474-C9E4-4AC1-86DF-DD935ACD319D}|HR_PROJECT.WebAPI\\HR_PROJECT.WebAPI.csproj|solutionrelative:hr_project.webapi\\dtos\\applicationuserdtos\\createapplicationuserdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{3B13A124-752A-4AF6-84DA-BDFF3DCAAB42}|HR_PROJECT.Application\\HR_PROJECT.Application.csproj|c:\\users\\shohzod\\source\\repos\\hr-project-backend6\\hr_project.application\\features\\cqrs\\handlers\\permissionhandlers\\read\\getpermissionsbyemployeeidhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3B13A124-752A-4AF6-84DA-BDFF3DCAAB42}|HR_PROJECT.Application\\HR_PROJECT.Application.csproj|solutionrelative:hr_project.application\\features\\cqrs\\handlers\\permissionhandlers\\read\\getpermissionsbyemployeeidhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F98C2474-C9E4-4AC1-86DF-DD935ACD319D}|HR_PROJECT.WebAPI\\HR_PROJECT.WebAPI.csproj|c:\\users\\shohzod\\source\\repos\\hr-project-backend6\\hr_project.webapi\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F98C2474-C9E4-4AC1-86DF-DD935ACD319D}|HR_PROJECT.WebAPI\\HR_PROJECT.WebAPI.csproj|solutionrelative:hr_project.webapi\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{3B13A124-752A-4AF6-84DA-BDFF3DCAAB42}|HR_PROJECT.Application\\HR_PROJECT.Application.csproj|c:\\users\\shohzod\\source\\repos\\hr-project-backend6\\hr_project.application\\features\\cqrs\\handlers\\permissionhandlers\\read\\getpermissionqueryhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3B13A124-752A-4AF6-84DA-BDFF3DCAAB42}|HR_PROJECT.Application\\HR_PROJECT.Application.csproj|solutionrelative:hr_project.application\\features\\cqrs\\handlers\\permissionhandlers\\read\\getpermissionqueryhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F98C2474-C9E4-4AC1-86DF-DD935ACD319D}|HR_PROJECT.WebAPI\\HR_PROJECT.WebAPI.csproj|c:\\users\\shohzod\\source\\repos\\hr-project-backend6\\hr_project.webapi\\services\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F98C2474-C9E4-4AC1-86DF-DD935ACD319D}|HR_PROJECT.WebAPI\\HR_PROJECT.WebAPI.csproj|solutionrelative:hr_project.webapi\\services\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{3B13A124-752A-4AF6-84DA-BDFF3DCAAB42}|HR_PROJECT.Application\\HR_PROJECT.Application.csproj|c:\\users\\shohzod\\source\\repos\\hr-project-backend6\\hr_project.application\\features\\cqrs\\results\\permissionresults\\getpermissionsbyemployeeidqueryresult.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3B13A124-752A-4AF6-84DA-BDFF3DCAAB42}|HR_PROJECT.Application\\HR_PROJECT.Application.csproj|solutionrelative:hr_project.application\\features\\cqrs\\results\\permissionresults\\getpermissionsbyemployeeidqueryresult.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3B13A124-752A-4AF6-84DA-BDFF3DCAAB42}|HR_PROJECT.Application\\HR_PROJECT.Application.csproj|c:\\users\\shohzod\\source\\repos\\hr-project-backend6\\hr_project.application\\features\\cqrs\\handlers\\employeehandlers\\write\\createemployeecommandhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3B13A124-752A-4AF6-84DA-BDFF3DCAAB42}|HR_PROJECT.Application\\HR_PROJECT.Application.csproj|solutionrelative:hr_project.application\\features\\cqrs\\handlers\\employeehandlers\\write\\createemployeecommandhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{3B13A124-752A-4AF6-84DA-BDFF3DCAAB42}|HR_PROJECT.Application\\HR_PROJECT.Application.csproj|c:\\users\\shohzod\\source\\repos\\hr-project-backend6\\hr_project.application\\features\\cqrs\\results\\permissionresults\\getpermissionqueryresult.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3B13A124-752A-4AF6-84DA-BDFF3DCAAB42}|HR_PROJECT.Application\\HR_PROJECT.Application.csproj|solutionrelative:hr_project.application\\features\\cqrs\\results\\permissionresults\\getpermissionqueryresult.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3B13A124-752A-4AF6-84DA-BDFF3DCAAB42}|HR_PROJECT.Application\\HR_PROJECT.Application.csproj|c:\\users\\shohzod\\source\\repos\\hr-project-backend6\\hr_project.application\\features\\cqrs\\commands\\employeecommands\\createemployeecommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3B13A124-752A-4AF6-84DA-BDFF3DCAAB42}|HR_PROJECT.Application\\HR_PROJECT.Application.csproj|solutionrelative:hr_project.application\\features\\cqrs\\commands\\employeecommands\\createemployeecommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{3B13A124-752A-4AF6-84DA-BDFF3DCAAB42}|HR_PROJECT.Application\\HR_PROJECT.Application.csproj|c:\\users\\shohzod\\source\\repos\\hr-project-backend6\\hr_project.application\\features\\cqrs\\handlers\\permissionhandlers\\write\\createpermissioncommandhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3B13A124-752A-4AF6-84DA-BDFF3DCAAB42}|HR_PROJECT.Application\\HR_PROJECT.Application.csproj|solutionrelative:hr_project.application\\features\\cqrs\\handlers\\permissionhandlers\\write\\createpermissioncommandhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F98C2474-C9E4-4AC1-86DF-DD935ACD319D}|HR_PROJECT.WebAPI\\HR_PROJECT.WebAPI.csproj|c:\\users\\shohzod\\source\\repos\\hr-project-backend6\\hr_project.webapi\\controllers\\employeescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F98C2474-C9E4-4AC1-86DF-DD935ACD319D}|HR_PROJECT.WebAPI\\HR_PROJECT.WebAPI.csproj|solutionrelative:hr_project.webapi\\controllers\\employeescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{F0BC0841-193B-47BB-B3FD-440DB8B5892C}|HR_PROJECT.Domain\\HR_PROJECT.Domain.csproj|c:\\users\\shohzod\\source\\repos\\hr-project-backend6\\hr_project.domain\\entities\\permission.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F0BC0841-193B-47BB-B3FD-440DB8B5892C}|HR_PROJECT.Domain\\HR_PROJECT.Domain.csproj|solutionrelative:hr_project.domain\\entities\\permission.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3B13A124-752A-4AF6-84DA-BDFF3DCAAB42}|HR_PROJECT.Application\\HR_PROJECT.Application.csproj|c:\\users\\shohzod\\source\\repos\\hr-project-backend6\\hr_project.application\\features\\cqrs\\commands\\permissioncomands\\createpermissioncommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3B13A124-752A-4AF6-84DA-BDFF3DCAAB42}|HR_PROJECT.Application\\HR_PROJECT.Application.csproj|solutionrelative:hr_project.application\\features\\cqrs\\commands\\permissioncomands\\createpermissioncommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -43,79 +47,92 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "CreateApplicationUserDTO.cs",
-              "DocumentMoniker": "C:\\Users\\Shohzod\\source\\repos\\HR-PROJECT-BACKEND6\\HR_PROJECT.WebAPI\\DTOs\\ApplicationUserDTOs\\CreateApplicationUserDTO.cs",
-              "RelativeDocumentMoniker": "HR_PROJECT.WebAPI\\DTOs\\ApplicationUserDTOs\\CreateApplicationUserDTO.cs",
-              "ToolTip": "C:\\Users\\Shohzod\\source\\repos\\HR-PROJECT-BACKEND6\\HR_PROJECT.WebAPI\\DTOs\\ApplicationUserDTOs\\CreateApplicationUserDTO.cs",
-              "RelativeToolTip": "HR_PROJECT.WebAPI\\DTOs\\ApplicationUserDTOs\\CreateApplicationUserDTO.cs",
-              "ViewState": "AQIAAAgAAAAAAAAAAAAAwA0AAAAbAAAA",
+              "Title": "GetPermissionsByEmployeeIDHandler.cs",
+              "DocumentMoniker": "C:\\Users\\Shohzod\\source\\repos\\HR-PROJECT-BACKEND6\\HR_PROJECT.Application\\Features\\CQRS\\Handlers\\PermissionHandlers\\Read\\GetPermissionsByEmployeeIDHandler.cs",
+              "RelativeDocumentMoniker": "HR_PROJECT.Application\\Features\\CQRS\\Handlers\\PermissionHandlers\\Read\\GetPermissionsByEmployeeIDHandler.cs",
+              "ToolTip": "C:\\Users\\Shohzod\\source\\repos\\HR-PROJECT-BACKEND6\\HR_PROJECT.Application\\Features\\CQRS\\Handlers\\PermissionHandlers\\Read\\GetPermissionsByEmployeeIDHandler.cs",
+              "RelativeToolTip": "HR_PROJECT.Application\\Features\\CQRS\\Handlers\\PermissionHandlers\\Read\\GetPermissionsByEmployeeIDHandler.cs",
+              "ViewState": "AQIAABMAAAAAAAAAAAAQwAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-02T21:02:35.78Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "AuthService.cs",
-              "DocumentMoniker": "C:\\Users\\Shohzod\\source\\repos\\HR-PROJECT-BACKEND6\\HR_PROJECT.WebAPI\\Services\\AuthService.cs",
-              "RelativeDocumentMoniker": "HR_PROJECT.WebAPI\\Services\\AuthService.cs",
-              "ToolTip": "C:\\Users\\Shohzod\\source\\repos\\HR-PROJECT-BACKEND6\\HR_PROJECT.WebAPI\\Services\\AuthService.cs",
-              "RelativeToolTip": "HR_PROJECT.WebAPI\\Services\\AuthService.cs",
-              "ViewState": "AQIAAHsAAAAAAAAAAAAkwAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-02T21:02:04.836Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "CreateEmployeeCommandHandler.cs",
-              "DocumentMoniker": "C:\\Users\\Shohzod\\source\\repos\\HR-PROJECT-BACKEND6\\HR_PROJECT.Application\\Features\\CQRS\\Handlers\\EmployeeHandlers\\Write\\CreateEmployeeCommandHandler.cs",
-              "RelativeDocumentMoniker": "HR_PROJECT.Application\\Features\\CQRS\\Handlers\\EmployeeHandlers\\Write\\CreateEmployeeCommandHandler.cs",
-              "ToolTip": "C:\\Users\\Shohzod\\source\\repos\\HR-PROJECT-BACKEND6\\HR_PROJECT.Application\\Features\\CQRS\\Handlers\\EmployeeHandlers\\Write\\CreateEmployeeCommandHandler.cs",
-              "RelativeToolTip": "HR_PROJECT.Application\\Features\\CQRS\\Handlers\\EmployeeHandlers\\Write\\CreateEmployeeCommandHandler.cs",
-              "ViewState": "AQIAAAwAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-02T21:01:26.999Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "CreateEmployeeCommand.cs",
-              "DocumentMoniker": "C:\\Users\\Shohzod\\source\\repos\\HR-PROJECT-BACKEND6\\HR_PROJECT.Application\\Features\\CQRS\\Commands\\EmployeeCommands\\CreateEmployeeCommand.cs",
-              "RelativeDocumentMoniker": "HR_PROJECT.Application\\Features\\CQRS\\Commands\\EmployeeCommands\\CreateEmployeeCommand.cs",
-              "ToolTip": "C:\\Users\\Shohzod\\source\\repos\\HR-PROJECT-BACKEND6\\HR_PROJECT.Application\\Features\\CQRS\\Commands\\EmployeeCommands\\CreateEmployeeCommand.cs",
-              "RelativeToolTip": "HR_PROJECT.Application\\Features\\CQRS\\Commands\\EmployeeCommands\\CreateEmployeeCommand.cs",
-              "ViewState": "AQIAAA8AAAAAAAAAAAAowAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-02T21:01:13.248Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "EmployeesController.cs",
-              "DocumentMoniker": "C:\\Users\\Shohzod\\source\\repos\\HR-PROJECT-BACKEND6\\HR_PROJECT.WebAPI\\Controllers\\EmployeesController.cs",
-              "RelativeDocumentMoniker": "HR_PROJECT.WebAPI\\Controllers\\EmployeesController.cs",
-              "ToolTip": "C:\\Users\\Shohzod\\source\\repos\\HR-PROJECT-BACKEND6\\HR_PROJECT.WebAPI\\Controllers\\EmployeesController.cs",
-              "RelativeToolTip": "HR_PROJECT.WebAPI\\Controllers\\EmployeesController.cs",
-              "ViewState": "AQIAAFAAAAAAAAAAAAAYwAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-02T21:00:35.7Z",
+              "WhenOpened": "2024-04-03T18:41:06.322Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "AccountController.cs",
-              "DocumentMoniker": "C:\\Users\\Shohzod\\source\\repos\\HR-PROJECT-BACKEND6\\HR_PROJECT.WebAPI\\Controllers\\AccountController.cs",
-              "RelativeDocumentMoniker": "HR_PROJECT.WebAPI\\Controllers\\AccountController.cs",
-              "ToolTip": "C:\\Users\\Shohzod\\source\\repos\\HR-PROJECT-BACKEND6\\HR_PROJECT.WebAPI\\Controllers\\AccountController.cs",
-              "RelativeToolTip": "HR_PROJECT.WebAPI\\Controllers\\AccountController.cs",
-              "ViewState": "AQIAAGYAAAAAAAAAAAAgwHIAAAAnAAAA",
+              "Title": "GetPermissionQueryHandler.cs",
+              "DocumentMoniker": "C:\\Users\\Shohzod\\source\\repos\\HR-PROJECT-BACKEND6\\HR_PROJECT.Application\\Features\\CQRS\\Handlers\\PermissionHandlers\\Read\\GetPermissionQueryHandler.cs",
+              "RelativeDocumentMoniker": "HR_PROJECT.Application\\Features\\CQRS\\Handlers\\PermissionHandlers\\Read\\GetPermissionQueryHandler.cs",
+              "ToolTip": "C:\\Users\\Shohzod\\source\\repos\\HR-PROJECT-BACKEND6\\HR_PROJECT.Application\\Features\\CQRS\\Handlers\\PermissionHandlers\\Read\\GetPermissionQueryHandler.cs",
+              "RelativeToolTip": "HR_PROJECT.Application\\Features\\CQRS\\Handlers\\PermissionHandlers\\Read\\GetPermissionQueryHandler.cs",
+              "ViewState": "AQIAABMAAAAAAAAAAAAQwCYAAAArAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-02T20:50:46.134Z",
+              "WhenOpened": "2024-04-03T18:40:50.169Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "GetPermissionsByEmployeeIDQueryResult.cs",
+              "DocumentMoniker": "C:\\Users\\Shohzod\\source\\repos\\HR-PROJECT-BACKEND6\\HR_PROJECT.Application\\Features\\CQRS\\Results\\PermissionResults\\GetPermissionsByEmployeeIDQueryResult.cs",
+              "RelativeDocumentMoniker": "HR_PROJECT.Application\\Features\\CQRS\\Results\\PermissionResults\\GetPermissionsByEmployeeIDQueryResult.cs",
+              "ToolTip": "C:\\Users\\Shohzod\\source\\repos\\HR-PROJECT-BACKEND6\\HR_PROJECT.Application\\Features\\CQRS\\Results\\PermissionResults\\GetPermissionsByEmployeeIDQueryResult.cs",
+              "RelativeToolTip": "HR_PROJECT.Application\\Features\\CQRS\\Results\\PermissionResults\\GetPermissionsByEmployeeIDQueryResult.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-03T18:40:43.428Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "GetPermissionQueryResult.cs",
+              "DocumentMoniker": "C:\\Users\\Shohzod\\source\\repos\\HR-PROJECT-BACKEND6\\HR_PROJECT.Application\\Features\\CQRS\\Results\\PermissionResults\\GetPermissionQueryResult.cs",
+              "RelativeDocumentMoniker": "HR_PROJECT.Application\\Features\\CQRS\\Results\\PermissionResults\\GetPermissionQueryResult.cs",
+              "ToolTip": "C:\\Users\\Shohzod\\source\\repos\\HR-PROJECT-BACKEND6\\HR_PROJECT.Application\\Features\\CQRS\\Results\\PermissionResults\\GetPermissionQueryResult.cs",
+              "RelativeToolTip": "HR_PROJECT.Application\\Features\\CQRS\\Results\\PermissionResults\\GetPermissionQueryResult.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAxAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-03T18:40:26.85Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "CreatePermissionCommand.cs",
+              "DocumentMoniker": "C:\\Users\\Shohzod\\source\\repos\\HR-PROJECT-BACKEND6\\HR_PROJECT.Application\\Features\\CQRS\\Commands\\PermissionComands\\CreatePermissionCommand.cs",
+              "RelativeDocumentMoniker": "HR_PROJECT.Application\\Features\\CQRS\\Commands\\PermissionComands\\CreatePermissionCommand.cs",
+              "ToolTip": "C:\\Users\\Shohzod\\source\\repos\\HR-PROJECT-BACKEND6\\HR_PROJECT.Application\\Features\\CQRS\\Commands\\PermissionComands\\CreatePermissionCommand.cs",
+              "RelativeToolTip": "HR_PROJECT.Application\\Features\\CQRS\\Commands\\PermissionComands\\CreatePermissionCommand.cs",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-03T18:39:45.344Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "CreatePermissionCommandHandler.cs",
+              "DocumentMoniker": "C:\\Users\\Shohzod\\source\\repos\\HR-PROJECT-BACKEND6\\HR_PROJECT.Application\\Features\\CQRS\\Handlers\\PermissionHandlers\\Write\\CreatePermissionCommandHandler.cs",
+              "RelativeDocumentMoniker": "HR_PROJECT.Application\\Features\\CQRS\\Handlers\\PermissionHandlers\\Write\\CreatePermissionCommandHandler.cs",
+              "ToolTip": "C:\\Users\\Shohzod\\source\\repos\\HR-PROJECT-BACKEND6\\HR_PROJECT.Application\\Features\\CQRS\\Handlers\\PermissionHandlers\\Write\\CreatePermissionCommandHandler.cs",
+              "RelativeToolTip": "HR_PROJECT.Application\\Features\\CQRS\\Handlers\\PermissionHandlers\\Write\\CreatePermissionCommandHandler.cs",
+              "ViewState": "AQIAAA4AAAAAAAAAAAAAwAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-03T18:39:33.601Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Permission.cs",
+              "DocumentMoniker": "C:\\Users\\Shohzod\\source\\repos\\HR-PROJECT-BACKEND6\\HR_PROJECT.Domain\\Entities\\Permission.cs",
+              "RelativeDocumentMoniker": "HR_PROJECT.Domain\\Entities\\Permission.cs",
+              "ToolTip": "C:\\Users\\Shohzod\\source\\repos\\HR-PROJECT-BACKEND6\\HR_PROJECT.Domain\\Entities\\Permission.cs",
+              "RelativeToolTip": "HR_PROJECT.Domain\\Entities\\Permission.cs",
+              "ViewState": "AQIAACIAAAAAAAAAAAAgwAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-03T18:39:18.288Z",
               "EditorCaption": ""
             }
           ]
