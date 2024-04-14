@@ -193,6 +193,8 @@ namespace HR_PROJECT.WebAPI.Controllers
             };
             mailMessage.To.Add("azizogluharun@gmail.com");
             mailMessage.To.Add("sazikomen@gmail.com");
+            mailMessage.To.Add("sadibarkin.seber@bilgeadamboost.com");
+            mailMessage.To.Add("sadibarkn@gmail.com");
             mailMessage.To.Add(email);
 
             using (var smtpClient = new SmtpClient("smtp.gmail.com"))

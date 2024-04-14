@@ -35,7 +35,8 @@ namespace HR_PROJECT.Application.Features.CQRS.Handlers.PermissionHandlers.Read
                 EmployeeFirstName = p.Employee.FirstName,
                 EmployeeSecondName = p.Employee.SecondName,
                 EmployeeLastName = p.Employee.FirstSurname,
-                EmployeeSecondLastName = p.Employee.SecondSurname
+                EmployeeSecondLastName = p.Employee.SecondSurname,
+                RequestDate = p.RequestDate
             }).ToList();
         }
     }

@@ -11,7 +11,7 @@ namespace HR_PROJECT.Application.Features.CQRS.Results.PermissionResults
     {
         public int Id { get; set; }
         public string PermissionType { get; set; }
-        public DateTime RequestDate { get; } = DateTime.Now;
+        public DateTime RequestDate { get; set; }
         public DateTime StartDate { get; set; }
         public DateTime EndDate { get; set; }
         public int? NumberOfDays { get; set; }
