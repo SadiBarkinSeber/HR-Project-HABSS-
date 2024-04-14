@@ -191,16 +191,13 @@ namespace HR_PROJECT.WebAPI.Controllers
                 Body = $"Şifrenizi sıfırlamak için aşağıdaki bağlantıyı kullanarak tek kullanımlık şifrenizle giriş yapabilirsiniz :<br/><br/> <a href='{resetPasswordLink}'>{resetPasswordLink}</a> <br/><br/> Tek Kullanımlık Şifreniz: {verificationCode}",
                 IsBodyHtml = true,
             };
-            mailMessage.To.Add("azizogluharun@gmail.com");
-            mailMessage.To.Add("sazikomen@gmail.com");
-            mailMessage.To.Add("sadibarkin.seber@bilgeadamboost.com");
-            mailMessage.To.Add("sadibarkn@gmail.com");
+            
             mailMessage.To.Add(email);
 
             using (var smtpClient = new SmtpClient("smtp.gmail.com"))
             {
                 smtpClient.Port = 587;
-                smtpClient.Credentials = new NetworkCredential("habss.hr@gmail.com", "mvwo msab napt efvc");
+                smtpClient.Credentials = new NetworkCredential("email", "creds");
                 smtpClient.EnableSsl = true;
 
                 await smtpClient.SendMailAsync(mailMessage);
